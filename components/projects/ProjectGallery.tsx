@@ -55,7 +55,7 @@ export default function ProjectGallery() {
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {filteredProjects.map((project: ProjectCaseStudy) => (
+        {filteredProjects.map((project: ProjectCaseStudy, index: number) => (
           <article
             key={project.slug}
             className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-200 flex flex-col justify-between shadow-2xs"
@@ -66,6 +66,8 @@ export default function ProjectGallery() {
                 src={project.imageSrc}
                 alt={project.title}
                 fill
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-300 opacity-90"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />

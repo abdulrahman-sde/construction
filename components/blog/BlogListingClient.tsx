@@ -54,6 +54,8 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
     setCurrentPage(1);
   };
 
+  const showFeaturedHero = selectedCategory === "All Articles" && !!featuredPost;
+
   return (
     <div className="space-y-12 sm:space-y-16">
       {/* Category Filter Tabs */}
@@ -78,7 +80,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
       </div>
 
       {/* Featured Article Hero Card (Visible on "All Articles") */}
-      {selectedCategory === "All Articles" && featuredPost && (
+      {showFeaturedHero && featuredPost && (
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <span className="text-xs uppercase font-medium tracking-wider text-muted-foreground flex items-center gap-2">
@@ -95,7 +97,8 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                   src={featuredPost.featuredImage}
                   alt={featuredPost.title}
                   fill
-                  priority
+                  loading="eager"
+                  fetchPriority="high"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -177,7 +180,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {paginatedPosts.map((post) => (
+            {paginatedPosts.map((post, index) => (
               <Card
                 key={post.slug}
                 className="group flex flex-col justify-between p-0 border border-border/80 hover:border-primary/40 hover:shadow-xs transition-all duration-200 rounded-xl overflow-hidden bg-card"
@@ -189,6 +192,8 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                       src={post.featuredImage}
                       alt={post.title}
                       fill
+                      loading={index === 0 && !showFeaturedHero ? "eager" : "lazy"}
+                      fetchPriority={index === 0 && !showFeaturedHero ? "high" : "auto"}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />

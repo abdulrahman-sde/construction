@@ -55,6 +55,8 @@ export default function ProjectBlueprintViewer({
           src={project.imageSrc}
           alt={`${project.title} Plan Markup`}
           fill
+          loading="eager"
+          fetchPriority="high"
           className="object-cover object-center opacity-85"
           sizes="(max-width: 1024px) 100vw, 800px"
         />

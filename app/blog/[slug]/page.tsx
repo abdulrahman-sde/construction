@@ -144,7 +144,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   src={post.featuredImage}
                   alt={post.title}
                   fill
-                  priority
+                  loading="eager"
+                  fetchPriority="high"
                   sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover"
                 />

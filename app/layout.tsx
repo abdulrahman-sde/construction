@@ -16,7 +16,8 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Construct Estimates | Precision Construction Cost Estimating & Takeoffs",
+  title:
+    "Construct Estimates | Precision Construction Cost Estimating & Takeoffs",
   description:
     "Trusted partner in construction estimating and material takeoff services for contractors, builders, and architects across North America and Australia.",
 };
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`scroll-smooth antialiased ${geist.variable} ${newsreader.variable}`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-foreground selection:text-background font-normal">

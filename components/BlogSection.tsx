@@ -15,8 +15,7 @@ const posts = [
     title: "Colorado Construction Estimating Services | Accurate Bids",
     excerpt:
       "Looking for reliable Colorado construction estimating services? We calibrate labor and material indices across Denver, Boulder, and regional commercial builds.",
-    image:
-      "https://constructestimates.com/wp-content/uploads/2026/07/colorado.jpg",
+    image: "/assets/trades/sitework.svg",
   },
   {
     slug: "bluebeam-revu-vs-planswift",
@@ -27,8 +26,7 @@ const posts = [
     title: "Bluebeam Revu vs PlanSwift: Which Estimation Software is Right?",
     excerpt:
       "A side-by-side engineering breakdown between PlanSwift and Bluebeam Revu comparing quantity takeoff speed, markup collaboration, and custom formulas.",
-    image:
-      "https://constructestimates.com/wp-content/uploads/2023/11/PlanSwift-vs-Bluebeam-Revu.jpg",
+    image: "/assets/trades/metal.svg",
   },
   {
     slug: "managing-construction-cash-flow",
@@ -39,14 +37,16 @@ const posts = [
     title: "Problems and Solutions for Managing Construction Cash Flow",
     excerpt:
       "Cash flow insolvency causes more contractor business failures than lack of profitable work. Learn practical strategies to structure billing milestones.",
-    image:
-      "https://constructestimates.com/wp-content/uploads/2023/10/Construction-cashflow.jpg",
+    image: "/assets/trades/lumber.svg",
   },
 ];
 
 export default function BlogSection() {
   return (
-    <section className="py-20 md:py-28 bg-background border-t border-border" id="blog">
+    <section
+      className="py-20 md:py-28 bg-background border-t border-border"
+      id="blog"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-14">
           <div className="space-y-2.5 max-w-2xl">
@@ -58,8 +58,8 @@ export default function BlogSection() {
               <span className="font-normal text-primary">Our Blog</span>
             </h2>
             <p className="font-sans text-muted-foreground text-xs sm:text-sm font-normal leading-relaxed">
-              Stay updated with the latest trends, best practices, and insights in construction
-              estimating through our informative blog.
+              Stay updated with the latest trends, best practices, and insights
+              in construction estimating through our informative blog.
             </p>
           </div>
           <Button
@@ -90,7 +90,7 @@ export default function BlogSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
-                  
+
                   {/* Category Tag on Image */}
                   <div className="absolute top-2.5 left-2.5 z-10">
                     <Badge

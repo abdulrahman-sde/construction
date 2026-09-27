@@ -1,26 +1,360 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #18181B;
+  --card: #FFFFFF;
+  --card-foreground: #18181B;
+  --popover: #FFFFFF;
+  --popover-foreground: #18181B;
+
+  /* Brand Primary: Royal/Cobalt Blue matching the brand */
+  --primary: #1E64D8;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #F8FAFC;
+  --secondary-foreground: #0F172A;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #F1F5F9;
+  --accent-foreground: #0F172A;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #1E64D8;
+
+  --chart-1: #1E64D8;
+  --chart-2: #3B82F6;
+  --chart-3: #60A5FA;
+  --chart-4: #93C5FD;
+  --chart-5: #E2E8F0;
+
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #18181B;
+  --sidebar-primary: #1E64D8;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F8FAFC;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #1E64D8;
+
+  /* Design Token Chips: Clean, Desaturated Muted Pastels (No jarring neon) */
+  --chip-blue-bg: #EFF6FF;
+  --chip-blue-text: #1E40AF;
+  --chip-blue-border: #BFDBFE;
+
+  --chip-green-bg: #F0FDF4;
+  --chip-green-text: #166534;
+  --chip-green-border: #BBF7D0;
+
+  --chip-amber-bg: #FEFCE8;
+  --chip-amber-text: #854D0E;
+  --chip-amber-border: #FEF08A;
+
+  --chip-rose-bg: #FEF2F2;
+  --chip-rose-text: #991B1B;
+  --chip-rose-border: #FECACA;
+
+  --chip-neutral-bg: #F8FAFC;
+  --chip-neutral-text: #475569;
+  --chip-neutral-border: #E2E8F0;
+
+  --font-sans: var(--font-geist), "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-newsreader), "Newsreader", Charter, "Bitstream Charter", "Iowan Old Style", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", "SF Mono", monospace;
+  --radius: 0.75rem;
+
+  /* Ultra-diffuse, modern shadows - replacing heavy black sludge */
+  --shadow-2xs: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-xs: 0 1px 3px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.03);
+  --shadow: 0 2px 8px 0 rgb(0 0 0 / 0.04), 0 1px 3px 0 rgb(0 0 0 / 0.02);
+  --shadow-md: 0 4px 14px -2px rgb(0 0 0 / 0.05), 0 2px 6px -1px rgb(0 0 0 / 0.02);
+  --shadow-lg: 0 10px 24px -4px rgb(0 0 0 / 0.06), 0 4px 10px -2px rgb(0 0 0 / 0.02);
+  --shadow-xl: 0 16px 36px -6px rgb(0 0 0 / 0.07);
+  --shadow-2xl: 0 24px 48px -12px rgb(0 0 0 / 0.08);
+
+  --tracking-normal: -0.012em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: #0B0F17;
+  --foreground: #F8FAFC;
+  --card: #111827;
+  --card-foreground: #F8FAFC;
+  --popover: #111827;
+  --popover-foreground: #F8FAFC;
+  --primary: #3B82F6;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E293B;
+  --secondary-foreground: #F8FAFC;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: #1E293B;
+  --accent-foreground: #F8FAFC;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #1E293B;
+  --input: #1E293B;
+  --ring: #3B82F6;
+
+  --chip-blue-bg: rgba(30, 58, 138, 0.35);
+  --chip-blue-text: #93C5FD;
+  --chip-blue-border: rgba(59, 130, 246, 0.25);
+
+  --chip-green-bg: rgba(22, 101, 52, 0.35);
+  --chip-green-text: #86EFAC;
+  --chip-green-border: rgba(34, 197, 94, 0.25);
+
+  --chip-amber-bg: rgba(133, 77, 14, 0.35);
+  --chip-amber-text: #FDE047;
+  --chip-amber-border: rgba(234, 179, 8, 0.25);
+
+  --chip-rose-bg: rgba(153, 27, 27, 0.35);
+  --chip-rose-text: #FCA5A5;
+  --chip-rose-border: rgba(239, 68, 68, 0.25);
+
+  --chip-neutral-bg: #1E293B;
+  --chip-neutral-text: #CBD5E1;
+  --chip-neutral-border: #334155;
+
+  --shadow-2xs: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+  --shadow-xs: 0 1px 3px 0 rgb(0 0 0 / 0.25);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.25), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+  --shadow: 0 2px 8px 0 rgb(0 0 0 / 0.25);
+  --shadow-md: 0 4px 14px -2px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 10px 24px -4px rgb(0 0 0 / 0.4);
+  --shadow-xl: 0 16px 36px -6px rgb(0 0 0 / 0.5);
+  --shadow-2xl: 0 24px 48px -12px rgb(0 0 0 / 0.6);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  --tracking-tighter: calc(var(--tracking-normal) - 0.04em);
+  --tracking-tight: calc(var(--tracking-normal) - 0.02em);
+  --tracking-normal: var(--tracking-normal);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+  --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+  --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/30;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-geist), "Geist", system-ui, -apple-system, sans-serif;
+    letter-spacing: var(--tracking-normal);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-newsreader), "Newsreader", Charter, "Bitstream Charter", "Iowan Old Style", Georgia, Cambria, serif !important;
+    font-style: normal !important;
+    letter-spacing: -0.025em;
+  }
+  h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+    font-style: normal;
+  }
+  p, li, input, textarea, button, label {
+    font-family: var(--font-geist), "Geist", system-ui, -apple-system, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Tasteful Entrance & Interaction Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stagger-1 {
+  animation-delay: 60ms;
+}
+
+.stagger-2 {
+  animation-delay: 120ms;
+}
+
+.stagger-3 {
+  animation-delay: 180ms;
+}
+
+
+/* Blueprint subtle grid */
+.blueprint-subtle-grid {
+  background-image: 
+    linear-gradient(to right, rgba(30, 100, 216, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 100, 216, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Smooth Infinite Marquee Effect */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation: none;
+  }
+}
+
+/* Editorial Article Prose Typography - Strict Editorial Architecture */
+.editorial-prose {
+  color: var(--muted-foreground);
+  font-weight: 400;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.editorial-prose p {
+  margin-bottom: 1.25rem;
+}
+.editorial-prose h2 {
+  font-family: var(--font-newsreader), serif;
+  font-weight: 400;
+  color: var(--foreground);
+  font-size: 1.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+.editorial-prose h3 {
+  font-family: var(--font-newsreader), serif;
+  font-weight: 400;
+  color: var(--foreground);
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+.editorial-prose ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.editorial-prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.editorial-prose li {
+  margin-bottom: 0.5rem;
+}
+.editorial-prose blockquote {
+  border-left: 2px solid var(--primary);
+  padding-left: 1.25rem;
+  margin: 1.75rem 0;
+  font-family: var(--font-newsreader), serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--foreground);
+  background: rgba(30, 100, 216, 0.03);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.editorial-prose strong {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+

@@ -10,13 +10,12 @@ import {
   Check,
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
-import { SERVICES_NAV_LIST } from "@/lib/services-data";
-
+ 
 interface ServiceSidebarProps {
-  currentSlug: string;
+  currentSlug?: string;
 }
 
-export default function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
+export default function ServiceSidebar({ currentSlug: _currentSlug }: ServiceSidebarProps = {}) {
   return (
     <aside className="space-y-6 lg:sticky lg:top-24 self-start">
       {/* 1. Quick Takeoff Promo Card: Architectural Slate */}
@@ -52,70 +51,24 @@ export default function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
           </div>
 
           {/* Quick trust checklist */}
-          <div className="pt-3 border-t border-slate-800 space-y-1.5 text-[11px] text-slate-300 font-normal">
+          <div className="pt-3 border-t border-slate-800 space-y-2 text-[11px] text-slate-300 font-normal">
             <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded-full bg-slate-800 text-primary flex items-center justify-center text-[9px] shrink-0">
-                <Check size={8} />
-              </span>
+              <Check size={14} className="text-primary shrink-0" />
               <span>RSMeans zip-code localized pricing</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded-full bg-slate-800 text-primary flex items-center justify-center text-[9px] shrink-0">
-                <Check size={8} />
-              </span>
+              <Check size={14} className="text-primary shrink-0" />
               <span>AACE &amp; AIQS certified estimators</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-3.5 h-3.5 rounded-full bg-slate-800 text-primary flex items-center justify-center text-[9px] shrink-0">
-                <Check size={8} />
-              </span>
+              <Check size={14} className="text-primary shrink-0" />
               <span>Unlimited minor revisions &amp; reviews</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. All Estimating Services Menu */}
-      <div className="bg-card rounded-xl border border-border/80 shadow-2xs p-5 space-y-3">
-        <div className="flex items-center justify-between border-b border-border/60 pb-3">
-          <h4 className="font-sans font-medium text-xs uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <span>All Estimating Services</span>
-          </h4>
-          <span className="text-[11px] text-muted-foreground font-normal">
-            {SERVICES_NAV_LIST.length} Trades
-          </span>
-        </div>
-
-        <nav aria-label="Services List" className="space-y-0.5 max-h-[440px] overflow-y-auto pr-1 scrollbar-thin">
-          {SERVICES_NAV_LIST.map((svc) => {
-            const isActive = svc.slug === currentSlug;
-            return (
-              <Link
-                key={svc.slug}
-                href={`/${svc.slug}`}
-                className={`group flex items-center justify-between px-3 py-2 rounded-lg text-xs sm:text-[13px] transition-colors ${
-                  isActive
-                    ? "bg-primary/5 text-primary font-normal border-l-2 border-primary pl-2.5"
-                    : "text-foreground/80 hover:text-primary hover:bg-muted/40 font-normal"
-                }`}
-              >
-                <span className="truncate">{svc.title}</span>
-                <ArrowRight
-                  size={12}
-                  className={`shrink-0 transition-transform duration-150 ${
-                    isActive
-                      ? "text-primary translate-x-0.5"
-                      : "text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-0.5"
-                  }`}
-                />
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-
-      {/* 3. Direct Contact & Support Box */}
+      {/* 2. Direct Contact & Support Box */}
       <div className="bg-slate-50/70 dark:bg-slate-950/20 rounded-xl border border-border/80 p-5 space-y-3.5">
         <div>
           <h4 className="font-serif font-normal text-foreground text-base tracking-tight">
@@ -126,12 +79,12 @@ export default function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
           </p>
         </div>
 
-        <div className="space-y-2.5 text-xs text-foreground/80 font-normal">
+        <div className="space-y-2 text-xs text-foreground/80 font-normal">
           <a
             href="tel:+13466602440"
-            className="flex items-center gap-2.5 p-2 rounded-lg bg-card border border-border/70 hover:border-primary/40 transition-colors"
+            className="flex items-center gap-2.5 p-2 rounded-xl bg-card border border-border/80"
           >
-            <div className="w-6 h-6 rounded-md bg-blue-50 text-primary flex items-center justify-center shrink-0 border border-blue-200/50">
+            <div className="w-6 h-6 rounded-md bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80">
               <Call size={12} />
             </div>
             <div>
@@ -142,9 +95,9 @@ export default function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
 
           <a
             href="tel:0455843274"
-            className="flex items-center gap-2.5 p-2 rounded-lg bg-card border border-border/70 hover:border-primary/40 transition-colors"
+            className="flex items-center gap-2.5 p-2 rounded-xl bg-card border border-border/80"
           >
-            <div className="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-200/50">
+            <div className="w-6 h-6 rounded-md bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80">
               <Call size={12} />
             </div>
             <div>
@@ -154,16 +107,16 @@ export default function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
           </a>
 
           <a
-            href="mailto:info@constructestimates.com"
-            className="flex items-center gap-2.5 p-2 rounded-lg bg-card border border-border/70 hover:border-primary/40 transition-colors"
+            href="mailto:Info@buildcraft360.com"
+            className="flex items-center gap-2.5 p-2 rounded-xl bg-card border border-border/80"
           >
-            <div className="w-6 h-6 rounded-md bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 border border-purple-200/50">
+            <div className="w-6 h-6 rounded-md bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80">
               <Message size={12} />
             </div>
             <div className="overflow-hidden">
               <div className="text-[10px] text-muted-foreground font-normal uppercase">Email Us</div>
               <div className="text-foreground font-normal truncate">
-                info@constructestimates.com
+                Info@buildcraft360.com
               </div>
             </div>
           </a>
@@ -184,7 +137,7 @@ export default function ServiceSidebar({ currentSlug }: ServiceSidebarProps) {
         </div>
       </div>
 
-      {/* 4. Credentials & Quality Seal */}
+      {/* 3. Credentials & Quality Seal */}
       <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/20 border border-border/80 flex items-center gap-3">
         <ShieldCheck size={24} className="text-primary shrink-0" />
         <div className="text-xs text-muted-foreground leading-relaxed font-normal">

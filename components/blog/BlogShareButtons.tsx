@@ -55,7 +55,7 @@ export default function BlogShareButtons({ title, slug }: BlogShareButtonsProps)
         </button>
 
         <a
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://constructestimates.com/blog/${slug}`)}`}
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://buildcraft360.com/blog/${slug}`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="p-2 rounded-lg border border-border bg-background hover:bg-muted/50 text-foreground/80 hover:text-foreground transition-colors"
@@ -67,7 +67,7 @@ export default function BlogShareButtons({ title, slug }: BlogShareButtonsProps)
         </a>
 
         <a
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(`https://constructestimates.com/blog/${slug}`)}`}
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(`https://buildcraft360.com/blog/${slug}`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="p-2 rounded-lg border border-border bg-background hover:bg-muted/50 text-foreground/80 hover:text-foreground transition-colors"

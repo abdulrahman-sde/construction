@@ -30,14 +30,10 @@ Across this entire site, **`font-bold`, `font-extrabold`, and `font-semibold` ar
 │  3. 2x2 Value Proposition Cards (Light Border)   │  1. 30% Off Promo   │
 │  4. Scope of Work & Trade Feature Checklists     │     Card with CTA   │
 │  5. Mid-Page Architectural Callout Banner        │                     │
-│  6. Takeoff Package Deliverables Cards           │  2. All Services    │
-│  7. [Optional Custom Component Slot]             │     Nav Menu with   │
-│  8. Accordion FAQ Section                        │     Active State    │
-│                                                  │                     │
-│                                                  │  3. Direct Contact  │
-│                                                  │     & Office Card   │
-│                                                  │                     │
-│                                                  │  4. AACE & AIQS     │
+│  6. Takeoff Package Deliverables Cards           │  2. Direct Contact  │
+│  7. [Optional Custom Component Slot]             │     & Office Card   │
+│  8. Accordion FAQ Section                        │                     │
+│                                                  │  3. AACE & AIQS     │
 │                                                  │     Quality Seal    │
 ├──────────────────────────────────────────────────┴─────────────────────┤
 │         Plan Upload & Interactive Quote Form Anchor (#contact)         │
@@ -58,7 +54,7 @@ All service UI sections are modular, pure components in [`components/services/`]
 | :--- | :--- | :--- |
 | **`ServiceLayout`** | [`components/services/ServiceLayout.tsx`](file:///Volumes/Data/code/construction/components/services/ServiceLayout.tsx) | Master template assembling Header, Hero, 2-column layout, Sidebar, Contact Form, Pre-Footer Banner, and Footer. |
 | **`ServiceHeroBanner`** | [`components/services/ServiceHeroBanner.tsx`](file:///Volumes/Data/code/construction/components/services/ServiceHeroBanner.tsx) | Architectural header with `blueprint-subtle-grid`, breadcrumbs, and `font-serif font-normal` headline. |
-| **`ServiceSidebar`** | [`components/services/ServiceSidebar.tsx`](file:///Volumes/Data/code/construction/components/services/ServiceSidebar.tsx) | Sticky right sidebar (`lg:sticky lg:top-24 self-start`) featuring the 30% Off Promo Card, Services Nav Menu with active highlighting, Direct Contact card, and AACE/AIQS certification seal. Zero bold text. |
+| **`ServiceSidebar`** | [`components/services/ServiceSidebar.tsx`](file:///Volumes/Data/code/construction/components/services/ServiceSidebar.tsx) | Sticky right sidebar (`lg:sticky lg:top-24 self-start`) featuring the 30% Off Promo Card, Direct Contact card, and AACE/AIQS certification seal. Zero bold text. |
 | **`ServiceIntroSection`** | [`components/services/ServiceIntroSection.tsx`](file:///Volumes/Data/code/construction/components/services/ServiceIntroSection.tsx) | Trade tag badge, H1/H2 with colored keyword highlight, lead text, trust checkmarks, and primary button. |
 | **`ServiceValueGrid`** | [`components/services/ServiceValueGrid.tsx`](file:///Volumes/Data/code/construction/components/services/ServiceValueGrid.tsx) | 2x2 grid of cards with subtle borders (`border-border/80 bg-card`), icons, and hover effects matching the site screenshot. |
 | **`ServiceFeaturesSection`**| [`components/services/ServiceFeaturesSection.tsx`](file:///Volumes/Data/code/construction/components/services/ServiceFeaturesSection.tsx) | Multi-category scope breakdown with checkmarks detailing every trade line item and technical specification. |
@@ -184,7 +180,7 @@ When writing content for any new construction trade:
    - Accuracy: `RSMeans zip-code localized pricing`
    - Certifications: `AACE (Cost Engineers) and AIQS (Quantity Surveyors)`
    - Contact US: `(346) 660-2440` | Contact AUS: `0455 843 274`
-   - Email: `info@constructestimates.com`
+   - Email: `Info@buildcraft360.com`
 
 ---
 

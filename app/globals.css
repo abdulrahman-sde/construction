@@ -41,30 +41,30 @@
   --sidebar-border: #E2E8F0;
   --sidebar-ring: #1E64D8;
 
-  /* Design Token Chips: Clean, Desaturated Muted Pastels (No jarring neon) */
-  --chip-blue-bg: #EFF6FF;
-  --chip-blue-text: #1E40AF;
-  --chip-blue-border: #BFDBFE;
+  /* Design Token Chips: Clean, Architectural Neutral & Desaturated Tokens */
+  --chip-blue-bg: #F1F5F9;
+  --chip-blue-text: #1E293B;
+  --chip-blue-border: #E2E8F0;
 
   --chip-green-bg: #F0FDF4;
   --chip-green-text: #166534;
-  --chip-green-border: #BBF7D0;
+  --chip-green-border: #DCFCE7;
 
   --chip-amber-bg: #FEFCE8;
-  --chip-amber-text: #854D0E;
+  --chip-amber-text: #78350F;
   --chip-amber-border: #FEF08A;
 
-  --chip-rose-bg: #FEF2F2;
-  --chip-rose-text: #991B1B;
-  --chip-rose-border: #FECACA;
+  --chip-rose-bg: #FFF1F2;
+  --chip-rose-text: #9F1239;
+  --chip-rose-border: #FFE4E6;
 
   --chip-neutral-bg: #F8FAFC;
-  --chip-neutral-text: #475569;
+  --chip-neutral-text: #334155;
   --chip-neutral-border: #E2E8F0;
 
   --font-sans: var(--font-geist), "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-serif: var(--font-newsreader), "Newsreader", Charter, "Bitstream Charter", "Iowan Old Style", Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: "JetBrains Mono", "SF Mono", monospace;
+  --font-serif: var(--font-newsreader), "Newsreader", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: var(--font-geist), "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --radius: 0.75rem;
 
   /* Ultra-diffuse, modern shadows - replacing heavy black sludge */
@@ -102,24 +102,24 @@
   --input: #1E293B;
   --ring: #3B82F6;
 
-  --chip-blue-bg: rgba(30, 58, 138, 0.35);
-  --chip-blue-text: #93C5FD;
-  --chip-blue-border: rgba(59, 130, 246, 0.25);
+  --chip-blue-bg: #1E293B;
+  --chip-blue-text: #F1F5F9;
+  --chip-blue-border: #334155;
 
-  --chip-green-bg: rgba(22, 101, 52, 0.35);
+  --chip-green-bg: rgba(22, 101, 52, 0.25);
   --chip-green-text: #86EFAC;
-  --chip-green-border: rgba(34, 197, 94, 0.25);
+  --chip-green-border: rgba(34, 197, 94, 0.2);
 
-  --chip-amber-bg: rgba(133, 77, 14, 0.35);
+  --chip-amber-bg: rgba(133, 77, 14, 0.25);
   --chip-amber-text: #FDE047;
-  --chip-amber-border: rgba(234, 179, 8, 0.25);
+  --chip-amber-border: rgba(234, 179, 8, 0.2);
 
-  --chip-rose-bg: rgba(153, 27, 27, 0.35);
+  --chip-rose-bg: rgba(153, 27, 27, 0.25);
   --chip-rose-text: #FCA5A5;
-  --chip-rose-border: rgba(239, 68, 68, 0.25);
+  --chip-rose-border: rgba(239, 68, 68, 0.2);
 
   --chip-neutral-bg: #1E293B;
-  --chip-neutral-text: #CBD5E1;
+  --chip-neutral-text: #E2E8F0;
   --chip-neutral-border: #334155;
 
   --shadow-2xs: 0 1px 2px 0 rgb(0 0 0 / 0.2);
@@ -205,9 +205,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-newsreader), "Newsreader", Charter, "Bitstream Charter", "Iowan Old Style", Georgia, Cambria, serif !important;
-    font-style: normal !important;
-    letter-spacing: -0.025em;
+    font-family: var(--font-serif) !important;
+    font-style: normal;
+    letter-spacing: -0.02em;
   }
   h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
     font-style: normal;
@@ -308,8 +308,8 @@
   margin-bottom: 1.25rem;
 }
 .editorial-prose h2 {
-  font-family: var(--font-newsreader), serif;
-  font-weight: 400;
+  font-family: var(--font-serif);
+  font-weight: 500;
   color: var(--foreground);
   font-size: 1.75rem;
   line-height: 1.25;
@@ -318,8 +318,8 @@
   margin-bottom: 1rem;
 }
 .editorial-prose h3 {
-  font-family: var(--font-newsreader), serif;
-  font-weight: 400;
+  font-family: var(--font-serif);
+  font-weight: 500;
   color: var(--foreground);
   font-size: 1.35rem;
   line-height: 1.3;
@@ -343,7 +343,7 @@
   border-left: 2px solid var(--primary);
   padding-left: 1.25rem;
   margin: 1.75rem 0;
-  font-family: var(--font-newsreader), serif;
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.15rem;
   color: var(--foreground);

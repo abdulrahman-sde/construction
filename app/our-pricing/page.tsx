@@ -67,7 +67,7 @@ const PRICING_TIERS = [
       "All PlanSwift, Bluebeam Revu & RSMeans licenses included",
       "Custom branded bid proposals and BOQ templates",
       "Change order tracking & value engineering support",
-      "No long-term binding contract — cancel anytime",
+      "No long-term binding contract, cancel anytime",
     ],
     ctaText: "Discuss Monthly Partnership",
     popular: false,
@@ -81,7 +81,7 @@ const VALUE_POINTS = [
       "Every estimate is calibrated with localized RSMeans and Craftsman construction cost databases. We benchmark local zip-code material prices, union and non-union labor wages, and equipment rentals.",
   },
   {
-    title: "24–48 Hour Turnaround",
+    title: "24-48 Hour Turnaround",
     description:
       "Construction bidding windows are unforgiving. Over 90% of our single-trade and residential packages are completed and returned to contractors within 24 to 48 hours.",
   },
@@ -135,7 +135,7 @@ export default function OurPricingPage() {
             Our mission is simple: provide contractors with highly accurate takeoffs at market-leading rates so you can &ldquo;BID MORE &amp; WIN MORE&rdquo; with zero hidden fees.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-muted-foreground">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-sans text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 bg-background border border-border px-3 py-1 rounded-md">
               <Clock size={12} className="text-primary" />
               24–48h Standard Delivery
@@ -153,19 +153,19 @@ export default function OurPricingPage() {
 
       {/* 4. Pricing Cards Grid */}
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
           {PRICING_TIERS.map((tier, idx) => (
             <div
               key={idx}
-              className={`rounded-2xl border p-7 sm:p-8 flex flex-col justify-between space-y-6 bg-card transition-all duration-200 relative ${
+              className={`rounded-2xl border p-7 sm:p-8 flex flex-col justify-between space-y-6 relative ${
                 tier.popular
-                  ? "border-primary/50 shadow-md ring-1 ring-primary/20"
-                  : "border-border shadow-2xs"
+                  ? "border-primary/50 bg-card text-foreground shadow-md ring-1 ring-primary/20"
+                  : "border-neutral-200/90 dark:border-neutral-800 bg-card text-foreground shadow-sm"
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-primary text-white text-[10px] font-mono uppercase tracking-wider px-3 py-1 rounded-full">
+                  <span className="bg-primary text-white text-xs font-sans font-medium px-3 py-0.5 rounded-full shadow-2xs">
                     Most Recommended
                   </span>
                 </div>
@@ -173,7 +173,7 @@ export default function OurPricingPage() {
 
               <div className="space-y-4">
                 <div className="space-y-1">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
+                  <span className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground">
                     {tier.badge}
                   </span>
                   <h3 className="font-serif font-normal text-2xl text-foreground">
@@ -185,7 +185,7 @@ export default function OurPricingPage() {
                   <span className="text-3xl sm:text-4xl font-serif font-normal text-foreground">
                     {tier.price}
                   </span>
-                  <span className="text-xs font-mono text-muted-foreground">
+                  <span className="text-xs font-sans text-muted-foreground">
                     / {tier.period}
                   </span>
                 </div>
@@ -194,13 +194,13 @@ export default function OurPricingPage() {
                   {tier.description}
                 </p>
 
-                <div className="inline-flex items-center gap-1.5 text-xs font-mono text-primary bg-primary/10 px-2.5 py-1 rounded">
+                <div className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-primary bg-primary/10 px-2.5 py-1 rounded">
                   <Clock size={12} />
                   <span>{tier.turnaround}</span>
                 </div>
 
                 <div className="pt-2 space-y-2.5 border-t border-border/60">
-                  <p className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
+                  <p className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground">
                     What&apos;s Included:
                   </p>
                   <ul className="space-y-2 text-xs text-foreground/90 font-sans font-normal">
@@ -232,7 +232,7 @@ export default function OurPricingPage() {
         {/* Value Proposition Grid */}
         <div className="space-y-8 pt-10 border-t border-border">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <Badge variant="blue" className="text-[10px] font-normal tracking-wide uppercase">
+            <Badge variant="blue" className="text-xs font-sans font-medium">
               Our Transparent Pricing Pledge
             </Badge>
             <h2 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
@@ -240,14 +240,14 @@ export default function OurPricingPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
             {VALUE_POINTS.map((vp, idx) => (
               <div
                 key={idx}
                 className="p-6 rounded-xl border border-border bg-card space-y-2.5"
               >
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs text-primary">0{idx + 1}.</span>
+                  <span className="font-sans text-xs font-medium text-primary">0{idx + 1}.</span>
                   <h3 className="font-serif font-normal text-lg sm:text-xl text-foreground">
                     {vp.title}
                   </h3>
@@ -261,9 +261,9 @@ export default function OurPricingPage() {
         </div>
 
         {/* 30% Off Promotion Banner */}
-        <div className="rounded-xl border border-primary/30 bg-primary/[0.03] dark:bg-primary/[0.05] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl border border-primary/25 bg-primary/[0.03] dark:bg-primary/[0.06] text-foreground p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-2 max-w-xl text-center md:text-left">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-primary">
+            <span className="text-xs font-sans font-medium uppercase tracking-wider text-primary">
               Special Limited Time Promotion
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
@@ -277,9 +277,8 @@ export default function OurPricingPage() {
           <div className="flex items-center gap-3 shrink-0">
             <Button
               render={<Link href="/contact-us" />}
-              variant="default"
               size="lg"
-              className="gap-2 text-xs font-medium rounded-lg"
+              className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
             >
               <span>Upload Plans for 30% Off</span>
               <ArrowRight size={13} />

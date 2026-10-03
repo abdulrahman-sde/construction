@@ -183,7 +183,7 @@ const trades = [
     ),
     title: "Openings Estimating",
     description:
-      "Doors, frames, hardware, windows, storefronts, and curtain wall systems — fully itemized with manufacturer specs and hardware schedules.",
+      "Doors, frames, hardware, windows, storefronts, and curtain wall systems, fully itemized with manufacturer specs and hardware schedules.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAQDjgnvMnE-Js6k0fGmKgotR8BwFt6xdgw_3bZTmqlqvJD-bGEuiGR45fl-tYjQ7sX0800gLRBUTNid9Ueva8xlhiGejt4GctMJs3J1jLyRqWv5ZlQZqqwPvxjnNbL0uVSG1SkftKz4IXfOBHClnaWo9HYLJVE3m5LOr5E6huyQjDf5RdNVFXGwN_sQOA8-EqMkCAshN0GpmBw-vm54w3VrVTfs4iqPRXpJ-aYhvFoHoSlmIk8_fyyug",
     imageAlt: "Window openings",
@@ -281,9 +281,9 @@ export default function TakeoffSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <Badge variant="blue" className="mb-3 text-[10.5px]">
+          <span className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground block mb-2.5">
             Trade Division Scope
-          </Badge>
+          </span>
           <h2 className="text-3xl sm:text-4xl font-serif font-normal text-foreground tracking-tight">
             Construction Takeoff{" "}
             <span className="font-normal text-primary">Services</span>
@@ -296,16 +296,16 @@ export default function TakeoffSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left: Trade List with tasteful non-flooding active state */}
-          <div className="lg:col-span-4 bg-slate-50/70 dark:bg-slate-900/40 border border-border rounded-xl p-2 space-y-1 text-xs font-sans">
+          <div className="lg:col-span-4 bg-slate-50/70 dark:bg-slate-900/40 border border-border rounded-2xl p-2.5 space-y-1 text-xs font-sans shadow-2xs">
             {trades.map((t, i) => {
               const isSelected = active === i;
               return (
                 <button
                   key={t.label}
                   onClick={() => setActive(i)}
-                  className={`w-full text-left px-3.5 py-3 rounded-lg flex items-center justify-between cursor-pointer transition-all duration-150 ${
+                  className={`w-full text-left px-3.5 py-3 rounded-xl flex items-center justify-between cursor-pointer transition-all duration-150 ${
                     isSelected
-                      ? "bg-card text-foreground font-medium shadow-2xs border border-border border-l-[3px] border-l-primary"
+                      ? "bg-card text-foreground font-medium shadow-2xs border border-border border-l-[3px] border-l-foreground"
                       : "text-muted-foreground font-normal border border-transparent hover:bg-card/60 hover:text-foreground"
                   }`}
                 >
@@ -331,7 +331,7 @@ export default function TakeoffSection() {
           </div>
 
           {/* Right: Active Trade Panel */}
-          <div className="lg:col-span-8 bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+          <div className="lg:col-span-8 bg-card border border-neutral-200/90 dark:border-neutral-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
             <div>
               <h3 className="text-xl sm:text-2xl font-serif font-normal text-foreground tracking-tight">
                 <span className="font-normal text-primary">
@@ -355,12 +355,9 @@ export default function TakeoffSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent z-10" />
               <div className="relative z-20 p-6 text-white w-full flex flex-wrap items-center justify-between gap-4">
                 <div className="space-y-0.5">
-                  <Badge
-                    variant="blue"
-                    className="text-[10px] text-white bg-blue-600/80 border-blue-400/50"
-                  >
+                  <span className="inline-block text-[10px] font-sans font-medium uppercase tracking-wider text-white/90 bg-white/15 backdrop-blur-md border border-white/20 px-2.5 py-0.5 rounded-md">
                     Standard Spec
-                  </Badge>
+                  </span>
                   <h4 className="font-medium text-base text-white mt-1">
                     {trade.subtitle}
                   </h4>

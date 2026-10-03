@@ -15,6 +15,7 @@ interface BlogListingClientProps {
 
 const CATEGORIES = [
   "All Articles",
+  "Regional Construction Insights",
   "Bidding & Takeoff Strategy",
   "Cash Flow & Profit Margins",
   "Trade Estimating Manuals",
@@ -89,7 +90,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
             </span>
           </div>
 
-          <div className="group rounded-2xl border border-border/80 bg-card overflow-hidden hover:border-primary/40 hover:shadow-xs transition-all duration-300">
+          <div className="rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card overflow-hidden shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Image Column */}
               <div className="lg:col-span-7 relative min-h-[260px] sm:min-h-[340px] lg:min-h-[400px] overflow-hidden bg-slate-100 dark:bg-slate-900">
@@ -100,7 +101,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                   loading="eager"
                   fetchPriority="high"
                   sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent lg:hidden" />
                 <div className="absolute top-4 left-4 z-10">
@@ -119,7 +120,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                     </Badge>
                   </div>
 
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground font-mono">
+                  <div className="flex items-center gap-3 text-xs text-muted-foreground font-sans">
                     <span>By {featuredPost.author}</span>
                     <span>•</span>
                     <span>{featuredPost.date}</span>
@@ -128,7 +129,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                   </div>
 
                   <Link href={`/blog/${featuredPost.slug}`}>
-                    <h2 className="text-2xl sm:text-3xl font-serif font-normal text-foreground leading-[1.2] tracking-tight group-hover:text-primary transition-colors">
+                    <h2 className="text-2xl sm:text-3xl font-serif font-normal text-foreground leading-[1.2] tracking-tight">
                       {featuredPost.title}
                     </h2>
                   </Link>
@@ -179,11 +180,11 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {paginatedPosts.map((post, index) => (
               <Card
                 key={post.slug}
-                className="group flex flex-col justify-between p-0 border border-border/80 hover:border-primary/40 hover:shadow-xs transition-all duration-200 rounded-xl overflow-hidden bg-card"
+                className="flex flex-col justify-between p-0 border border-neutral-200/90 dark:border-neutral-800 shadow-sm rounded-2xl overflow-hidden bg-card"
               >
                 <div>
                   {/* Real Featured Image with 16:10 Aspect Ratio */}
@@ -195,7 +196,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                       loading={index === 0 && !showFeaturedHero ? "eager" : "lazy"}
                       fetchPriority={index === 0 && !showFeaturedHero ? "high" : "auto"}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
 
@@ -203,14 +204,14 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                     <div className="absolute top-3 left-3 z-10">
                       <Badge
                         variant={post.badgeVariant}
-                        className="text-[10px] px-2 py-0.5 shadow-2xs backdrop-blur-xs"
+                        className="text-xs px-2 py-0.5 shadow-2xs backdrop-blur-xs font-sans font-medium"
                       >
                         {post.category}
                       </Badge>
                     </div>
 
                     {/* Date on Image */}
-                    <div className="absolute bottom-2.5 left-3 z-10 text-[10.5px] text-white/90 font-mono tracking-tight drop-shadow-xs">
+                    <div className="absolute bottom-2.5 left-3 z-10 text-[11px] text-white/90 font-sans tracking-tight drop-shadow-xs">
                       {post.date}
                     </div>
                   </div>
@@ -218,7 +219,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                   {/* Card Content */}
                   <CardContent className="p-5 space-y-2.5">
                     <Link href={`/blog/${post.slug}`}>
-                      <h4 className="font-serif font-normal text-base sm:text-lg text-foreground leading-snug line-clamp-2 group-hover:text-primary transition-colors">
+                      <h4 className="font-serif font-normal text-base sm:text-lg text-foreground leading-snug line-clamp-2">
                         {post.title}
                       </h4>
                     </Link>
@@ -232,7 +233,7 @@ export default function BlogListingClient({ posts }: BlogListingClientProps) {
                 {/* Footer Row */}
                 <div className="px-5 pb-5 pt-0">
                   <div className="pt-3 border-t border-border/50 flex items-center justify-between text-xs">
-                    <span className="text-[11px] text-muted-foreground font-mono">
+                    <span className="text-[11px] text-muted-foreground font-sans">
                       By {post.author} • {post.readTime}
                     </span>
                     <Link

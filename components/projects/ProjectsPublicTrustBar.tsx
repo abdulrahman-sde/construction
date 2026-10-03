@@ -5,7 +5,7 @@ export default function ProjectsPublicTrustBar() {
     <section className="border-y border-border/80 bg-slate-50/50 dark:bg-slate-950/20 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2 mb-8">
-          <p className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
+          <p className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground">
             Proven Industry Track Record
           </p>
           <h3 className="text-xl sm:text-2xl font-serif font-normal text-foreground tracking-tight">
@@ -13,10 +13,10 @@ export default function ProjectsPublicTrustBar() {
           </h3>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4">
           <div className="flex flex-col items-center text-center p-4 rounded-xl border border-border/60 bg-card">
-            <span className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">
-              <Building size={20} />
+            <span className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs mb-3">
+              <Building size={18} />
             </span>
             <h4 className="font-sans font-medium text-sm text-foreground">
               TxDOT Standardized
@@ -27,8 +27,8 @@ export default function ProjectsPublicTrustBar() {
           </div>
 
           <div className="flex flex-col items-center text-center p-4 rounded-xl border border-border/60 bg-card">
-            <span className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">
-              <Compass size={20} />
+            <span className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs mb-3">
+              <Compass size={18} />
             </span>
             <h4 className="font-sans font-medium text-sm text-foreground">
               MTA Infrastructure
@@ -39,8 +39,8 @@ export default function ProjectsPublicTrustBar() {
           </div>
 
           <div className="flex flex-col items-center text-center p-4 rounded-xl border border-border/60 bg-card">
-            <span className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">
-              <Award size={20} />
+            <span className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs mb-3">
+              <Award size={18} />
             </span>
             <h4 className="font-sans font-medium text-sm text-foreground">
               EPA Environmental
@@ -51,8 +51,8 @@ export default function ProjectsPublicTrustBar() {
           </div>
 
           <div className="flex flex-col items-center text-center p-4 rounded-xl border border-border/60 bg-card">
-            <span className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3">
-              <ShieldCheck size={20} />
+            <span className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs mb-3">
+              <ShieldCheck size={18} />
             </span>
             <h4 className="font-sans font-medium text-sm text-foreground">
               AACE &amp; AIQS Certified

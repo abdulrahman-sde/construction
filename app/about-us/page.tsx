@@ -17,38 +17,38 @@ import {
 } from "reicon-react";
 
 export const metadata: Metadata = {
-  title: "About Us | Construct Estimates - Certified Construction Estimators",
+  title: "About Us | Buildcraft360 - Construction Estimating, Planning & Architectural Services",
   description:
-    "Learn about Construct Estimates: 25+ certified cost estimators, 8,000+ completed projects, and over 700 satisfied contractors across the USA, Canada, and Australia.",
+    "Learn about Buildcraft360: 10+ certified cost estimators, planners, and architects, 5,000+ completed projects, and over 300 satisfied clients across North America and Australia.",
 };
 
 const STATS = [
-  { value: "8,000+", label: "Projects Estimated" },
-  { value: "25+", label: "Certified Estimators" },
-  { value: "700+", label: "Active Contractor Clients" },
-  { value: "98%+", label: "Bid Accuracy Benchmark" },
+  { value: "5000+", label: "Projects Completed" },
+  { value: "300+", label: "Happy Clients" },
+  { value: "10+", label: "Highly Qualified Estimators" },
+  { value: "8+ Years", label: "Industry Experience" },
 ];
 
 const VALUE_PILLARS = [
   {
     title: "Delivering Accurate Estimates for Competitive Bids",
     description:
-      "With Construct Estimates, you can bid with confidence knowing your numbers are grounded in real-world local market data. Our team of 25 seasoned estimators combines deep construction field experience with PlanSwift and Bluebeam digitizers to eliminate estimating blindspots.",
+      "With Buildcraft360, you can bid with confidence knowing your numbers are grounded in real-world local market data. Our team of seasoned estimators and planners combines deep construction field experience with PlanSwift and Bluebeam digitizers to eliminate estimating blindspots.",
   },
   {
-    title: "Tailored Solutions for Diverse Projects",
+    title: "Integrated Support Across Design & Planning",
     description:
-      "Whether you are framing a custom residential estate, managing a multi-story commercial development, or bidding on a TxDOT heavy highway contract, we tailor our CSI MasterFormat takeoffs to your exact trade scope and specification sheets.",
+      "From architectural concept design to detailed quantity takeoffs and critical-path scheduling, we provide practical solutions that keep projects organized and cost-controlled from start to finish.",
   },
   {
     title: "Your Long-Term Estimating Partner",
     description:
-      "We measure our success by the bids our clients win. With a customer retention rate exceeding 90%, we act as an on-demand estimating department for contractors, cutting your pre-construction overhead by up to 60%.",
+      "We measure our success by the bids our clients win. With a customer retention rate exceeding 90%, we act as an on-demand estimating and planning department for contractors, cutting pre-construction overhead significantly.",
   },
   {
     title: "Certified Estimators & Zero Hidden Charges",
     description:
-      "All takeoffs follow American Association of Cost Engineers (AACE) and Australian Institute of Quantity Surveyors (AIQS) standards. We never charge extra for minor revisions or addenda reviews.",
+      "All takeoffs follow American Association of Cost Engineers (AACE) and industry standards. We never charge extra for minor revisions or addenda reviews.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function AboutUsPage() {
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
-            Construct Estimates is revolutionizing the construction bidding process. With over 8,000 completed takeoffs and 15+ years of combined engineering expertise, we provide contractors with the accuracy needed to win more bids and protect their margins.
+            Buildcraft360 is your trusted partner for professional construction estimating, planning, and architectural services, helping contractors, builders, and developers manage their projects with greater accuracy and efficiency.
           </p>
         </div>
       </section>
@@ -101,7 +101,7 @@ export default function AboutUsPage() {
                 <p className="text-3xl sm:text-4xl font-serif font-normal text-foreground">
                   {s.value}
                 </p>
-                <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                <p className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground">
                   {s.label}
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function AboutUsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-2">
-              <Badge variant="blue" className="text-[10px] font-normal tracking-wide uppercase">
+              <Badge variant="blue" className="text-xs font-sans font-medium uppercase tracking-wide">
                 Our Commitment to Excellence
               </Badge>
               <h2 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
@@ -129,17 +129,17 @@ export default function AboutUsPage() {
 
             <div className="space-y-4 text-sm text-muted-foreground font-sans font-normal leading-relaxed">
               <p>
-                At Construct Estimates, our mission is to eliminate estimating uncertainty. Founded by experienced civil engineers and professional quantity surveyors, we recognized that general contractors and trade subcontractors were constantly losing bids due to late submission times or inaccurate takeoffs.
+                At Buildcraft360, our mission is to eliminate estimating uncertainty and streamline project planning. Founded by experienced construction engineers and professional quantity surveyors, we recognized that general contractors and trade subcontractors were constantly losing bids due to late submission times or inaccurate takeoffs.
               </p>
               <p>
-                We built a centralized engineering team of 25 certified estimators operating across North America and Australia. By leveraging digital takeoff digitizers like Bluebeam Revu and PlanSwift alongside zip-code calibrated RSMeans 2026 data, we deliver audit-ready estimates in as little as 24 to 48 hours.
+                With over 8 years of experience in the construction industry, Buildcraft360 provides dependable project support across residential, commercial, civil, and industrial projects. Our team of 10+ certified estimators, planners, and architectural professionals brings the technical knowledge and practical expertise needed to support projects from initial planning through execution.
               </p>
               <p>
-                Whether you need a quick single-trade takeoff for concrete framing or a full 16-division CSI MasterFormat bid package for a $20M commercial complex, our team gives you the competitive edge.
+                Whether you need an estimate for a small project or a detailed takeoff for a larger commercial project, we provide clear and organized estimating that helps you understand the numbers before you bid.
               </p>
             </div>
 
-            <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-muted-foreground">
+            <div className="pt-2 flex flex-wrap gap-4 text-xs font-sans text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <Check size={14} className="text-primary" />
                 AACE &amp; AIQS Certified
@@ -160,13 +160,13 @@ export default function AboutUsPage() {
             <div className="absolute inset-0 opacity-15 pointer-events-none bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:28px_28px]" />
 
             <div className="relative z-10 space-y-6">
-              <div className="inline-flex items-center gap-2 bg-slate-800/90 border border-slate-700 px-3 py-1 rounded text-xs font-mono text-slate-300">
+              <div className="inline-flex items-center gap-2 bg-slate-800/90 border border-slate-700 px-3 py-1 rounded text-xs font-sans text-slate-300">
                 <Clock size={12} className="text-primary" />
                 <span>On-Demand Estimating Department</span>
               </div>
 
               <h3 className="font-serif font-normal text-2xl sm:text-3xl text-white tracking-tight leading-snug">
-                Why Contractors Choose Construct Estimates Over In-House Staff
+                Why Contractors Choose Buildcraft360 Over In-House Staff
               </h3>
 
               <div className="space-y-3.5 text-xs sm:text-sm text-slate-300 font-normal">
@@ -224,14 +224,14 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
             {VALUE_PILLARS.map((pillar, idx) => (
               <div
                 key={idx}
                 className="p-6 sm:p-7 rounded-xl border border-border bg-card space-y-2.5"
               >
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs text-primary">0{idx + 1}.</span>
+                  <span className="font-sans text-xs font-medium text-primary">0{idx + 1}.</span>
                   <h3 className="font-serif font-normal text-lg sm:text-xl text-foreground">
                     {pillar.title}
                   </h3>

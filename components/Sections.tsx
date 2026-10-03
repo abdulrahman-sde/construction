@@ -52,45 +52,42 @@ export function OutrankSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
           {cards.map((c) => {
             const Icon = c.icon;
             return (
               <Card
                 key={c.num}
-                className={`group flex flex-col justify-between p-5 sm:p-6 rounded-xl border transition-all duration-200 ${
+                className={`flex flex-col justify-between p-6 sm:p-7 rounded-2xl border shadow-sm ${
                   c.featured
-                    ? "border-primary/40 bg-card shadow-xs ring-1 ring-primary/20"
-                    : "border-border/80 bg-card hover:border-primary/30 hover:shadow-2xs"
+                    ? "border-primary/40 bg-card ring-1 ring-primary/20 text-foreground"
+                    : "border-neutral-200/90 dark:border-neutral-800/90 bg-card text-foreground"
                 }`}
               >
                 <div>
-                  {/* Clean Icon & Number Row (No clunky background box!) */}
-                  <div className="flex items-center justify-between mb-3">
-                    <Icon size={20} className="text-primary" />
-                    <span className="font-mono text-xs font-medium text-muted-foreground/60">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 text-foreground border border-neutral-200/80 dark:border-neutral-700/80">
+                      <Icon size={18} />
+                    </div>
+                    <span className="font-sans text-xs font-medium text-muted-foreground/70">
                       {c.num}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3
-                    className={`text-[15px] sm:text-base font-medium tracking-tight leading-snug mb-2 group-hover:text-primary transition-colors ${
-                      c.featured ? "text-primary" : "text-foreground"
-                    }`}
-                  >
+                  <h3 className="text-base sm:text-lg font-serif font-normal tracking-tight leading-snug mb-2.5 text-foreground">
                     {c.title}
                   </h3>
 
                   {/* Body Copy */}
-                  <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed font-normal">
+                  <p className="text-xs sm:text-[13px] leading-relaxed font-normal text-muted-foreground">
                     {c.body}
                   </p>
                 </div>
 
                 {/* Subtle bottom link */}
-                <div className="pt-3.5 mt-4 border-t border-border/50 flex items-center justify-end text-xs">
-                  <span className="text-primary text-xs font-medium inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                <div className="pt-4 mt-5 border-t border-border/60 flex items-center justify-end text-xs">
+                  <span className="text-xs font-medium inline-flex items-center gap-1 text-primary">
                     <span>Learn More</span>
                     <ArrowRight size={12} />
                   </span>

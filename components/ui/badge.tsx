@@ -4,24 +4,24 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium tracking-wide uppercase whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring [&>svg]:pointer-events-none [&>svg]:size-3",
+  "group/badge inline-flex w-fit shrink-0 items-center justify-center gap-1.5 rounded-md border px-2.5 py-0.5 text-xs font-sans font-medium tracking-normal whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring [&>svg]:pointer-events-none [&>svg]:size-3",
   {
     variants: {
       variant: {
         default:
-          "bg-[var(--chip-neutral-bg)] text-[var(--chip-neutral-text)] border-[var(--chip-neutral-border)]",
+          "bg-neutral-100 dark:bg-neutral-800/90 text-neutral-800 dark:text-neutral-200 border-neutral-200/90 dark:border-neutral-700/80",
         neutral:
-          "bg-[var(--chip-neutral-bg)] text-[var(--chip-neutral-text)] border-[var(--chip-neutral-border)]",
+          "bg-neutral-100 dark:bg-neutral-800/90 text-neutral-800 dark:text-neutral-200 border-neutral-200/90 dark:border-neutral-700/80",
         blue:
-          "bg-[var(--chip-blue-bg)] text-[var(--chip-blue-text)] border-[var(--chip-blue-border)]",
+          "bg-slate-100 dark:bg-slate-850/90 text-slate-800 dark:text-slate-200 border-slate-200/90 dark:border-slate-700/80",
         green:
-          "bg-[var(--chip-green-bg)] text-[var(--chip-green-text)] border-[var(--chip-green-border)]",
+          "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-200/80 dark:border-emerald-800/40",
         amber:
-          "bg-[var(--chip-amber-bg)] text-[var(--chip-amber-text)] border-[var(--chip-amber-border)]",
+          "bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-300 border-amber-200/80 dark:border-amber-800/40",
         rose:
-          "bg-[var(--chip-rose-bg)] text-[var(--chip-rose-text)] border-[var(--chip-rose-border)]",
+          "bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 border-rose-200/80 dark:border-rose-800/40",
         primary:
-          "bg-primary/10 text-primary border-primary/20",
+          "bg-primary text-white border-primary shadow-2xs",
         outline:
           "bg-transparent border-border text-foreground/80",
         secondary:
@@ -31,7 +31,7 @@ const badgeVariants = cva(
         accent:
           "bg-secondary/70 text-foreground border-border/60",
         destructive:
-          "bg-[var(--chip-rose-bg)] text-[var(--chip-rose-text)] border-[var(--chip-rose-border)]",
+          "bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 border-rose-200/80 dark:border-rose-800/40",
       },
     },
     defaultVariants: {

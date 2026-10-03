@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Star, ShieldCheck, ArrowRight } from "reicon-react";
 
 export const metadata: Metadata = {
-  title: "Client Testimonials & Contractor Reviews | Construct Estimates",
+  title: "Client Testimonials & Contractor Reviews | Buildcraft360",
   description:
-    "Read genuine reviews and testimonials from general contractors, home builders, and trade subcontractors who use Construct Estimates to win bids and protect their profit margins.",
+    "Read genuine reviews and testimonials from general contractors, home builders, and trade subcontractors who use Buildcraft360 to win bids and protect their profit margins.",
 };
 
 const TESTIMONIALS = [
@@ -54,7 +54,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Construct Estimates turned around our multi-family framing takeoff in under 36 hours. The color-coded markups made trade scope reconciliation with our subbies completely seamless.",
+      "Buildcraft360 turned around our multi-family framing takeoff in under 36 hours. The color-coded markups made trade scope reconciliation with our subbies completely seamless.",
     author: "Matt Day",
     role: "Custom Home Builder",
     location: "Sydney, Australia",
@@ -121,14 +121,14 @@ export default function TestimonialsPage() {
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-serif font-normal text-foreground tracking-tight leading-[1.15] max-w-4xl mx-auto">
             What Our Clients Say About{" "}
-            <span className="font-normal text-primary">Construct Estimates</span>
+            <span className="font-normal text-primary">Buildcraft360</span>
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
             Over 700 general contractors, home builders, and trade subcontractors rely on our certified estimators to deliver audit-ready bids that win projects and protect profit margins.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-muted-foreground">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-sans text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 bg-background border border-border px-3 py-1 rounded-md">
               <Star size={12} className="text-amber-500 fill-amber-500" />
               4.9 / 5.0 Average Client Rating
@@ -146,11 +146,11 @@ export default function TestimonialsPage() {
 
       {/* 4. Testimonials Masonry / Grid */}
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-14 sm:py-20 space-y-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
           {TESTIMONIALS.map((t, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl border border-border bg-card flex flex-col justify-between space-y-5 hover:border-primary/40 transition-colors shadow-2xs"
+              className="p-6 sm:p-7 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card flex flex-col justify-between space-y-5 shadow-sm"
             >
               <div className="space-y-3">
                 {/* 5-Star Rating */}
@@ -176,7 +176,7 @@ export default function TestimonialsPage() {
                     {t.role} • {t.location}
                   </p>
                 </div>
-                <span className="text-[10px] font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">
+                <span className="text-[10px] font-sans font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">
                   {t.projectType}
                 </span>
               </div>
@@ -185,9 +185,9 @@ export default function TestimonialsPage() {
         </div>
 
         {/* Evaluation Banner */}
-        <div className="rounded-xl border border-primary/30 bg-primary/[0.03] dark:bg-primary/[0.05] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl border border-primary/25 bg-primary/[0.03] dark:bg-primary/[0.06] text-foreground p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-2 max-w-xl text-center md:text-left">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-primary">
+            <span className="text-xs font-sans font-medium uppercase tracking-wider text-primary">
               Experience the Difference
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
@@ -201,9 +201,8 @@ export default function TestimonialsPage() {
           <div className="flex items-center gap-3 shrink-0">
             <Button
               render={<Link href="/contact-us" />}
-              variant="default"
               size="lg"
-              className="gap-2 text-xs font-medium rounded-lg"
+              className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
             >
               <span>Upload Plans for 30% Off</span>
               <ArrowRight size={13} />

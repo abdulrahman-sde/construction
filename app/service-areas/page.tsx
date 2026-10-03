@@ -17,9 +17,9 @@ import {
 } from "reicon-react";
 
 export const metadata: Metadata = {
-  title: "Service Areas | Construct Estimates - USA, Canada & Australia Coverage",
+  title: "Service Areas | Buildcraft360 - USA, Canada & Australia Coverage",
   description:
-    "Construct Estimates provides localized construction cost estimating and material takeoff services across all 50 US States, Canada, and all Australian states and territories.",
+    "Buildcraft360 provides localized construction cost estimating and material takeoff services across all 50 US States, Canada, and all Australian states and territories.",
 };
 
 const US_REGIONS = [
@@ -128,10 +128,10 @@ export default function ServiceAreasPage() {
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto font-normal leading-relaxed">
-            Construct Estimates delivers localized cost estimating and material takeoff services calibrated to local prevailing wages, union rules, and material price indices across North America and Australia.
+            Buildcraft360 delivers localized cost estimating and material takeoff services calibrated to local prevailing wages, union rules, and material price indices across North America and Australia.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-muted-foreground">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-sans text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 bg-background border border-border px-3 py-1 rounded-md">
               <Global size={12} className="text-primary" />
               All 50 US States Covered
@@ -166,7 +166,7 @@ export default function ServiceAreasPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
             {US_REGIONS.map((region, idx) => (
               <div
                 key={idx}
@@ -187,7 +187,7 @@ export default function ServiceAreasPage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-[11px] font-mono text-muted-foreground pt-3 border-t border-border/40">
+                <p className="text-[11px] font-sans text-muted-foreground pt-3 border-t border-border/40">
                   {region.states.length} States • RSMeans Localized
                 </p>
               </div>
@@ -200,7 +200,7 @@ export default function ServiceAreasPage() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="text-xl">🇦🇺</span>
-              <Badge variant="blue" className="text-[10.5px] font-normal tracking-wide uppercase">
+              <Badge variant="blue" className="text-xs font-sans font-medium uppercase tracking-wide">
                 Australian Quantity Surveying
               </Badge>
             </div>
@@ -212,7 +212,7 @@ export default function ServiceAreasPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
             {AUSTRALIA_REGIONS.map((item, idx) => (
               <div
                 key={idx}
@@ -222,7 +222,7 @@ export default function ServiceAreasPage() {
                   <h3 className="font-serif font-normal text-lg text-foreground">
                     {item.territory}
                   </h3>
-                  <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">
+                  <span className="text-xs font-sans font-medium text-primary bg-primary/10 px-2 py-0.5 rounded">
                     {item.capital}
                   </span>
                 </div>
@@ -239,7 +239,7 @@ export default function ServiceAreasPage() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="text-xl">🇨🇦</span>
-              <Badge variant="blue" className="text-[10.5px] font-normal tracking-wide uppercase">
+              <Badge variant="blue" className="text-xs font-sans font-medium uppercase tracking-wide">
                 Canadian Provincial Coverage
               </Badge>
             </div>
@@ -251,7 +251,7 @@ export default function ServiceAreasPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
             {CANADA_REGIONS.map((c, idx) => (
               <div
                 key={idx}
@@ -261,7 +261,7 @@ export default function ServiceAreasPage() {
                   <h3 className="font-serif font-normal text-lg text-foreground">
                     {c.province}
                   </h3>
-                  <span className="text-xs font-mono text-muted-foreground">
+                  <span className="text-xs font-sans text-muted-foreground">
                     {c.hub}
                   </span>
                 </div>
@@ -274,9 +274,9 @@ export default function ServiceAreasPage() {
         </section>
 
         {/* Localized Calibration Guarantee Banner */}
-        <div className="rounded-xl border border-primary/30 bg-primary/[0.03] dark:bg-primary/[0.05] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl border border-primary/25 bg-primary/[0.03] dark:bg-primary/[0.06] text-foreground p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-2 max-w-xl text-center md:text-left">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-primary">
+            <span className="text-xs font-sans font-medium uppercase tracking-wider text-primary">
               Zip-Code Precision Guarantee
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
@@ -290,9 +290,8 @@ export default function ServiceAreasPage() {
           <div className="flex items-center gap-3 shrink-0">
             <Button
               render={<Link href="/contact-us" />}
-              variant="default"
               size="lg"
-              className="gap-2 text-xs font-medium rounded-lg"
+              className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
             >
               <span>Upload Plans for 30% Off</span>
               <ArrowRight size={13} />

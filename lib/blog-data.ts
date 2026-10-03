@@ -11,7 +11,8 @@ export interface BlogPost {
     | "Bidding & Takeoff Strategy"
     | "Cash Flow & Profit Margins"
     | "Trade Estimating Manuals"
-    | "Software & Technology";
+    | "Software & Technology"
+    | "Regional Construction Insights";
   badgeVariant:
     | "blue"
     | "amber"
@@ -36,12 +37,12 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedDate: "2026-07-30",
     author: "Usman",
     authorRole: "Senior Construction Estimator & QS",
-    category: "Bidding & Takeoff Strategy",
+    category: "Regional Construction Insights",
     badgeVariant: "blue",
-    featuredImage: "/assets/trades/sitework.svg",
+    featuredImage: "/assets/images/blog-colorado.jpg",
     readTime: "7 min read",
     content: `
-      <p>Looking for reliable Colorado construction estimating services? You are in the right place. Colorado's construction market is experiencing historic velocity right now. The Front Range corridor—from Fort Collins through Metro Denver down to Colorado Springs—remains dense with commercial and multi-family infill. Meanwhile, mountain communities across Summit County, Vail, and Aspen demand ultra-custom residential framing built to stringent cold-weather building codes.</p>
+      <p>Looking for reliable Colorado construction estimating services? You are in the right place. Colorado's construction market is experiencing historic velocity right now. The Front Range corridor (from Fort Collins through Metro Denver down to Colorado Springs) remains dense with commercial and multi-family infill. Meanwhile, mountain communities across Summit County, Vail, and Aspen demand ultra-custom residential framing built to stringent cold-weather building codes.</p>
       
       <h2>Why Generic National Averages Fail on Colorado Projects</h2>
       <p>If you have ever prepared a bid using nationwide RSMeans multipliers without local calibration, you know how quickly profit margins erode in Colorado. Construction in this state operates under severe geographic and seasonal variables:</p>
@@ -69,19 +70,209 @@ export const BLOG_POSTS: BlogPost[] = [
     `,
   },
   {
+    id: 18643,
+    slug: "vermont-construction-estimating-services",
+    title:
+      "Vermont Construction Estimating Services | Accurate Takeoffs for VT Contractors",
+    excerpt:
+      "Vermont construction estimating services help contractors, developers, and architects put a real number on a project before the first shovel hits the ground, factoring in mud season logistics and regional labor rates.",
+    date: "July 2026",
+    publishedDate: "2026-07-28",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "green",
+    featuredImage: "/assets/images/blog-vermont.jpg",
+    readTime: "7 min read",
+    content: `
+      <p>Vermont construction estimating services help contractors, developers, and architects put a real number on a project before the first shovel hits the ground. If you have bid work in this state before, you already know it does not follow national averages. A framing team booked solid through mud season, a driveway that needs ledge blasting, or historic preservation zoning across Burlington and Montpelier can quickly blow standard budget assumptions.</p>
+      
+      <h2>Regional Vermont Construction Factors</h2>
+      <p>Bidding in Vermont requires granular regional understanding. Standard national databases fail to capture the following realities:</p>
+      <ul>
+        <li><strong>Act 250 Environmental Review:</strong> Large-scale commercial developments and subdivisions require strict stormwater runoff mitigation, wetlands buffers, and erosion control line items.</li>
+        <li><strong>Frost Depth & Thermal Performance:</strong> Deep 48-inch to 60-inch frost line footing excavations and continuous exterior insulation requirements (R-20 to R-40 envelope values).</li>
+        <li><strong>Subcontractor Scarcity:</strong> Specialized trade contractors in rural counties require mobilization and travel stipends to be priced into the general conditions.</li>
+      </ul>
+
+      <h2>Complete Material Takeoff Packages for Vermont Bidders</h2>
+      <p>We provide full CSI Division takeoffs covering sitework, concrete foundations, lumber, timber framing, insulation, finishes, and MEP utilities. Deliverables include Excel takeoffs and Bluebeam visual markups delivered in 24 to 48 hours.</p>
+    `,
+  },
+  {
+    id: 18616,
+    slug: "louisiana-construction-estimating-services",
+    title:
+      "Louisiana Construction Estimating Services: Accurate Takeoffs for LA Contractors",
+    excerpt:
+      "If you've bid a job in Louisiana, you know the state doesn't play by standard rules. Flood elevation requirements, hurricane wind resistance, and localized parish permitting demand audit-ready takeoffs.",
+    date: "July 2026",
+    publishedDate: "2026-07-23",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "amber",
+    featuredImage: "/assets/images/blog-louisiana.jpg",
+    readTime: "6 min read",
+    content: `
+      <p>If you've bid a job in Louisiana, you already know the state doesn't play by the same cost rules as the rest of the country. Land and labor may appear cost-effective on paper, but the second you factor in base flood elevations (BFE), hurricane wind ratings, coastal soil stabilization, and parish-specific permitting, standard cost estimates fall apart.</p>
+      
+      <h2>Crucial Factors in Louisiana Construction Estimating</h2>
+      <p>Our team specializes in preparing audit-ready estimates tailored to southern Louisiana's unique geotechnical and meteorological challenges:</p>
+      <ul>
+        <li><strong>Deep Pile Foundations & Soil Stabilization:</strong> High water tables across New Orleans, Baton Rouge, and coastal parishes require helical piles, timber pilings, and geotechnical geogrid reinforcement.</li>
+        <li><strong>130+ MPH Wind Load Specifications:</strong> Continuous load-path strapping, hurricane clip fastening, impact-rated fenestrations, and heavy-gauge roof attachments.</li>
+        <li><strong>Moisture & Mold Barrier Systems:</strong> Closed-cell spray foam insulation, commercial dehumidification sizing, and marine-grade exterior waterproofing assemblies.</li>
+      </ul>
+
+      <h2>Bid Confidently on Commercial & Residential LA Projects</h2>
+      <p>Whether bidding public municipal projects in Jefferson Parish or custom residential developments along the Gulf Coast, our team provides line-by-line itemized material schedules and local labor rate calibration.</p>
+    `,
+  },
+  {
+    id: 18588,
+    slug: "construction-estimating-services-in-wisconsin",
+    title:
+      "Construction Estimating Services in Wisconsin: Takeoffs & Cost Modeling",
+    excerpt:
+      "Prevailing wage compliance on public tenders and condensed winter construction windows require disciplined takeoff accuracy for general contractors across Wisconsin.",
+    date: "July 2026",
+    publishedDate: "2026-07-20",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "blue",
+    featuredImage: "/assets/images/blog-wisconsin.jpg",
+    readTime: "7 min read",
+    content: `
+      <p>If you bid on construction jobs in Wisconsin, you know the state has two big challenges that most national estimating guides miss. First, prevailing wage rules and union labor structures for public and publicly funded projects in Milwaukee and Madison. Second, the cold-weather construction season is so short that a bad estimate or procurement delay can ruin your whole operational year.</p>
+
+      <h2>Key Wisconsin Takeoff Considerations</h2>
+      <ul>
+        <li><strong>Winter Protection & Heated Enclosures:</strong> Temporary heating fuels, insulated concrete forms, and frost blanket rentals factored into general conditions.</li>
+        <li><strong>Structural Steel & Precast Panels:</strong> Rapid-erection structural framing systems favored for commercial warehouses and manufacturing facilities across the Fox Valley corridor.</li>
+        <li><strong>Masonry Cold-Weather Admixtures:</strong> Mortar heating and accelerated curing line items required between November and April.</li>
+      </ul>
+    `,
+  },
+  {
+    id: 18546,
+    slug: "construction-estimating-services-missouri",
+    title:
+      "Construction Estimating Services in Missouri: Takeoffs & Cost Estimates",
+    excerpt:
+      "Material price fluctuation and labor rate divergence between St. Louis, Kansas City, and rural counties require precise, localized estimating models.",
+    date: "July 2026",
+    publishedDate: "2026-07-16",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "neutral",
+    featuredImage: "/assets/images/blog-missouri.jpg",
+    readTime: "6 min read",
+    content: `
+      <p>Right now, bidding accurately in Missouri means handling material prices that fluctuate each quarter and labor rates that vary widely between union-heavy St. Louis, fast-growing Kansas City, and non-union rural counties. Pricing too high loses you the contract; pricing too low burns your working capital.</p>
+
+      <h2>Comprehensive Missouri Estimating Coverage</h2>
+      <p>We provide accurate material quantities and current market pricing for General Contractors, Subcontractors, and Developers across Missouri, including residential subdivisions, retail build-outs, and civil infrastructure.</p>
+    `,
+  },
+  {
+    id: 18520,
+    slug: "nevada-construction-estimating-services",
+    title:
+      "Nevada Construction Estimating Services – Fast Takeoffs for Contractors",
+    excerpt:
+      "Rising skilled labor wages and extreme desert thermal cycles across Clark County and Reno demand precise quantity takeoffs for commercial and hospitality projects.",
+    date: "July 2026",
+    publishedDate: "2026-07-14",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "amber",
+    featuredImage: "/assets/images/blog-nevada.jpg",
+    readTime: "7 min read",
+    content: `
+      <p>Nevada's construction market is dynamic and fast-paced. Clark County and Las Vegas command massive hospitality, commercial entertainment, and multi-family infrastructure, while northern Nevada (Reno/Sparks) leads in industrial logistics and battery manufacturing facilities.</p>
+
+      <h2>Desert Geotechnical & Thermal Factors</h2>
+      <ul>
+        <li><strong>Caliche Rock Excavation:</strong> Hard cemented calcium carbonate layers that require heavy hydraulic breaker attachments and rock trenching allowances.</li>
+        <li><strong>High-SEER HVAC & Reflective Cool Roofs:</strong> Extreme summer heat demands specialized insulation values and heat-reflective membrane specifications.</li>
+      </ul>
+    `,
+  },
+  {
+    id: 18417,
+    slug: "construction-estimating-services-georgia",
+    title:
+      "Construction Estimating Services in Georgia: Bid-ready Estimates",
+    excerpt:
+      "From Atlanta high-density commercial corridors and hyperscale data centers to Savannah logistics hubs, get accurate Georgia cost estimates and takeoffs.",
+    date: "July 2026",
+    publishedDate: "2026-07-08",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "green",
+    featuredImage: "/assets/images/blog-georgia.jpg",
+    readTime: "7 min read",
+    content: `
+      <p>Georgia consistently ranks as a premier business hub, driving massive demand in industrial warehousing, data center campuses, and residential master-planned communities. With labor markets strained by major industrial mega-projects around Atlanta and Savannah, estimating accuracy is paramount.</p>
+    `,
+  },
+  {
+    id: 18313,
+    slug: "construction-estimating-services-utah",
+    title:
+      "Construction Estimating Services in Utah: Fast, Accurate Takeoffs",
+    excerpt:
+      "High seismic requirements along the Wasatch Fault, rapid residential growth in Salt Lake Valley, and mountain terrain dictate precise estimating standards.",
+    date: "July 2026",
+    publishedDate: "2026-07-06",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "blue",
+    featuredImage: "/assets/images/blog-utah.jpg",
+    readTime: "6 min read",
+    content: `
+      <p>Utah's construction sector has led the nation in job growth and commercial development. Building along the Wasatch Front requires strict seismic design category D and E framing, special moment frames, and high-altitude snow load engineering.</p>
+    `,
+  },
+  {
+    id: 18210,
+    slug: "tennessee-construction-estimating-services",
+    title:
+      "Tennessee Construction Estimating Services: Takeoffs & Cost Modeling",
+    excerpt:
+      "Nashville and Memphis commercial construction booms require audit-ready takeoffs calibrated to local trade availability and building codes.",
+    date: "June 2026",
+    publishedDate: "2026-06-28",
+    author: "Usman",
+    authorRole: "Senior Construction Estimator & QS",
+    category: "Regional Construction Insights",
+    badgeVariant: "neutral",
+    featuredImage: "/assets/images/blog-tennessee.jpg",
+    readTime: "6 min read",
+    content: `
+      <p>Tennessee's steady economic influx has fueled multi-story mixed-use towers in Nashville, distribution hubs in Memphis, and manufacturing plants across middle Tennessee. Our team delivers itemized material takeoffs with 24-48 hour turnaround.</p>
+    `,
+  },
+  {
     id: 17820,
     slug: "bluebeam-revu-vs-planswift",
     title:
       "Bluebeam Revu vs PlanSwift: Which Estimation Software is Right for You?",
     excerpt:
       "A comprehensive, side-by-side engineering breakdown between PlanSwift and Bluebeam Revu. Compare quantity takeoff speed, formula customization, markup collaboration, and licensing costs.",
-    date: "July 2026",
-    publishedDate: "2026-07-15",
+    date: "June 2026",
+    publishedDate: "2026-06-15",
     author: "Usman",
     authorRole: "Senior Construction Estimator & QS",
     category: "Software & Technology",
     badgeVariant: "primary",
-    featuredImage: "/assets/trades/metal.svg",
+    featuredImage: "/assets/images/service-planning.jpg",
     readTime: "8 min read",
     content: `
       <p>Choosing the right digital takeoff software is one of the most critical workflow decisions a construction estimator, general contractor, or quantity surveyor will make. Two platforms dominate modern construction offices across North America and Australia: Bluebeam Revu and PlanSwift.</p>
@@ -97,7 +288,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>For specialized sub-contractors (such as drywall, painting, and flooring contractors), PlanSwift's pre-configured item templates offer unmatched takeoff speed once properly calibrated. However, for general contractors coordinating multi-discipline drawing revisions, Bluebeam Revu provides superior overlay and plan-comparison tools that immediately highlight architectural revisions in red and green.</p>
 
       <h2>The Verdict: When to Deploy Each Tool</h2>
-      <p>At Construct Estimates, our senior estimators utilize both platforms depending on project scope. We deploy Bluebeam Revu for general contracting plan reviews and architectural markups, and combine it with PlanSwift for intricate Division 09 and Division 03 assemblies.</p>
+      <p>At Buildcraft360, our senior estimators utilize both platforms depending on project scope. We deploy Bluebeam Revu for general contracting plan reviews and architectural markups, and combine it with PlanSwift for intricate Division 09 and Division 03 assemblies.</p>
     `,
   },
   {
@@ -106,13 +297,13 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Problems and Solutions for Managing Construction Cash Flow",
     excerpt:
       "Cash flow insolvency causes more contractor business failures than lack of profitable work. Learn practical strategies to structure billing milestones, manage retainage, and protect operating reserves.",
-    date: "July 2026",
-    publishedDate: "2026-07-02",
+    date: "June 2026",
+    publishedDate: "2026-06-02",
     author: "Usman",
     authorRole: "Senior Construction Estimator & QS",
     category: "Cash Flow & Profit Margins",
     badgeVariant: "amber",
-    featuredImage: "/assets/trades/lumber.svg",
+    featuredImage: "/assets/images/why-choose-building.jpg",
     readTime: "6 min read",
     content: `
       <p>It is a well-documented industry paradox: construction companies with overflowing order books and strong paper margins can still slide into sudden bankruptcy. In construction, profit is an accounting opinion, but cash is a physical reality.</p>
@@ -135,16 +326,16 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "9 Proven Ways to Increase Your Profit Margins in Construction",
     excerpt:
       "Stop competing in the destructive race to the bottom on low-margin bids. Discover 9 operational disciplines that boost net margins by eliminating scope gaps and unpriced change orders.",
-    date: "June 2026",
-    publishedDate: "2026-06-25",
+    date: "May 2026",
+    publishedDate: "2026-05-25",
     author: "Usman",
     authorRole: "Senior Construction Estimator & QS",
     category: "Cash Flow & Profit Margins",
     badgeVariant: "green",
-    featuredImage: "/assets/trades/concrete.svg",
+    featuredImage: "/assets/images/service-estimating.jpg",
     readTime: "7 min read",
     content: `
-      <p>The construction industry historically operates on notoriously razor-thin margins. Average commercial general contractor net profit margins hover between 2% and 4%, leaving virtually zero room for estimating oversights or unbilled site revisions.</p>
+      <p>The construction industry historically operates on razor-thin margins. Average commercial general contractor net profit margins hover between 2% and 4%, leaving virtually zero room for estimating oversights or unbilled site revisions.</p>
 
       <h2>Transitioning from Gross Margin to Retained Net Margin</h2>
       <p>True profitability is not achieved simply by adding a higher markup percentage at bid closing. Doing so indiscriminately causes contractors to lose competitive jobs. Instead, elite builders improve margins through disciplined pre-construction estimating and strict field controls:</p>
@@ -163,13 +354,13 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Bid Analysis: Definition, Process, Types & Evaluation Criteria",
     excerpt:
       "Twelve subcontractor bids land in your inbox with a 40% price spread. How do you evaluate scope coverage, normalize exclusions, and select the best bid without taking on catastrophic risk?",
-    date: "June 2026",
-    publishedDate: "2026-06-18",
+    date: "May 2026",
+    publishedDate: "2026-05-18",
     author: "Usman",
     authorRole: "Senior Construction Estimator & QS",
     category: "Bidding & Takeoff Strategy",
     badgeVariant: "blue",
-    featuredImage: "/assets/trades/masonry.svg",
+    featuredImage: "/assets/images/project-1.png",
     readTime: "9 min read",
     content: `
       <p>Bid analysis (also called bid leveling or bid tabulation) is the systematic process of comparing competing proposals submitted by subcontractors and vendors to ensure all bids are analyzed on an identical scope baseline.</p>
@@ -193,28 +384,22 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Hard Costs vs Soft Costs: Unlock Construction Budget Success",
     excerpt:
       "Understand the clear financial boundary between hard physical construction expenses and soft administrative, architectural, and financing fees to safeguard developer feasibility models.",
-    date: "June 2026",
-    publishedDate: "2026-06-08",
+    date: "May 2026",
+    publishedDate: "2026-05-08",
     author: "Usman",
     authorRole: "Senior Construction Estimator & QS",
     category: "Cash Flow & Profit Margins",
     badgeVariant: "amber",
-    featuredImage: "/assets/trades/interior.svg",
+    featuredImage: "/assets/images/architectural-drawing.png",
     readTime: "6 min read",
     content: `
       <p>When assembling a pro forma budget for real estate development or commercial construction, misclassifying project expenses between hard costs and soft costs can skew loan draw schedules, tax depreciation strategies, and investor returns.</p>
 
       <h2>Defining Hard Costs (Direct Construction Costs)</h2>
-      <p>Hard costs encompass the tangible, brick-and-mortar physical assets required to construct the facility. These include:</p>
-      <ul>
-        <li>Site excavation, grading, utilities, and paving.</li>
-        <li>Structural concrete, steel framing, lumber, masonry, and exterior facade.</li>
-        <li>MEP installations (HVAC units, plumbing distribution, electrical switchgear).</li>
-        <li>Direct job-site field labor and equipment rental charges.</li>
-      </ul>
+      <p>Hard costs encompass the tangible, brick-and-mortar physical assets required to construct the facility. These include site excavation, structural concrete, steel framing, lumber, masonry, exterior facade, and MEP installations.</p>
 
       <h2>Defining Soft Costs (Indirect Development Costs)</h2>
-      <p>Soft costs represent the non-physical professional and legal fees that facilitate construction. These typically include architectural design fees, structural engineering reports, municipal permit fees, builder's risk insurance, construction loan interest, and legal zoning counsel.</p>
+      <p>Soft costs represent the non-physical professional and legal fees that facilitate construction: architectural design fees, structural engineering reports, municipal permit fees, builder's risk insurance, and construction loan interest.</p>
     `,
   },
   {
@@ -223,13 +408,13 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "How Much Does a Concrete Slab Cost? 2026 Price Breakdown",
     excerpt:
       "A comprehensive per-square-foot cost breakdown for pouring residential and commercial concrete slabs. Includes labor, gravel base preparation, rebar reinforcement, and finishing specs.",
-    date: "May 2026",
-    publishedDate: "2026-05-28",
+    date: "April 2026",
+    publishedDate: "2026-04-28",
     author: "Usman",
     authorRole: "Senior Construction Estimator & QS",
     category: "Trade Estimating Manuals",
     badgeVariant: "neutral",
-    featuredImage: "/assets/trades/concrete.svg",
+    featuredImage: "/assets/images/project-2.png",
     readTime: "6 min read",
     content: `
       <p>Whether you are calculating the budget for a 40x60 commercial metal building slab or a standard residential garage foundation, estimating concrete slab costs requires quantifying multiple layers beneath and within the pour.</p>
@@ -244,94 +429,6 @@ export const BLOG_POSTS: BlogPost[] = [
         <li><strong>Reinforcement:</strong> $0.50 - $1.20 per SF for #4 rebar grid or welded wire reinforcement mesh.</li>
         <li><strong>Concrete Ready-Mix (3,000 - 4,000 PSI):</strong> $135 - $175 per cubic yard delivered.</li>
         <li><strong>Finishing & Curing:</strong> $2.00 - $3.50 per SF for power-trowel smooth or broom non-slip texture.</li>
-      </ul>
-    `,
-  },
-  {
-    id: 17980,
-    slug: "what-are-mep-drawings-in-construction",
-    title:
-      "What Are MEP Drawings in Construction? Coordination & Takeoff Guide",
-    excerpt:
-      "Mechanical, electrical, and plumbing drawings are the nervous system of modern buildings. Learn how MEP drawings work together, how BIM clashes are resolved, and how estimators quantify them.",
-    date: "May 2026",
-    publishedDate: "2026-05-15",
-    author: "Usman",
-    authorRole: "Senior Construction Estimator & QS",
-    category: "Trade Estimating Manuals",
-    badgeVariant: "blue",
-    featuredImage: "/assets/trades/mep.svg",
-    readTime: "7 min read",
-    content: `
-      <p>In modern commercial construction, mechanical, electrical, and plumbing (MEP) systems account for 30% to 50% of total project construction value. Without cohesive coordination drawings, structural clashes between ductwork, sanitary gravity lines, and cable trays quickly derail schedules.</p>
-
-      <h2>The Three Primary Disciplines in MEP Packages</h2>
-      <ul>
-        <li><strong>M - Mechanical Drawings:</strong> Detail air handling units, chilled water loops, VAV boxes, duct routing sizes, return grilles, and exhaust fan schedules.</li>
-        <li><strong>E - Electrical Drawings:</strong> Depict main service panels, transformers, lighting layout circuitry, low-voltage telecommunication conduits, and emergency generator hookups.</li>
-        <li><strong>P - Plumbing Drawings:</strong> Specify potable domestic water distribution, sanitary sewer waste lines, vent stacks, grease interceptors, and stormwater drainage systems.</li>
-      </ul>
-
-      <h2>BIM Coordination and Clash Detection</h2>
-      <p>Modern building information modeling (BIM) has largely replaced flat 2D overlays. Using Revit and Navisworks, estimators and project engineers detect physical spatial clashes before raw pipes and ductwork are fabricated offsite.</p>
-    `,
-  },
-  {
-    id: 17910,
-    slug: "framing-estimating",
-    title: "A Complete Guide to Framing Estimating for Wood Frame Construction",
-    excerpt:
-      "Master the formulas for estimating wall studs, plates, headers, joists, and structural sheathing. Factor in board-foot conversions and waste allowances with zero guesswork.",
-    date: "May 2026",
-    publishedDate: "2026-05-02",
-    author: "Usman",
-    authorRole: "Senior Construction Estimator & QS",
-    category: "Trade Estimating Manuals",
-    badgeVariant: "amber",
-    featuredImage: "/assets/trades/lumber.svg",
-    readTime: "8 min read",
-    content: `
-      <p>Wood framing takeoff is one of the most detail-intensive estimating disciplines in residential and light commercial building. A single missing beam spec or undercounted stud tally multiplies into costly lumberyard backorders and field downtime.</p>
-
-      <h2>Standard Wall Stud Estimating Formula</h2>
-      <p>The standard rule of thumb for 16-inch on-center (O.C.) stud layout is one stud per linear foot of wall. While 16 inches would mathematically suggest 0.75 studs per foot, the additional 0.25 stud allowance accounts for corners, door trimmers, king studs, and partition intersections.</p>
-
-      <h2>Plates, Headers, and Fasteners</h2>
-      <ul>
-        <li><strong>Wall Plates:</strong> Linear footage of walls multiplied by three (one bottom sole plate + double top plates), with an additional 10% scrap allowance.</li>
-        <li><strong>Door & Window Headers:</strong> Double 2x10 or engineered LVL lengths calculated per rough opening schedule.</li>
-        <li><strong>Fastener & Clip Multipliers:</strong> Calculate framing nails, joist hangers, seismic hurricane ties, and hold-down brackets per structural engineering callouts.</li>
-      </ul>
-    `,
-  },
-  {
-    id: 17850,
-    slug: "roofing-estimating-services",
-    title:
-      "Roofing Estimating Services That Win More Commercial & Residential Bids",
-    excerpt:
-      "Accurate roofing takeoffs require precise square calculations, pitch multipliers, valley allowances, and flashings. Learn how professional estimators price steep slope and low slope roofs.",
-    date: "April 2026",
-    publishedDate: "2026-04-20",
-    author: "Usman",
-    authorRole: "Senior Construction Estimator & QS",
-    category: "Trade Estimating Manuals",
-    badgeVariant: "green",
-    featuredImage: "/assets/trades/thermal.svg",
-    readTime: "7 min read",
-    content: `
-      <p>Roofing contractors compete in a demanding market where material price spikes and labor risks are high. Estimating errors on steep pitch roofs or commercial flat membrane systems quickly consume all operating margins.</p>
-
-      <h2>Pitch Multipliers and Geometric Waste Factors</h2>
-      <p>A flat plan view calculation never represents the true surface area of a pitched roof. Estimators must apply the exact geometric pitch factor (e.g., 1.20 for an 8/12 pitch, 1.414 for a 12/12 pitch) to convert horizontal projected area into true square footage.</p>
-
-      <h2>Commercial Flat Roofing Considerations</h2>
-      <p>For TPO, EPDM, and modified bitumen commercial roofs, estimating goes far beyond surface square footage. Accurate takeoffs account for:</p>
-      <ul>
-        <li>Tapered polyiso insulation schemes for positive drainage slope.</li>
-        <li>Parapet wall termination bar and coping metal flashing perimeters.</li>
-        <li>Roof drain clamping rings, vent boots, and equipment curb flashing details.</li>
-        <li>Mechanical fastener pull-test requirements and wind uplift adhesion specs.</li>
       </ul>
     `,
   },

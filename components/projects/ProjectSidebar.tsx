@@ -35,17 +35,17 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
       {/* 1. Download Sample Package Card */}
       <div
         id="sample-download"
-        className="rounded-xl border border-primary/30 bg-primary/[0.03] dark:bg-primary/[0.05] p-6 space-y-4 shadow-2xs"
+        className="rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-neutral-50/70 dark:bg-neutral-900/40 p-6 space-y-4 shadow-sm"
       >
-        <div className="flex items-center gap-2">
-          <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-            <Download size={16} />
+        <div className="flex items-center gap-2.5">
+          <span className="w-8 h-8 rounded-xl bg-primary text-white flex items-center justify-center shrink-0 shadow-2xs">
+            <Download size={15} />
           </span>
           <div>
             <h3 className="font-serif font-normal text-lg text-foreground leading-snug">
               Download Sample Package
             </h3>
-            <p className="text-[11px] font-mono text-muted-foreground">
+            <p className="text-[11px] font-sans text-muted-foreground">
               {project.samplePdfName} ({project.sampleFileSize})
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
           </form>
         )}
 
-        <div className="pt-2 border-t border-border/60 flex items-center justify-between text-[10.5px] font-mono text-muted-foreground">
+        <div className="pt-2 border-t border-border/60 flex items-center justify-between text-[10.5px] font-sans text-muted-foreground">
           <span>✓ Includes PDF &amp; Excel BOQ</span>
           <span>✓ No Credit Card Required</span>
         </div>
@@ -105,29 +105,29 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
 
         <dl className="space-y-3 text-xs divide-y divide-border/60">
           <div className="flex justify-between pt-2">
-            <dt className="text-muted-foreground font-mono">Category</dt>
+            <dt className="text-muted-foreground font-sans">Category</dt>
             <dd className="font-normal text-foreground">{project.category}</dd>
           </div>
           <div className="flex justify-between pt-2">
-            <dt className="text-muted-foreground font-mono">Client Type</dt>
+            <dt className="text-muted-foreground font-sans">Client Type</dt>
             <dd className="font-normal text-foreground">{project.clientType}</dd>
           </div>
           <div className="flex justify-between pt-2">
-            <dt className="text-muted-foreground font-mono">Delivery Time</dt>
+            <dt className="text-muted-foreground font-sans">Delivery Time</dt>
             <dd className="font-normal text-foreground">{project.turnaroundTime}</dd>
           </div>
           <div className="flex justify-between pt-2">
-            <dt className="text-muted-foreground font-mono">Software Used</dt>
+            <dt className="text-muted-foreground font-sans">Software Used</dt>
             <dd className="font-normal text-foreground text-right">
               {project.softwareUsed.join(", ")}
             </dd>
           </div>
           <div className="flex justify-between pt-2">
-            <dt className="text-muted-foreground font-mono">Cost Database</dt>
+            <dt className="text-muted-foreground font-sans">Cost Database</dt>
             <dd className="font-normal text-foreground">RSMeans 2026 Localized</dd>
           </div>
           <div className="flex justify-between pt-2">
-            <dt className="text-muted-foreground font-mono">Certification</dt>
+            <dt className="text-muted-foreground font-sans">Certification</dt>
             <dd className="font-normal text-foreground">AACE &amp; AIQS Standard</dd>
           </div>
         </dl>
@@ -172,11 +172,11 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
               <span>(346) 660-2440</span>
             </a>
             <a
-              href="mailto:info@constructestimates.com"
+              href="mailto:Info@buildcraft360.com"
               className="flex items-center gap-2.5 text-slate-300 hover:text-white transition-colors"
             >
               <Message size={14} className="text-primary shrink-0" />
-              <span className="truncate">info@constructestimates.com</span>
+              <span className="truncate">Info@buildcraft360.com</span>
             </a>
           </div>
         </div>

@@ -29,12 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!project) {
     return {
-      title: "Project Not Found | Construct Estimates",
+      title: "Project Not Found | Buildcraft360",
     };
   }
 
   return {
-    title: `${project.title} Estimating & Markups | Construct Estimates`,
+    title: `${project.title} Estimating & Markups | Buildcraft360`,
     description: project.metaDesc,
   };
 }

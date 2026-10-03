@@ -78,7 +78,7 @@ const FAQ_CATEGORIES = [
       {
         question: "Can I see examples of your previous estimates before ordering?",
         answer:
-          "Absolutely. You can download comprehensive sample packages directly from our Projects and Portfolio pages, or email info@constructestimates.com to request sample takeoff sheets specifically for your trade.",
+          "Absolutely. You can download comprehensive sample packages directly from our Projects and Portfolio pages, or email Info@buildcraft360.com to request sample takeoff sheets specifically for your trade.",
       },
       {
         question: "Can you provide estimates from preliminary sketches or incomplete plans?",
@@ -147,7 +147,7 @@ export default function FaqsPage() {
             Everything you need to know about our estimating process, pricing structures, localized cost databases, delivery timelines, and certified quantity surveying practices.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-muted-foreground">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-sans text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 bg-background border border-border px-3 py-1 rounded-md">
               <Clock size={12} className="text-primary" />
               24–48h Turnaround Answered
@@ -168,7 +168,7 @@ export default function FaqsPage() {
         {FAQ_CATEGORIES.map((categoryGroup, cIdx) => (
           <section key={cIdx} className="space-y-4">
             <div className="flex items-center gap-2 border-b border-border/80 pb-3">
-              <span className="font-mono text-xs text-primary">0{cIdx + 1}.</span>
+              <span className="font-sans text-xs font-medium text-primary">0{cIdx + 1}.</span>
               <h2 className="font-serif font-normal text-xl sm:text-2xl text-foreground tracking-tight">
                 {categoryGroup.category}
               </h2>
@@ -194,9 +194,9 @@ export default function FaqsPage() {
         ))}
 
         {/* Still Have Questions Card */}
-        <div className="rounded-xl border border-primary/30 bg-primary/[0.03] dark:bg-primary/[0.05] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl border border-primary/25 bg-primary/[0.03] dark:bg-primary/[0.06] text-foreground p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-2 max-w-xl text-center md:text-left">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-primary">
+            <span className="text-xs font-sans font-medium uppercase tracking-wider text-primary">
               Have a Specific Question?
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
@@ -210,9 +210,8 @@ export default function FaqsPage() {
           <div className="flex items-center gap-3 shrink-0">
             <Button
               render={<Link href="/contact-us" />}
-              variant="default"
               size="lg"
-              className="gap-2 text-xs font-medium rounded-lg"
+              className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
             >
               <span>Contact Us for Assistance</span>
               <ArrowRight size={13} />

@@ -1,5 +1,5 @@
 /**
- * Construct Estimates — Services Registry & Content Database
+ * Construct Estimates - Services Registry & Content Database
  * Centralized, data-driven registry containing complete structured data for all service pages.
  * Extracted directly from https://constructestimates.com/
  */

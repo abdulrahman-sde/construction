@@ -15,7 +15,7 @@ interface Testimonial {
 const row1: Testimonial[] = [
   {
     quote:
-      "I have on the project board at this moment over 3 million dollars of projects they estimated for me — hospitals, restaurants, fitness facilities, and churches. I will not use any other estimation service.",
+      "I have on the project board at this moment over 3 million dollars of projects they estimated for me, including hospitals, restaurants, fitness facilities, and churches. I will not use any other estimation service.",
     initials: "AB",
     name: "Alain Bouchard",
     role: "President",
@@ -25,7 +25,7 @@ const row1: Testimonial[] = [
   },
   {
     quote:
-      "Construct Estimates is an exceptional asset to our projects. Despite the rush on some projects, CE demonstrated remarkable dedication, successfully meeting deadlines without compromising quality.",
+      "Buildcraft360 is an exceptional asset to our projects. Despite the rush on some projects, the team demonstrated remarkable dedication, successfully meeting deadlines without compromising quality.",
     initials: "AD",
     name: "Allison Dorwart",
     role: "Project Manager",
@@ -108,24 +108,24 @@ export default function TestimonialsSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800/80 pb-8">
           <div>
-            <span className="text-primary text-[11px] font-mono uppercase tracking-widest block mb-2">
+            <span className="text-neutral-400 text-xs font-sans font-medium uppercase tracking-wider block mb-2">
               Verified Client Reviews
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-normal text-white tracking-tight">
               Hear from Our{" "}
-              <span className="font-normal text-blue-400">
+              <span className="font-normal text-neutral-300 italic">
                 Satisfied Clients
               </span>
             </h2>
             <p className="font-sans text-slate-400 text-xs sm:text-sm mt-2 max-w-xl font-normal leading-relaxed">
               General contractors, trade specialists, and builders across the United States
-              rely on Construct Estimates for dependable quantity takeoffs and win-ready bids.
+              rely on Buildcraft360 for dependable quantity takeoffs and win-ready bids.
             </p>
           </div>
           <Button
             render={<Link href="#contact" />}
             size="default"
-            className="bg-primary text-white gap-2 shrink-0 font-medium"
+            className="bg-white text-neutral-950 hover:bg-neutral-100 gap-2 shrink-0 font-medium"
           >
             <span>Get a Quote</span>
             <ArrowRight size={13} />
@@ -166,7 +166,7 @@ function TestimonialCard({
   location,
 }: Testimonial) {
   return (
-    <div className="w-[330px] sm:w-[380px] shrink-0 mr-5 sm:mr-6 bg-slate-900/90 border border-slate-800/80 rounded-xl p-5 sm:p-6 flex flex-col justify-between space-y-4 hover:border-blue-500/40 hover:bg-slate-900 transition-colors shadow-2xs">
+    <div className="w-[330px] sm:w-[380px] shrink-0 mr-5 sm:mr-6 bg-neutral-900/90 border border-neutral-800 rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4 shadow-sm">
       <div className="space-y-3">
         {/* Rating & Trade Tag */}
         <div className="flex items-center justify-between">
@@ -175,31 +175,31 @@ function TestimonialCard({
               <Star key={i} size={13} weight="Filled" />
             ))}
           </div>
-          <span className="text-[10px] font-mono tracking-wide px-2 py-0.5 rounded bg-slate-800 text-blue-300 border border-slate-700/60">
+          <span className="text-[10px] font-sans font-medium uppercase tracking-wider px-2 py-0.5 rounded-md bg-neutral-800 text-neutral-300 border border-neutral-700/80">
             {trade}
           </span>
         </div>
 
         {/* Quote */}
-        <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed font-sans font-normal">
+        <p className="text-xs sm:text-[13px] text-neutral-300 leading-relaxed font-sans font-normal">
           &ldquo;{quote}&rdquo;
         </p>
       </div>
 
       {/* Author Row */}
-      <div className="flex items-center justify-between pt-3 border-t border-slate-800/80">
+      <div className="flex items-center justify-between pt-3 border-t border-neutral-800/80">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-primary/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-medium text-xs">
+          <div className="w-8 h-8 rounded-full bg-neutral-800 text-neutral-200 border border-neutral-700 flex items-center justify-center font-sans font-medium text-xs shadow-2xs">
             {initials}
           </div>
           <div>
             <h4 className="text-xs font-medium text-white leading-tight">{name}</h4>
-            <span className="text-[11px] text-slate-400 font-normal">
+            <span className="text-[11px] text-neutral-400 font-normal">
               {role} &bull; {location}
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-1 text-[10px] text-emerald-400 font-mono">
+        <div className="flex items-center gap-1 text-[10px] text-emerald-400 font-sans">
           <CheckCircle size={12} weight="Filled" />
           <span>Verified</span>
         </div>

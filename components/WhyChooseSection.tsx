@@ -13,7 +13,7 @@ const accordionItems = [
     id: "item-0",
     title: "Trust in Accurate Estimates",
     content:
-      "At Construct Estimates, we deliver precise and dependable construction cost estimates. Our meticulous analysis and attention to detail ensure accurate projections, mitigating the risk of unexpected expenses and delays. Trust us for reliable estimates that provide a solid foundation for successful project planning and execution.",
+      "At Buildcraft360, we deliver precise and dependable construction cost estimates. Our meticulous analysis and attention to detail ensure accurate projections, mitigating the risk of unexpected expenses and delays. Trust us for reliable estimates that provide a solid foundation for successful project planning and execution.",
   },
   {
     id: "item-1",
@@ -67,7 +67,7 @@ export default function WhyChooseSection() {
               <h2 className="text-3xl sm:text-4xl font-serif font-normal text-foreground leading-tight tracking-tight">
                 Why Choose <br />
                 <span className="font-normal text-primary">
-                  Construct Estimates?
+                  Buildcraft360?
                 </span>
               </h2>
               <p className="font-sans text-muted-foreground text-sm sm:text-base font-normal mt-3 leading-relaxed">
@@ -80,15 +80,15 @@ export default function WhyChooseSection() {
             {/* Architecture Card */}
             <div className="relative rounded-2xl overflow-hidden shadow-sm border border-border bg-card aspect-[4/3] flex flex-col justify-end p-6">
               <Image
-                alt="High-rise building glass corner"
+                alt="High-rise building glass corner construction"
                 className="absolute inset-0 object-cover"
                 fill
                 sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 42vw, 500px"
-                src="/assets/trades/masonry.svg"
+                src="/assets/images/why-choose-building.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent" />
               <div className="relative z-10 text-white space-y-2">
-                <div className="w-9 h-9 rounded-lg bg-primary text-primary-foreground flex items-center justify-center text-base mb-1 shadow-xs">
+                <div className="w-9 h-9 rounded-lg bg-white/15 backdrop-blur-md border border-white/20 text-white flex items-center justify-center text-base mb-1 shadow-xs">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -122,14 +122,14 @@ export default function WhyChooseSection() {
             </div>
           </div>
 
-          {/* Right: Accordion with elegant active state */}
+          {/* Right: Accordion with architectural active state */}
           <div className="lg:col-span-7">
             <Accordion defaultValue={["item-0"]} className="space-y-3">
               {accordionItems.map((item) => (
                 <AccordionItem
                   key={item.id}
                   value={item.id}
-                  className="border border-border rounded-xl px-5 py-1.5 bg-card transition-all duration-200 data-expanded:border-primary/40 data-expanded:bg-blue-50/30 dark:data-expanded:bg-blue-950/20 shadow-2xs"
+                  className="border border-border/80 rounded-xl px-5 py-1.5 bg-card transition-all duration-200 data-expanded:border-neutral-400 dark:data-expanded:border-neutral-600 data-expanded:bg-neutral-50/60 dark:data-expanded:bg-neutral-900/40 shadow-2xs"
                 >
                   <AccordionTrigger className="text-foreground text-sm sm:text-base font-medium py-3.5 no-underline">
                     {item.title}

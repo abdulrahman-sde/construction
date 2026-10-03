@@ -23,14 +23,14 @@ export default function ServiceDeliverablesSection({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
         {deliverables.map((d) => (
           <div
             key={d.title}
-            className="p-5 rounded-xl border border-border/80 bg-card hover:border-primary/40 transition-all duration-200 shadow-2xs space-y-2"
+            className="p-5 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card shadow-sm space-y-2"
           >
-            <div className="flex items-center gap-2.5 text-primary">
-              <div className="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center shrink-0 border border-blue-200/50">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs">
                 <Document size={15} />
               </div>
               <h4 className="font-sans font-medium text-sm text-foreground leading-snug">

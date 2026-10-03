@@ -9,13 +9,13 @@ export default function ProjectScopeContent({ project }: ProjectScopeContentProp
   return (
     <div className="space-y-12">
       {/* 1. Project Stats Strip */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
         {project.stats.map((stat, i) => (
           <div
             key={i}
             className="p-4 rounded-xl border border-border/80 bg-card text-center space-y-1"
           >
-            <p className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
+            <p className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground">
               {stat.label}
             </p>
             <p className="text-xl sm:text-2xl font-serif font-normal text-foreground">
@@ -38,9 +38,9 @@ export default function ProjectScopeContent({ project }: ProjectScopeContentProp
       </div>
 
       {/* 3. Challenge & Solution Bento */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
         <div className="p-6 rounded-xl border border-border/80 bg-card space-y-3">
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded">
+          <div className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded">
             <CircleInfo size={13} />
             <span>The Estimating Challenge</span>
           </div>
@@ -53,9 +53,9 @@ export default function ProjectScopeContent({ project }: ProjectScopeContentProp
         </div>
 
         <div className="p-6 rounded-xl border border-border/80 bg-card space-y-3">
-          <div className="inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded">
+          <div className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded">
             <Check size={13} />
-            <span>Construct Estimates Solution</span>
+            <span>Buildcraft360 Solution</span>
           </div>
           <h3 className="font-serif font-normal text-lg text-foreground">
             Multi-Tier Digital Takeoff Protocol
@@ -77,9 +77,7 @@ export default function ProjectScopeContent({ project }: ProjectScopeContentProp
               key={idx}
               className="flex items-start gap-3 p-3.5 rounded-lg border border-border/60 bg-card text-xs sm:text-sm font-normal text-foreground/90"
             >
-              <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 text-xs">
-                ✓
-              </span>
+              <Check size={15} className="text-primary shrink-0 mt-0.5" />
               <span className="leading-snug">{scope}</span>
             </div>
           ))}
@@ -97,7 +95,7 @@ export default function ProjectScopeContent({ project }: ProjectScopeContentProp
               Direct excerpt from the CSI MasterFormat 16-Division Excel takeoff package.
             </p>
           </div>
-          <span className="text-[11px] font-mono text-muted-foreground">
+          <span className="text-xs font-sans text-muted-foreground">
             {project.keyQuantities.length} Major Trade Assemblies Listed
           </span>
         </div>
@@ -105,7 +103,7 @@ export default function ProjectScopeContent({ project }: ProjectScopeContentProp
         <div className="rounded-xl border border-border overflow-hidden bg-card">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs font-sans">
-              <thead className="bg-slate-100/70 dark:bg-slate-900/60 border-b border-border text-[11px] font-mono uppercase tracking-wider text-muted-foreground">
+              <thead className="bg-slate-100/70 dark:bg-slate-900/60 border-b border-border text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground">
                 <tr>
                   <th className="py-3 px-4">CSI Division</th>
                   <th className="py-3 px-4">Item Description</th>
@@ -120,16 +118,16 @@ export default function ProjectScopeContent({ project }: ProjectScopeContentProp
                     key={idx}
                     className="hover:bg-accent/40 transition-colors"
                   >
-                    <td className="py-3 px-4 font-mono text-muted-foreground text-[11px] whitespace-nowrap">
+                    <td className="py-3 px-4 font-sans text-muted-foreground text-xs whitespace-nowrap">
                       {row.division}
                     </td>
                     <td className="py-3 px-4 text-foreground font-normal">
                       {row.item}
                     </td>
-                    <td className="py-3 px-3 text-center font-mono text-muted-foreground">
+                    <td className="py-3 px-3 text-center font-sans text-muted-foreground">
                       {row.unit}
                     </td>
-                    <td className="py-3 px-4 text-right font-mono text-foreground font-normal text-sm">
+                    <td className="py-3 px-4 text-right font-sans text-foreground font-normal text-sm">
                       {row.quantity}
                     </td>
                     <td className="py-3 px-4 hidden md:table-cell text-muted-foreground text-xs font-normal">

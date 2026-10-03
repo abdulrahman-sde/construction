@@ -16,9 +16,9 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column */}
           <div className="lg:col-span-6 space-y-7">
-            <Badge variant="blue" className="text-[10.5px]">
-              Special Limited Time Offer
-            </Badge>
+            <span className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground block">
+              Inquiries &amp; Quotes
+            </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-serif font-normal leading-[1.18] tracking-tight text-foreground">
               Let&apos;s Discuss Your Construction{" "}
@@ -26,20 +26,20 @@ export default function ContactSection() {
             </h2>
 
             <p className="font-sans text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
-              Ready to experience the difference with Construct Estimates? Take the next step
+              Ready to experience the difference with Buildcraft360? Take the next step
               towards accurate construction estimates and successful projects. Contact us today to
               request a quote with <span className="text-foreground font-medium">30% off</span> tailored to
               your specific needs.
             </p>
 
-            <Card className="p-6 space-y-2 shadow-2xs border border-border">
-              <h4 className="font-medium text-sm text-foreground flex items-center gap-2.5">
-                <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-primary flex items-center justify-center">
+            <Card className="p-6 space-y-2 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card shadow-sm">
+              <h4 className="font-medium text-sm text-foreground flex items-center gap-3">
+                <div className="w-8 h-8 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground border border-neutral-200/80 dark:border-neutral-700/80 flex items-center justify-center shrink-0 shadow-2xs">
                   <Gift size={16} />
                 </div>
                 <span>Download our Free Sample Estimates</span>
               </h4>
-              <p className="font-sans text-xs text-muted-foreground font-normal leading-relaxed pl-9">
+              <p className="font-sans text-xs text-muted-foreground font-normal leading-relaxed pl-11">
                 Want to inspect the precision of our takeoff spreadsheets and colored markup PDFs
                 before ordering?
               </p>
@@ -48,7 +48,7 @@ export default function ContactSection() {
 
           {/* Right Column: Form */}
           <div className="lg:col-span-6">
-            <Card className="p-6 sm:p-8 shadow-sm border border-border">
+            <Card className="p-6 sm:p-8 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card shadow-md">
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-border">
                 <div>
                   <h3 className="text-base font-serif font-normal text-foreground tracking-tight">
@@ -58,7 +58,7 @@ export default function ContactSection() {
                     Fast 24-48 hour turnaround on all trades
                   </span>
                 </div>
-                <Badge variant="rose" className="text-[11px] font-medium">
+                <Badge variant="primary" className="text-[10.5px]">
                   30% OFF
                 </Badge>
               </div>

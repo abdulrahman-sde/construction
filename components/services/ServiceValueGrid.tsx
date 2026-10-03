@@ -8,10 +8,10 @@ interface ServiceValueGridProps {
 }
 
 const defaultIcons = [
-  <Clock key="clock" size={18} className="text-primary" />,
-  <ShieldCheck key="shield" size={18} className="text-primary" />,
-  <Document key="doc" size={18} className="text-primary" />,
-  <DollarCircle key="dollar" size={18} className="text-primary" />,
+  <Clock key="clock" size={17} />,
+  <ShieldCheck key="shield" size={17} />,
+  <Document key="doc" size={17} />,
+  <DollarCircle key="dollar" size={17} />,
 ];
 
 export default function ServiceValueGrid({
@@ -34,17 +34,17 @@ export default function ServiceValueGrid({
         )}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
         {valueProps.map((item, idx) => (
           <div
             key={item.title}
-            className="group p-5 sm:p-6 rounded-xl border border-border/80 bg-card hover:border-primary/40 transition-all duration-200 shadow-2xs space-y-2.5"
+            className="p-5 sm:p-6 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card shadow-sm space-y-2.5"
           >
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center shrink-0 border border-blue-200/50">
+              <div className="w-9 h-9 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs">
                 {defaultIcons[idx % defaultIcons.length]}
               </div>
-              <h4 className="font-sans font-medium text-sm sm:text-base text-foreground group-hover:text-primary transition-colors">
+              <h4 className="font-sans font-medium text-sm sm:text-base text-foreground">
                 {item.title}
               </h4>
             </div>

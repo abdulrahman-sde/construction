@@ -1,289 +1,239 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Calculator,
-  Layers,
-  Home,
-  Building2,
-  Industry,
-  DocumentText,
   Calendar,
-  Flash,
-  ArrowRight,
-  Clock,
+  Building2,
   CheckCircle,
+  ArrowRight,
   IconComponent,
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 
-interface ServiceItem {
-  id: string;
+interface ServicePillar {
+  number: string;
   title: string;
-  description: string;
   icon: IconComponent;
+  lead: string;
   deliverables: string[];
-  turnaround: string;
+  closing: string;
+  ctaText: string;
+  ctaHref: string;
 }
 
-const services: ServiceItem[] = [
+const servicePillars: ServicePillar[] = [
   {
-    id: "cost-estimating",
-    title: "Cost Estimating Services",
-    description:
-      "Construct Estimates offers a wide range of construction cost estimating services and cost management solutions tailored to meet the unique needs of the ever-growing construction industry.",
+    number: "01",
+    title: "Construction Estimating",
     icon: Calculator,
-    deliverables: ["RSMeans Pricing", "Bill of Quantities", "Labor & Equipment Rates"],
-    turnaround: "24-48 hours",
+    lead: "Accurate estimating is essential for preparing competitive bids and maintaining control over project costs. We provide detailed quantity takeoffs and cost estimates based on project drawings, specifications, and scope of work.",
+    deliverables: [
+      "Detailed Quantity Takeoffs",
+      "Material & Labor Cost Estimation",
+      "Bid Preparation & Pricing",
+      "Subcontractor Scope Review",
+      "Construction Cost Analysis",
+      "Preliminary & Budget Estimates",
+      "Value Engineering Support",
+      "Bid Comparison & Review",
+    ],
+    closing:
+      "Whether you need an estimate for a small project or a detailed takeoff for a larger commercial project, we provide clear and organized estimating that helps you understand the numbers before you bid.",
+    ctaText: "Request an Estimate",
+    ctaHref: "#contact",
   },
   {
-    id: "material-takeoff",
-    title: "Material Takeoff Services",
-    description:
-      "Our professional estimators excel in producing accurate takeoffs that form a solid foundation for your bidding process by meticulously analyzing construction drawings and specifications.",
-    icon: Layers,
-    deliverables: ["Planswift & Bluebeam", "Itemized Excel Sheets", "Material Schedules"],
-    turnaround: "24-48 hours",
+    number: "02",
+    title: "Construction Planning",
+    icon: Calendar,
+    lead: "Good planning helps turn an approved project into a well-organized execution plan. We provide planning support to help project teams establish realistic schedules, monitor progress, and identify potential delays.",
+    deliverables: [
+      "Project Scheduling",
+      "Baseline Schedule Development",
+      "Construction Work Programs",
+      "Progress Tracking",
+      "Schedule Updates",
+      "Look-Ahead Schedules",
+      "Resource & Activity Planning",
+      "Delay & Recovery Planning",
+      "Progress Reporting",
+    ],
+    closing:
+      "We focus on practical schedules that reflect the actual sequence of construction activities and provide project teams with a clear view of upcoming work and progress.",
+    ctaText: "Discuss Your Project",
+    ctaHref: "#contact",
   },
   {
-    id: "residential-estimating",
-    title: "Residential Estimating Services",
-    description:
-      "At Construct Estimates, we take pride in our track record of successful projects. We have provided comprehensive estimates for diverse residential single and multi-family endeavors.",
-    icon: Home,
-    deliverables: ["Framing & Lumber", "Finishes & Drywall", "Subcontractor Bid Packs"],
-    turnaround: "24-48 hours",
-  },
-  {
-    id: "commercial-estimating",
-    title: "Commercial Estimating Services",
-    description:
-      "Construct Estimates, your trusted partner for accurate and efficient commercial estimating services. Our precise approach empowers General Contractors and Subcontractors.",
+    number: "03",
+    title: "Architectural Design",
     icon: Building2,
-    deliverables: ["CSI MasterFormat", "Office & Mixed-Use", "Tenant Improvements"],
-    turnaround: "24-48 hours",
-  },
-  {
-    id: "industrial-estimating",
-    title: "Industrial Estimating Services",
-    description:
-      "We offer comprehensive quantity takeoffs, cost estimates, piping, electrical and heavy mechanical analysis services for industrial projects.",
-    icon: Industry,
-    deliverables: ["Process Piping", "Heavy Equipment Hours", "Structural Steel"],
-    turnaround: "48-72 hours",
-  },
-  {
-    id: "preliminary-estimates",
-    title: "Preliminary Estimates Services",
-    description:
-      "Tired of grappling with incomplete drawing plans? We provide conceptual and schematic budget estimates to eliminate uncertainty before architectural finalization.",
-    icon: DocumentText,
-    deliverables: ["Square-Foot Modeling", "Schematic Feasibility", "Budget Validation"],
-    turnaround: "24-48 hours",
+    lead: "We provide architectural design support that helps transform ideas and requirements into clear, practical drawings and visual concepts. Our approach focuses on functionality, constructability, and a design that works within the project's requirements.",
+    deliverables: [
+      "Conceptual Design",
+      "2D Floor Plans",
+      "Architectural Drawings",
+      "Elevations & Sections",
+      "Space Planning",
+      "3D Modeling & Visualization",
+      "Design Development",
+      "Construction Drawing Support",
+      "Drawing Revisions",
+    ],
+    closing:
+      "From an initial concept to developed design drawings, we work to create solutions that are practical, clear, and ready for the next stage of the project.",
+    ctaText: "Start Your Design",
+    ctaHref: "#contact",
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 md:py-24 bg-slate-50/60 dark:bg-slate-950/30 border-t border-border" id="services">
+    <section
+      className="py-20 md:py-28 bg-slate-50/60 dark:bg-slate-950/30 border-t border-border"
+      id="services"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <Badge variant="blue" className="mb-3 text-[10.5px]">
-            Precision Estimating Matrix
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl font-serif font-normal text-foreground tracking-tight">
-            Our Construction Estimating <span className="font-normal text-primary">Services</span>
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <span className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground block mb-2.5">
+            Core Scope
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-serif font-normal text-foreground tracking-tight">
+            Our <span className="font-normal text-primary">Services</span>
           </h2>
-          <p className="font-sans text-muted-foreground text-sm sm:text-base mt-2.5 font-normal max-w-2xl mx-auto leading-relaxed">
-            Whether you are a General Contractor, Subcontractor, Builder, Architect, or Developer,
-            we deliver audit-ready estimates calibrated to your local market.
+          <p className="font-sans text-muted-foreground text-sm sm:text-base mt-3 leading-relaxed font-normal">
+            At Buildcraft360, we provide practical construction support from the early design
+            stage through estimating and project planning. Our services are designed to help
+            contractors, developers, and project teams make informed decisions, prepare competitive
+            bids, and keep projects organized from start to finish.
           </p>
         </div>
 
-        {/* Primary Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map((service) => {
-            const Icon = service.icon;
+        {/* Full Uncropped Visual Triptych Master Picture */}
+        <div className="mb-14 sm:mb-16">
+          <div className="relative rounded-2xl overflow-hidden border border-border/90 shadow-md bg-card">
+            <Image
+              src="/assets/images/services-overview.jpg"
+              alt="Buildcraft360 Construction Estimating, Construction Planning & Architectural Design"
+              width={1024}
+              height={682}
+              className="w-full h-auto block"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* 3 Core Service Pillars */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+          {servicePillars.map((pillar) => {
+            const Icon = pillar.icon;
             return (
               <Card
-                key={service.id}
-                className="group flex flex-col justify-between p-5 rounded-xl border border-border/80 bg-card hover:border-primary/40 hover:shadow-xs transition-all duration-200"
+                key={pillar.number}
+                className="flex flex-col justify-between p-6 sm:p-8 rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-card shadow-sm relative overflow-hidden"
               >
                 <div>
-                  {/* Clean Icon & Title Header */}
-                  <div className="flex items-center gap-2.5 mb-2.5">
-                    <Icon size={19} className="text-primary shrink-0" />
-                    <h3 className="text-[15px] sm:text-base font-medium text-foreground tracking-tight group-hover:text-primary transition-colors">
-                      {service.title}
-                    </h3>
+                  {/* Header Row: Number & Icon */}
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="font-sans text-xs font-medium tracking-wide px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 border border-neutral-200/70 dark:border-neutral-700/60">
+                      {pillar.number}
+                    </span>
+                    <div className="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-800/90 text-foreground flex items-center justify-center border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs">
+                      <Icon size={18} />
+                    </div>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-xs sm:text-[13px] leading-relaxed text-muted-foreground font-normal line-clamp-3 mb-3">
-                    {service.description}
+                  {/* Title */}
+                  <h3 className="text-xl sm:text-2xl font-serif font-normal text-foreground tracking-tight mb-3">
+                    {pillar.title}
+                  </h3>
+
+                  {/* Lead Summary */}
+                  <p className="text-xs sm:text-[13.5px] leading-relaxed text-muted-foreground font-normal mb-5">
+                    {pillar.lead}
                   </p>
 
-                  {/* Technical Deliverables Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-2">
-                    {service.deliverables.map((tag) => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center text-[10.5px] px-2 py-0.5 rounded-md bg-secondary text-muted-foreground font-normal border border-border/60"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  {/* Subhead & Deliverables */}
+                  <div className="pt-4 border-t border-border/70 mb-5">
+                    <h4 className="text-[11px] uppercase tracking-wider font-semibold text-foreground/80 mb-3">
+                      Our services include:
+                    </h4>
+                    <ul className="space-y-2.5">
+                      {pillar.deliverables.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2.5 text-xs sm:text-[13px] text-foreground/90 font-normal leading-snug"
+                        >
+                          <CheckCircle
+                            size={14}
+                            className="text-neutral-400 dark:text-neutral-500 group-hover:text-foreground mt-0.5 shrink-0 transition-colors"
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
+
+                  {/* Closing Takeaway Note */}
+                  <p className="text-xs text-muted-foreground italic leading-relaxed pt-3 border-t border-border/60 mb-6">
+                    {pillar.closing}
+                  </p>
                 </div>
 
-                {/* Footer with Turnaround and Action */}
-                <div className="pt-3 mt-3 border-t border-border/60 flex items-center justify-between text-xs">
-                  <span className="text-[11px] text-muted-foreground flex items-center gap-1.5 font-normal">
-                    <Clock size={12} className="text-primary/70 shrink-0" />
-                    <span>{service.turnaround}</span>
-                  </span>
-                  <Link
-                    href="#contact"
-                    aria-label={`Learn more about ${service.title}`}
-                    className="font-medium text-xs text-primary inline-flex items-center gap-1 group/link hover:underline"
+                {/* Card CTA */}
+                <div className="pt-2">
+                  <Button
+                    render={<Link href={pillar.ctaHref} />}
+                    variant="outline"
+                    size="default"
+                    className="w-full justify-center gap-2 group/btn border-neutral-200 dark:border-neutral-700 hover:bg-foreground hover:text-background hover:border-foreground text-foreground text-xs sm:text-sm font-medium transition-all"
                   >
-                    <span>Learn More</span>
-                    <ArrowRight size={12} className="transition-transform group-hover/link:translate-x-0.5" />
-                  </Link>
+                    <span>{pillar.ctaText}</span>
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform group-hover/btn:translate-x-1"
+                    />
+                  </Button>
                 </div>
               </Card>
             );
           })}
         </div>
 
-        {/* Action & Engagement Accelerator Cards (2 Balanced Banners) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-6">
-          {/* Accelerator Card 1: Monthly Subscription */}
-          <Card className="flex flex-col justify-between p-5 sm:p-6 rounded-xl border border-border/80 bg-card hover:border-primary/40 hover:shadow-xs transition-all duration-200">
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-3">
-                <Badge variant="amber" className="text-[10px] font-medium">
-                  Save 10% Time
-                </Badge>
-                <span className="text-xs font-medium text-primary flex items-center gap-1">
-                  <Calendar size={13} />
-                  <span>Recurring Retainer</span>
-                </span>
-              </div>
-
-              <div className="mb-3">
-                <h3 className="text-lg sm:text-xl font-serif font-normal text-foreground tracking-tight">
-                  Get our <span className="font-normal text-primary">Monthly Subscription</span>
-                </h3>
-                <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed font-normal mt-1">
-                  Get hassle-free estimates every month. Tailored packages for busy contractors bidding
-                  on multiple jobs weekly.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2 text-xs text-foreground/85">
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>Dedicated lead estimator</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>Priority bid queue access</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>Volume rollover allowance</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>No long-term commitments</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-3.5 mt-3 border-t border-border/60 flex items-center justify-between">
-              <span className="text-xs text-muted-foreground font-normal">
-                Predictable monthly billing
+        {/* From Concept to Construction: Integrated Banner */}
+        <div className="mt-14 sm:mt-16">
+          <div className="relative overflow-hidden p-8 sm:p-10 rounded-2xl border border-primary/20 bg-primary/[0.03] dark:bg-primary/[0.06] text-foreground shadow-xs">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <span className="inline-block text-xs font-sans font-medium uppercase tracking-wider text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+                Integrated Project Delivery
               </span>
-              <Button
-                render={<Link href="#contact" />}
-                variant="outline"
-                size="sm"
-                className="h-8 text-xs px-3"
-              >
-                <span>Contact Us</span>
-                <ArrowRight size={12} />
-              </Button>
-            </div>
-          </Card>
-
-          {/* Accelerator Card 2: Fastest 24h Delivery */}
-          <Card className="flex flex-col justify-between p-5 sm:p-6 rounded-xl border border-border/80 bg-card hover:border-primary/40 hover:shadow-xs transition-all duration-200">
-            <div>
-              <div className="flex items-center justify-between gap-2 mb-3">
-                <Badge variant="blue" className="text-[10px] font-medium">
-                  Fastest 24h Delivery
-                </Badge>
-                <span className="text-xs font-medium text-primary flex items-center gap-1">
-                  <Flash size={13} />
-                  <span>Express Queue</span>
-                </span>
-              </div>
-
-              <div className="mb-3">
-                <h3 className="text-lg sm:text-xl font-serif font-normal text-foreground tracking-tight">
-                  Want An <span className="font-normal text-primary">Accurate Estimate?</span>
-                </h3>
-                <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed font-normal mt-1">
-                  Transform your commercial visions into tangible realities with our certified
-                  estimators.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2 text-xs text-foreground/85">
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>24h emergency takeoff option</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>RSMeans ZIP-code verified</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>98% certified bid accuracy</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={14} className="text-primary shrink-0" />
-                  <span>Direct estimator phone line</span>
-                </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-normal text-foreground tracking-tight">
+                From Concept to Construction
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal max-w-2xl mx-auto">
+                At Buildcraft360, our services are connected. Design, estimating, and planning
+                work together throughout a project, and having support across these areas can make
+                the process more organized and efficient. Whether you are preparing a bid,
+                developing a project schedule, or turning an idea into a buildable design,
+                Buildcraft360 is here to support your project at every stage.
+              </p>
+              <p className="text-sm font-medium text-foreground pt-1">
+                Have a project in mind? Let&apos;s talk.
+              </p>
+              <div className="pt-2">
+                <Button
+                  render={<Link href="#contact" />}
+                  size="lg"
+                  className="font-medium gap-2 shadow-xs px-7"
+                >
+                  <span>Contact Us</span>
+                  <ArrowRight size={15} />
+                </Button>
               </div>
             </div>
-
-            <div className="pt-3.5 mt-3 border-t border-border/60 flex items-center justify-between">
-              <span className="text-xs text-muted-foreground font-normal">
-                Guaranteed on-time bid return
-              </span>
-              <Button
-                render={<Link href="#contact" />}
-                size="sm"
-                className="h-8 text-xs px-3"
-              >
-                <span>Contact Us</span>
-                <ArrowRight size={12} />
-              </Button>
-            </div>
-          </Card>
-        </div>
-
-        {/* Bottom Contextual Note */}
-        <div className="text-center mt-10 text-xs sm:text-sm text-muted-foreground font-normal">
-          Have specific questions about our services? Check out our{" "}
-          <Link className="text-primary underline font-medium" href="#contact">
-            FAQs section
-          </Link>{" "}
-          for detailed answers.
+          </div>
         </div>
       </div>
     </section>

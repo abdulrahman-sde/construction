@@ -9,9 +9,9 @@ import { Badge } from "@/components/ui/badge";
 import { Call, Message, Clock, ShieldCheck, Building } from "reicon-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Construct Estimates - Houston, Melbourne & Oshawa Offices",
+  title: "Contact Us | Buildcraft360 - Houston, Melbourne & Oshawa Offices",
   description:
-    "Get in touch with Construct Estimates. Contact our estimating offices in Houston, Texas, Melbourne, Australia, and Oshawa, Canada. 24/7 plan review and 30% discount for new clients.",
+    "Get in touch with Buildcraft360. Contact our estimating offices in Houston, Texas, Melbourne, Australia, and Oshawa, Canada. 24/7 plan review and 30% discount for new clients.",
 };
 
 const OFFICES = [
@@ -21,7 +21,7 @@ const OFFICES = [
     address: "2000 Taylor St, Houston, TX 77007, United States",
     phone: "(346) 660-2440",
     phoneHref: "tel:3466602440",
-    email: "info@constructestimates.com",
+    email: "Info@buildcraft360.com",
     hours: "24/7 Estimating Support",
   },
   {
@@ -30,7 +30,7 @@ const OFFICES = [
     address: "118 Royal Terrace, Craigieburn VIC 3064, Australia",
     phone: "0455 843 274",
     phoneHref: "tel:0455843274",
-    email: "info@constructestimates.com",
+    email: "Info@buildcraft360.com",
     hours: "AEST Business Hours & 24/7 Intake",
   },
   {
@@ -39,7 +39,7 @@ const OFFICES = [
     address: "2 Simcoe St S #300, Oshawa, ON L1H 8C1, Canada",
     phone: "(587) 674 3826",
     phoneHref: "tel:5876743826",
-    email: "info@constructestimates.com",
+    email: "Info@buildcraft360.com",
     hours: "EST Business Hours & 24/7 Intake",
   },
 ];
@@ -82,7 +82,7 @@ export default function ContactUsPage() {
             Have questions about your project scope or bidding deadline? Reach our certified estimators directly by phone, email, or upload your blueprints below for a fast quote with 30% savings.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-muted-foreground">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-sans text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 bg-background border border-border px-3 py-1 rounded-md">
               <Clock size={12} className="text-primary" />
               24/7 Rapid Response Guarantee
@@ -110,14 +110,14 @@ export default function ContactUsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
             {OFFICES.map((office, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-xl border border-border bg-background space-y-4 shadow-2xs hover:border-primary/40 transition-colors"
+                className="p-6 sm:p-7 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card space-y-4 shadow-sm"
               >
                 <div className="space-y-1">
-                  <div className="inline-flex items-center gap-1.5 text-[10.5px] font-mono uppercase tracking-wider text-primary">
+                  <div className="inline-flex items-center gap-1.5 text-xs font-sans font-medium uppercase tracking-wider text-primary">
                     <Building size={12} />
                     <span>{office.city}</span>
                   </div>
@@ -136,7 +136,7 @@ export default function ContactUsPage() {
                     className="flex items-center gap-2 text-foreground/90 hover:text-primary transition-colors"
                   >
                     <Call size={13} className="text-primary shrink-0" />
-                    <span className="font-mono">{office.phone}</span>
+                    <span className="font-sans">{office.phone}</span>
                   </a>
 
                   <a
@@ -148,7 +148,7 @@ export default function ContactUsPage() {
                   </a>
                 </div>
 
-                <div className="pt-2 border-t border-border/40 text-[11px] font-mono text-muted-foreground">
+                <div className="pt-2 border-t border-border/40 text-[11px] font-sans text-muted-foreground">
                   <span>Hours: {office.hours}</span>
                 </div>
               </div>

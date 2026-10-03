@@ -7,16 +7,9 @@ import {
   Call,
   Message,
   ChevronDown,
-  Profile,
   ArrowRight,
   Menu as MenuIcon,
   CloseCircle,
-  Buildings,
-  Star,
-  ShieldCheck,
-  Global,
-  WalletCheck,
-  CircleInfo,
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -33,45 +26,6 @@ import {
 } from "@/components/ui/accordion";
 
 // --- Navigation Data ---
-
-const aboutUsItems = [
-  {
-    href: "/about-us",
-    title: "Company Overview",
-    description: "Certified estimating team, our mission & 8,000+ completed projects",
-    Icon: Buildings,
-  },
-  {
-    href: "/our-pricing",
-    title: "Our Pricing",
-    description: "$50 single trade, monthly estimator packages & 30% savings",
-    Icon: WalletCheck,
-  },
-  {
-    href: "/service-areas",
-    title: "Our Service Areas",
-    description: "Serving general contractors across USA, Canada & Australia",
-    Icon: Global,
-  },
-  {
-    href: "/testimonials",
-    title: "Client Testimonials",
-    description: "Read verified contractor reviews, ratings & feedback",
-    Icon: Star,
-  },
-  {
-    href: "/faqs",
-    title: "Frequently Asked Questions",
-    description: "Turnaround times, databases, software & delivery formats",
-    Icon: CircleInfo,
-  },
-  {
-    href: "/contact-us",
-    title: "Contact Us",
-    description: "Offices in Houston TX, Melbourne AU & Oshawa Canada",
-    Icon: Call,
-  },
-];
 
 const serviceItems = [
   {
@@ -208,10 +162,10 @@ export default function Header() {
             </a>
             <a
               className="flex items-center gap-2 hover:text-white transition-colors"
-              href="mailto:info@constructestimates.com"
+              href="mailto:Info@buildcraft360.com"
             >
               <Message size={12} className="text-primary-foreground/70" />
-              <span>info@constructestimates.com</span>
+              <span>Info@buildcraft360.com</span>
             </a>
           </div>
 
@@ -222,22 +176,13 @@ export default function Header() {
             <div className="flex items-center gap-2.5">
               <a
                 aria-label="LinkedIn"
-                href="https://www.linkedin.com/company/construct-estimates/"
+                href="https://www.linkedin.com/company/buildcraft360/"
                 rel="noreferrer"
                 target="_blank"
                 className="hover:text-white transition-colors"
               >
                 <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
                   <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                </svg>
-              </a>
-              <a
-                aria-label="Facebook"
-                href="#"
-                className="hover:text-white transition-colors"
-              >
-                <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
             </div>
@@ -259,61 +204,39 @@ export default function Header() {
           {/* Logo */}
           <Link className="flex items-center gap-2.5 shrink-0" href="/">
             <Image
-              src="/assets/logos/logo.svg"
-              alt="Construct Estimates"
-              width={180}
-              height={45}
+              src="/assets/logos/buildcraft360-horizontal.png"
+              alt="Buildcraft360"
+              width={161}
+              height={28}
               priority
-              className="h-10 w-auto object-contain dark:brightness-0 dark:invert"
+              className="h-7 w-auto object-contain dark:hidden"
+            />
+            <Image
+              src="/assets/logos/buildcraft360-horizontal-white.png"
+              alt="Buildcraft360"
+              width={161}
+              height={28}
+              priority
+              className="h-7 w-auto object-contain hidden dark:block"
             />
           </Link>
 
           {/* Desktop Navigation with shadcn Dropdowns */}
           <nav className="hidden lg:flex items-center gap-2 text-[13.5px] font-medium text-foreground/80">
-            {/* 1. About Us Dropdown */}
-            <DropdownMenu modal={false}>
-              <DropdownMenuTrigger className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring select-none data-[popup-open]:text-foreground data-[popup-open]:bg-accent/60">
-                <span>About Us</span>
-                <ChevronDown
-                  size={12}
-                  className="text-muted-foreground transition-transform duration-200 group-data-[popup-open]:rotate-180"
-                />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="start"
-                sideOffset={12}
-                className="w-[580px] p-2.5 rounded-2xl shadow-xl border border-border/80 bg-popover/98 backdrop-blur-xl"
-              >
-                <div className="grid grid-cols-2 gap-1.5">
-                  {aboutUsItems.map((item) => {
-                    const ItemIcon = item.Icon;
-                    return (
-                      <DropdownMenuItem
-                        key={item.href}
-                        render={<Link href={item.href} />}
-                        className="group relative flex items-start gap-2.5 p-2 rounded-xl transition-all duration-150 hover:bg-accent/80 cursor-pointer text-left outline-none focus-visible:bg-accent"
-                      >
-                        <div className="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-foreground flex items-center justify-center shrink-0 border border-slate-200/60 dark:border-slate-700/60 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                          <ItemIcon size={16} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <span className="text-[12.5px] font-medium text-foreground group-hover:text-primary transition-colors block leading-snug">
-                            {item.title}
-                          </span>
-                          <p className="text-[11px] leading-snug text-muted-foreground group-hover:text-foreground/80 transition-colors mt-0.5 line-clamp-2">
-                            {item.description}
-                          </p>
-                        </div>
-                      </DropdownMenuItem>
-                    );
-                  })}
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            {/* 1. About Us Direct Link */}
+            <Link
+              href="/about-us"
+              className="px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer select-none"
+            >
+              About Us
+            </Link>
 
             {/* 2. Our Services Dropdown */}
             <DropdownMenu modal={false}>
-              <DropdownMenuTrigger className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring select-none data-[popup-open]:text-foreground data-[popup-open]:bg-accent/60">
+              <DropdownMenuTrigger
+                openOnHover={false}
+                className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring select-none data-[popup-open]:text-foreground data-[popup-open]:bg-accent/60"
+              >
                 <span>Our Services</span>
                 <ChevronDown
                   size={12}
@@ -331,29 +254,25 @@ export default function Header() {
                     <DropdownMenuItem
                       key={item.href}
                       render={<Link href={item.href} />}
-                      className="group relative flex items-start gap-3 p-2.5 rounded-xl transition-all duration-150 hover:bg-accent/80 cursor-pointer text-left outline-none focus-visible:bg-accent"
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-neutral-100/80 dark:hover:bg-neutral-800/60 cursor-pointer text-left outline-none transition-colors"
                     >
-                      <div className="size-9 rounded-xl bg-blue-50/80 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 border border-blue-100 dark:border-blue-900/40 group-hover:border-primary/40 group-hover:bg-primary group-hover:text-white transition-all duration-200">
+                      <div className="size-9 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs">
                         <Image
                           src={item.iconSrc}
                           alt={item.title}
                           width={20}
                           height={20}
-                          className="size-5 object-contain group-hover:brightness-0 group-hover:invert transition-all"
+                          className="size-5 object-contain"
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-[13px] font-medium text-foreground group-hover:text-primary transition-colors block leading-snug">
+                        <span className="text-[13px] font-medium text-foreground block leading-snug">
                           {item.title}
                         </span>
-                        <p className="text-[11.5px] leading-tight text-muted-foreground group-hover:text-foreground/80 transition-colors mt-0.5 line-clamp-1">
+                        <p className="text-[11.5px] leading-tight text-muted-foreground mt-0.5 line-clamp-1 font-normal">
                           {item.description}
                         </p>
                       </div>
-                      <ArrowRight
-                        size={12}
-                        className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 text-primary transition-all ml-auto shrink-0 self-center"
-                      />
                     </DropdownMenuItem>
                   ))}
                 </div>
@@ -362,7 +281,10 @@ export default function Header() {
 
             {/* 3. Trades Dropdown */}
             <DropdownMenu modal={false}>
-              <DropdownMenuTrigger className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring select-none data-[popup-open]:text-foreground data-[popup-open]:bg-accent/60">
+              <DropdownMenuTrigger
+                openOnHover={false}
+                className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring select-none data-[popup-open]:text-foreground data-[popup-open]:bg-accent/60"
+              >
                 <span>Trades</span>
                 <ChevronDown
                   size={12}
@@ -381,7 +303,7 @@ export default function Header() {
                         <DropdownMenuItem
                           key={item.href}
                           render={<Link href={item.href} />}
-                          className="px-5 py-3.5 text-[13px] sm:text-[13.5px] font-normal text-foreground/80 hover:text-primary hover:bg-muted/40 transition-colors cursor-pointer outline-none focus-visible:bg-muted/50 rounded-none flex items-center justify-between"
+                          className="px-5 py-3 text-[13px] sm:text-[13.5px] font-normal text-foreground/85 hover:text-foreground hover:bg-neutral-100/70 dark:hover:bg-neutral-800/50 transition-colors cursor-pointer outline-none rounded-none flex items-center justify-between"
                         >
                           <span>{item.title}</span>
                         </DropdownMenuItem>
@@ -424,16 +346,6 @@ export default function Header() {
               <ArrowRight size={13} />
             </Button>
 
-            <Button
-              variant="outline"
-              size="icon-sm"
-              title="My Account"
-              aria-label="My Account"
-              className="hidden sm:inline-flex"
-            >
-              <Profile size={15} />
-            </Button>
-
             {/* Mobile Menu Hamburger Toggle */}
             <button
               type="button"
@@ -454,29 +366,19 @@ export default function Header() {
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-border bg-background/98 backdrop-blur-xl px-4 py-5 shadow-xl max-h-[85vh] overflow-y-auto animate-fade-in-up">
-            <Accordion className="w-full">
-              {/* Mobile About Us */}
-              <AccordionItem value="about">
-                <AccordionTrigger className="text-sm font-medium py-3 text-foreground">
-                  About Us
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-1.5 pl-2 pt-1 pb-2">
-                    {aboutUsItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-medium text-foreground/80 hover:bg-accent hover:text-primary transition-colors"
-                      >
-                        <span>{item.title}</span>
-                        <ArrowRight size={11} className="text-muted-foreground" />
-                      </Link>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+            {/* Mobile About Us Direct Link */}
+            <div className="border-b border-border/70 pb-2 mb-1">
+              <Link
+                href="/about-us"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-between py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent transition-colors"
+              >
+                <span>About Us</span>
+                <ArrowRight size={13} className="text-muted-foreground" />
+              </Link>
+            </div>
 
+            <Accordion className="w-full">
               {/* Mobile Our Services */}
               <AccordionItem value="services">
                 <AccordionTrigger className="text-sm font-medium py-3 text-foreground">
@@ -489,7 +391,7 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-medium text-foreground/80 hover:bg-accent hover:text-primary transition-colors"
+                        className="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-medium text-foreground/80 hover:bg-accent transition-colors"
                       >
                         <div className="flex items-center gap-2">
                           <Image
@@ -520,7 +422,7 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-normal text-foreground/80 hover:bg-accent hover:text-primary transition-colors"
+                        className="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-normal text-foreground/80 hover:bg-accent transition-colors"
                       >
                         <span>{item.title}</span>
                         <ArrowRight size={11} className="text-muted-foreground" />
@@ -536,21 +438,21 @@ export default function Header() {
               <Link
                 href="/our-projects"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent hover:text-primary transition-colors"
+                className="block py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent transition-colors"
               >
                 Our Projects
               </Link>
               <Link
                 href="/our-blogs"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent hover:text-primary transition-colors"
+                className="block py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent transition-colors"
               >
                 Blogs
               </Link>
               <Link
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent hover:text-primary transition-colors"
+                className="block py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent transition-colors"
               >
                 Contact Us
               </Link>
@@ -567,11 +469,11 @@ export default function Header() {
                   <span>Call: (346) 660-2440</span>
                 </a>
                 <a
-                  href="mailto:info@constructestimates.com"
+                  href="mailto:Info@buildcraft360.com"
                   className="flex items-center gap-2 text-foreground font-medium"
                 >
                   <Message size={14} className="text-primary" />
-                  <span>Email: info@constructestimates.com</span>
+                  <span>Email: Info@buildcraft360.com</span>
                 </a>
               </div>
               <Button

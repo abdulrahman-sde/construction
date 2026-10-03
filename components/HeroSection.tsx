@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 const checklistItems = [
   "Any Trade or Any Kind of Project",
   "Ensure up to 100% Accuracy",
-  "Refund Policy (Risk Free)",
   "No Hidden Charges",
 ];
 
@@ -35,11 +34,11 @@ export default function HeroSection() {
           {/* Left: Copy */}
           <div className="lg:col-span-6 space-y-7 animate-fade-in-up">
             <h1 className="text-3xl sm:text-4xl lg:text-[50px] font-serif font-normal text-foreground leading-[1.15] tracking-tight">
-              Construction{" "}
+              Construction Estimating,{" "}
               <span className="font-normal text-primary">
-                Estimating Services
+                Planning &amp; Architectural
               </span>{" "}
-              for Precise Project Planning
+              Services
             </h1>
 
             <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl font-normal">
@@ -50,9 +49,7 @@ export default function HeroSection() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-foreground/90 text-sm font-normal">
               {checklistItems.map((item) => (
                 <li key={item} className="flex items-center gap-2.5">
-                  <span className="w-5 h-5 rounded-full bg-blue-50 text-primary flex items-center justify-center text-xs flex-shrink-0 border border-blue-200/60">
-                    <Check size={11} />
-                  </span>
+                  <Check size={18} className="text-primary shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -63,7 +60,7 @@ export default function HeroSection() {
               <Button
                 render={<Link href="#contact" />}
                 size="xl"
-                className="shadow-sm"
+                className="shadow-sm font-medium"
               >
                 <span>
                   Reduce Your Estimating Expenses{" "}
@@ -79,7 +76,7 @@ export default function HeroSection() {
             <div className="pt-6 border-t border-border flex items-center gap-8 text-xs font-medium text-foreground">
               {trustBadges.map((b) => (
                 <div key={b.label} className="flex flex-col items-center text-center gap-2">
-                  <div className="w-12 h-12 rounded-full bg-secondary border border-border/80 flex items-center justify-center shadow-2xs">
+                  <div className="w-11 h-11 rounded-xl bg-neutral-100 dark:bg-neutral-800/80 border border-neutral-200/80 dark:border-neutral-700/80 text-foreground flex items-center justify-center shadow-2xs">
                     {b.icon}
                   </div>
                   <span className="text-xs text-foreground/80 font-normal">{b.label}</span>

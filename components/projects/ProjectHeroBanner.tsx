@@ -40,11 +40,11 @@ export default function ProjectHeroBanner({ project }: ProjectHeroBannerProps) {
           <Badge variant="blue" className="text-xs uppercase font-normal tracking-wide">
             {project.category} Portfolio
           </Badge>
-          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground bg-background/80 border border-border px-2.5 py-1 rounded-md font-mono">
+          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground bg-background/80 border border-border px-2.5 py-1 rounded-md font-sans">
             <Clock size={12} className="text-primary" />
             <span>Turnaround: {project.turnaroundTime}</span>
           </div>
-          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground bg-background/80 border border-border px-2.5 py-1 rounded-md font-mono">
+          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground bg-background/80 border border-border px-2.5 py-1 rounded-md font-sans">
             <ShieldCheck size={12} className="text-primary" />
             <span>AACE / AIQS Calibrated</span>
           </div>
@@ -62,7 +62,7 @@ export default function ProjectHeroBanner({ project }: ProjectHeroBannerProps) {
 
         {/* Software Tooling Stack */}
         <div className="pt-2 flex flex-wrap items-center gap-2">
-          <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider flex items-center gap-1 mr-1">
+          <span className="text-xs font-sans font-medium text-muted-foreground uppercase tracking-wider flex items-center gap-1 mr-1">
             <Layers size={12} />
             Software Stack:
           </span>

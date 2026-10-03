@@ -12,14 +12,28 @@ const newsreader = Newsreader({
   subsets: ["latin"],
   variable: "--font-newsreader",
   display: "swap",
-  fallback: ["Charter", "Bitstream Charter", "Georgia", "Cambria", "serif"],
+  fallback: ["Georgia", "Cambria", "Times New Roman", "serif"],
 });
 
 export const metadata: Metadata = {
   title:
-    "Construct Estimates | Precision Construction Cost Estimating & Takeoffs",
+    "Buildcraft360 | Construction Estimating, Planning & Architectural Services",
   description:
-    "Trusted partner in construction estimating and material takeoff services for contractors, builders, and architects across North America and Australia.",
+    "Buildcraft360 is your trusted partner for professional construction estimating, planning, and architectural services, helping contractors, builders, and developers manage their projects with greater accuracy and efficiency.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/assets/logos/buildcraft360-icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/assets/logos/buildcraft360-icon.png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

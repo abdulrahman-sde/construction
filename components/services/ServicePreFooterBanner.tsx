@@ -8,9 +8,9 @@ export default function ServicePreFooterBanner() {
     <section className="relative py-20 md:py-24 bg-slate-50/60 dark:bg-slate-950/30 border-t border-border overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl space-y-6">
-          <Badge variant="blue" className="text-[10.5px]">
-            Fast 24–48 Hour Turnaround
-          </Badge>
+          <span className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground block">
+            Fast 24-48 Hour Turnaround
+          </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-serif font-normal text-foreground leading-[1.18] tracking-tight">
             Let&apos;s Discuss Your Construction{" "}

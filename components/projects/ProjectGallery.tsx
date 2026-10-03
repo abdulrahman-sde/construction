@@ -54,11 +54,11 @@ export default function ProjectGallery() {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         {filteredProjects.map((project: ProjectCaseStudy, index: number) => (
           <article
             key={project.slug}
-            className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all duration-200 flex flex-col justify-between shadow-2xs"
+            className="rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card overflow-hidden flex flex-col justify-between shadow-sm"
           >
             {/* Project Image Banner */}
             <div className="relative aspect-[16/10] bg-slate-900 overflow-hidden border-b border-border/60">
@@ -68,23 +68,23 @@ export default function ProjectGallery() {
                 fill
                 loading={index === 0 ? "eager" : "lazy"}
                 fetchPriority={index === 0 ? "high" : "auto"}
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-300 opacity-90"
+                className="object-cover object-center opacity-90"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
 
               <div className="absolute top-3 left-3 flex items-center gap-2">
-                <Badge variant="blue" className="text-[10px] font-normal tracking-wide uppercase">
+                <Badge variant="blue" className="text-xs font-sans font-medium">
                   {project.category}
                 </Badge>
               </div>
 
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white/90 text-xs">
-                <span className="inline-flex items-center gap-1 text-[11px] font-mono">
+                <span className="inline-flex items-center gap-1 text-[11px] font-sans">
                   <Clock size={12} className="text-primary" />
                   {project.turnaroundTime}
                 </span>
-                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-white/80">
+                <span className="inline-flex items-center gap-1 text-[11px] font-sans text-white/80">
                   <File size={12} />
                   Sample PDF Included
                 </span>
@@ -96,7 +96,7 @@ export default function ProjectGallery() {
               <div className="space-y-2.5">
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="block group-hover:text-primary transition-colors"
+                  className="block"
                 >
                   <h3 className="font-serif font-normal text-xl sm:text-2xl text-foreground tracking-tight leading-snug">
                     {project.title}
@@ -110,13 +110,13 @@ export default function ProjectGallery() {
 
               {/* Key Deliverables Bullet Tags */}
               <div className="pt-2 border-t border-border/60 space-y-2">
-                <p className="text-[10.5px] font-mono uppercase tracking-wider text-muted-foreground">
+                <p className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground">
                   Package Deliverables:
                 </p>
                 <ul className="space-y-1 text-xs text-foreground/80 font-normal">
                   {project.deliverables.slice(0, 2).map((deliv, i) => (
                     <li key={i} className="flex items-start gap-1.5">
-                      <Check size={12} className="text-primary mt-0.5 shrink-0" />
+                      <Check size={12} className="text-neutral-400 mt-0.5 shrink-0" />
                       <span className="truncate">{deliv}</span>
                     </li>
                   ))}
@@ -129,7 +129,7 @@ export default function ProjectGallery() {
                   render={<Link href={`/projects/${project.slug}`} />}
                   variant="outline"
                   size="default"
-                  className="w-full justify-between group-hover:border-primary/50 group-hover:text-primary transition-colors font-medium text-xs rounded-lg"
+                  className="w-full justify-between border-neutral-200 dark:border-neutral-700 hover:bg-foreground hover:text-background hover:border-foreground transition-all font-medium text-xs rounded-xl"
                 >
                   <span>View Case Study &amp; Samples</span>
                   <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />

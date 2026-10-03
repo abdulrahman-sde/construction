@@ -30,15 +30,15 @@ export async function generateMetadata({
 
   if (!post) {
     return {
-      title: "Article Not Found | Construct Estimates",
+      title: "Article Not Found | Buildcraft360",
     };
   }
 
   return {
-    title: `${post.title} | Construct Estimates`,
+    title: `${post.title} | Buildcraft360`,
     description: post.excerpt,
     openGraph: {
-      title: `${post.title} | Construct Estimates`,
+      title: `${post.title} | Buildcraft360`,
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishedDate,
@@ -108,11 +108,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <Badge variant={post.badgeVariant} className="text-xs">
                     {post.category}
                   </Badge>
-                  <span className="text-xs text-muted-foreground font-mono flex items-center gap-1.5">
+                  <span className="text-xs text-muted-foreground font-sans flex items-center gap-1.5">
                     <Clock size={12} className="text-primary" />
                     <span>{post.readTime}</span>
                   </span>
-                  <span className="text-xs text-muted-foreground font-mono flex items-center gap-1.5">
+                  <span className="text-xs text-muted-foreground font-sans flex items-center gap-1.5">
                     <Calendar size={12} className="text-primary" />
                     <span>{post.date}</span>
                   </span>

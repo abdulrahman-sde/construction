@@ -48,21 +48,15 @@ export default function ServiceIntroSection({
       <div className="pt-2 space-y-5">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2.5 text-xs sm:text-sm font-normal text-foreground/85">
           <div className="flex items-center gap-2">
-            <span className="w-4 h-4 rounded-full bg-blue-50 text-primary flex items-center justify-center text-[10px] shrink-0 border border-blue-200/60">
-              <Check size={10} />
-            </span>
-            <span>24–48 Hours Delivery</span>
+            <Check size={16} className="text-primary shrink-0" />
+            <span>24-48 Hours Delivery</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-4 h-4 rounded-full bg-blue-50 text-primary flex items-center justify-center text-[10px] shrink-0 border border-blue-200/60">
-              <Check size={10} />
-            </span>
+            <Check size={16} className="text-primary shrink-0" />
             <span>RSMeans Zip-Code Pricing</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-4 h-4 rounded-full bg-blue-50 text-primary flex items-center justify-center text-[10px] shrink-0 border border-blue-200/60">
-              <Check size={10} />
-            </span>
+            <Check size={16} className="text-primary shrink-0" />
             <span>95% Bid Acceptance Rate</span>
           </div>
         </div>

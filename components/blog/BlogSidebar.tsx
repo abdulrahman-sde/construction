@@ -120,7 +120,7 @@ export default function BlogSidebar({ currentSlug }: BlogSidebarProps) {
                 <h5 className="font-serif font-normal text-xs sm:text-[13px] text-foreground leading-snug line-clamp-2 group-hover:text-primary transition-colors">
                   {post.title}
                 </h5>
-                <p className="font-mono text-[10.5px] text-muted-foreground">
+                <p className="font-sans text-[11px] text-muted-foreground">
                   {post.date}
                 </p>
               </div>
@@ -172,14 +172,14 @@ export default function BlogSidebar({ currentSlug }: BlogSidebarProps) {
             className="flex items-center gap-2.5 text-xs text-foreground/90 hover:text-primary transition-colors p-2 rounded-lg bg-background border border-border/60"
           >
             <Call size={13} className="text-primary shrink-0" />
-            <span className="font-mono text-[11.5px]">USA: (346) 660-2440</span>
+            <span className="font-sans text-[11.5px]">USA: (346) 660-2440</span>
           </a>
           <a
             href="tel:0455843274"
             className="flex items-center gap-2.5 text-xs text-foreground/90 hover:text-primary transition-colors p-2 rounded-lg bg-background border border-border/60"
           >
             <Call size={13} className="text-primary shrink-0" />
-            <span className="font-mono text-[11.5px]">AUS: 0455 843 274</span>
+            <span className="font-sans text-[11.5px]">AUS: 0455 843 274</span>
           </a>
         </div>
       </div>

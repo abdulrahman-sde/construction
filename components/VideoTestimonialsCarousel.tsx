@@ -25,7 +25,7 @@ const videoReviews: VideoReview[] = [
     thumbnail:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDVWvG1v7KDUODwmw5ebWw7lXsr4SGv3WbsXYTFart_B9WlImwf9yqk-nVvQ-Fil9cwrsIbGrZ8PqSPMAtYlu9vkAWiIB-E9N-rXGBS4yPkyK-H4A7V1KIqTaomuQ9URUmJ6yuaGThjzfypxbIqu-u3Vcp0rpdB1QdPwzicEPDAxZXR9Le3BvQlxWUBVEpCVdUsLS17RPZCgJ024NDlfHxfAJ4EahFOAOWDikKGaeiRdc6B-EhpPf8kzg",
     quote:
-      "Construct Estimates cut our takeoff turnaround in half without missing a single line item.",
+      "Buildcraft360 cut our takeoff turnaround in half without missing a single line item.",
   },
   {
     id: "matt-day",

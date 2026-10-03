@@ -21,10 +21,10 @@ export default function ProjectBlueprintViewer({
             <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
           </div>
-          <span className="font-mono text-xs text-slate-300">
+          <span className="font-sans text-xs text-slate-300">
             Sheet A-102_Markup_Overlay.pdf
           </span>
-          <span className="text-[10px] font-mono text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">
+          <span className="text-[10px] font-sans font-medium text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">
             Scale: 1/4&quot; = 1&apos;-0&quot;
           </span>
         </div>
@@ -66,14 +66,14 @@ export default function ProjectBlueprintViewer({
 
         {/* Floating Callout Badges to simulate real markups */}
         <div className="absolute top-6 left-6 z-10 hidden sm:block">
-          <div className="bg-slate-900/90 backdrop-blur-sm border border-primary/50 text-white px-3 py-1.5 rounded text-[11px] font-mono space-y-0.5 shadow-sm">
+          <div className="bg-slate-900/90 backdrop-blur-sm border border-primary/50 text-white px-3 py-1.5 rounded text-xs font-sans space-y-0.5 shadow-sm">
             <p className="text-primary font-normal">● Division Takeoff Layer Active</p>
             <p className="text-slate-300 text-[10px]">{project.title} Sheet Quantities</p>
           </div>
         </div>
 
         <div className="absolute bottom-4 right-4 z-10">
-          <div className="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-sm border border-slate-700 text-slate-200 px-3 py-1.5 rounded text-xs font-mono">
+          <div className="inline-flex items-center gap-2 bg-slate-900/90 backdrop-blur-sm border border-slate-700 text-slate-200 px-3 py-1.5 rounded text-xs font-sans">
             <Eye size={13} className="text-primary" />
             <span>Inspection-Ready Resolution</span>
           </div>
@@ -83,7 +83,7 @@ export default function ProjectBlueprintViewer({
       {/* Legend & CSI Trade Divisions Footer */}
       <div className="p-4 sm:p-5 bg-card border-t border-border flex flex-wrap items-center justify-between gap-4 text-xs">
         <div className="flex flex-wrap items-center gap-4">
-          <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+          <span className="font-sans text-xs font-medium uppercase tracking-wider text-muted-foreground">
             Plan Markup Color Legend:
           </span>
           <span className="inline-flex items-center gap-1.5 text-foreground font-normal">
@@ -104,7 +104,7 @@ export default function ProjectBlueprintViewer({
           </span>
         </div>
 
-        <span className="text-[11px] font-mono text-muted-foreground">
+        <span className="text-xs font-sans text-muted-foreground">
           Calibrated to 2026 RSMeans
         </span>
       </div>

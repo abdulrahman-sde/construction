@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Clock } from "reicon-react";
 
 export const metadata: Metadata = {
-  title: "Construction Estimating Projects Portfolio | Construct Estimates",
+  title: "Construction Estimating Projects Portfolio | Buildcraft360",
   description:
     "Explore our construction estimating and material takeoff project portfolio. Real plan markups, CSI division BOQs, and sample packages across residential, commercial, and civil infrastructure.",
 };
@@ -54,7 +54,7 @@ export default function OurProjectsPage() {
             Delivering audit-ready cost assessments, color-coded PDF plan markups, and CSI MasterFormat 16-division Excel workbooks across residential, commercial, and public works sectors.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-muted-foreground">
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4 text-xs font-sans text-muted-foreground">
             <span className="inline-flex items-center gap-1.5 bg-background border border-border px-3 py-1 rounded-md">
               <Clock size={12} className="text-primary" />
               24–48h Turnaround Available
@@ -77,9 +77,9 @@ export default function OurProjectsPage() {
           <ProjectGallery />
 
           {/* Sample Download Callout Card */}
-          <div className="rounded-xl border border-primary/30 bg-primary/[0.03] dark:bg-primary/[0.05] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="rounded-2xl border border-primary/25 bg-primary/[0.03] dark:bg-primary/[0.06] text-foreground p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
             <div className="space-y-2 max-w-xl text-center md:text-left">
-              <span className="text-[11px] font-mono uppercase tracking-wider text-primary">
+              <span className="text-xs font-sans font-medium uppercase tracking-wider text-primary">
                 Free Evaluation Package
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
@@ -93,9 +93,8 @@ export default function OurProjectsPage() {
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
               <Button
                 render={<Link href="/contact-us" />}
-                variant="default"
                 size="lg"
-                className="gap-2 text-xs font-medium rounded-lg"
+                className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
               >
                 <span>Upload Plans for 30% Off</span>
                 <ArrowRight size={13} />

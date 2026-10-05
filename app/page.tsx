@@ -5,7 +5,6 @@ import ServicesSection from "@/components/ServicesSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import { OutrankSection } from "@/components/Sections";
@@ -22,7 +21,6 @@ export default function Home() {
         <OutrankSection />
         <ProjectsSection />
         <TestimonialsSection />
-        <BlogSection />
         <ContactSection />
       </main>
       <Footer />

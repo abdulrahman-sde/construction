@@ -73,7 +73,7 @@ export default function WhyChooseSection() {
               <p className="font-sans text-muted-foreground text-sm sm:text-base font-normal mt-3 leading-relaxed">
                 We stand out from the competition regarding material takeoff and
                 construction estimating services. Here&apos;s why contractors
-                across North America &amp; Australia trust us:
+                across North America trust us:
               </p>
             </div>
 

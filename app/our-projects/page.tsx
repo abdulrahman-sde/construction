@@ -9,6 +9,7 @@ import ServicePreFooterBanner from "@/components/services/ServicePreFooterBanner
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Clock } from "reicon-react";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Construction Estimating Projects Portfolio | Buildcraft360",
@@ -92,11 +93,11 @@ export default function OurProjectsPage() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
               <Button
-                render={<Link href="/contact-us" />}
+                render={<a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" />}
                 size="lg"
                 className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
               >
-                <span>Upload Plans for 30% Off</span>
+                <span>Upload Plans via WhatsApp (30% Off)</span>
                 <ArrowRight size={13} />
               </Button>
             </div>

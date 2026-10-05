@@ -1,12 +1,47 @@
 "use client";
 
-import { ArrowRight, Gift } from "reicon-react";
+import { useState } from "react";
+import { ArrowRight, Gift, Check, ShieldCheck } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function ContactSection() {
+  const [result, setResult] = useState<string>("");
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setResult("");
+
+    const formData = new FormData(event.currentTarget);
+    formData.append("access_key", "ec5b7772-d3b4-4b10-9e19-48a58af8c5e7");
+    formData.append("from_name", "Buildcraft360 Homepage Takeoff Form");
+    formData.append("subject", "30% Off Estimate Request - Homepage / Service Section");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setIsSubmitted(true);
+        setResult("Success! Your plans have been submitted. Our senior estimator will review your sheets and send your 30% discounted quote within 2 hours.");
+      } else {
+        setResult(data.message || "An error occurred while submitting your plans. Please try again or email Info@buildcraft360.com.");
+      }
+    } catch {
+      setResult("Network error. Please verify your connection or email your plans directly to Info@buildcraft360.com.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section
       className="py-24 md:py-32 bg-slate-50/60 dark:bg-slate-950/30 text-foreground relative border-t border-border"
@@ -64,64 +99,125 @@ export default function ContactSection() {
               </div>
 
               <CardContent className="p-0">
-                <form
-                  className="space-y-4"
-                  onSubmit={(e) => e.preventDefault()}
-                >
-                  <div>
-                    <label className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5">
-                      Your Full Name
-                    </label>
-                    <Input
-                      placeholder="John Doe"
-                      type="text"
-                      className="h-10 text-xs bg-background"
-                    />
+                {isSubmitted ? (
+                  <div className="py-8 text-center space-y-4 animate-fade-in-up">
+                    <div className="size-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50 mx-auto flex items-center justify-center">
+                      <Check size={24} />
+                    </div>
+                    <div className="space-y-1.5 max-w-sm mx-auto">
+                      <h4 className="font-serif font-normal text-lg text-foreground">
+                        Estimate Request Received
+                      </h4>
+                      <p className="text-xs text-muted-foreground font-normal leading-relaxed">
+                        {result}
+                      </p>
+                    </div>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setIsSubmitted(false)}
+                      className="text-xs cursor-pointer"
+                    >
+                      Submit Another Request
+                    </Button>
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ) : (
+                  <form className="space-y-4" onSubmit={onSubmit}>
                     <div>
-                      <label className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5">
-                        Phone Number
+                      <label
+                        htmlFor="cs-name"
+                        className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
+                      >
+                        Your Full Name <span className="text-primary">*</span>
                       </label>
                       <Input
-                        placeholder="(346) 000-0000"
-                        type="tel"
+                        id="cs-name"
+                        name="name"
+                        required
+                        placeholder="John Doe"
+                        type="text"
                         className="h-10 text-xs bg-background"
                       />
                     </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          htmlFor="cs-phone"
+                          className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
+                        >
+                          Phone Number <span className="text-primary">*</span>
+                        </label>
+                        <Input
+                          id="cs-phone"
+                          name="phone"
+                          required
+                          placeholder="(346) 000-0000"
+                          type="tel"
+                          className="h-10 text-xs bg-background"
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="cs-email"
+                          className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
+                        >
+                          Your Email <span className="text-primary">*</span>
+                        </label>
+                        <Input
+                          id="cs-email"
+                          name="email"
+                          required
+                          placeholder="contractor@build.com"
+                          type="email"
+                          className="h-10 text-xs bg-background"
+                        />
+                      </div>
+                    </div>
                     <div>
-                      <label className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5">
-                        Your Email
+                      <label
+                        htmlFor="cs-drawings"
+                        className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
+                      >
+                        Upload Drawings / Plan Link
                       </label>
                       <Input
-                        placeholder="contractor@build.com"
-                        type="email"
+                        id="cs-drawings"
+                        name="drawing_link"
+                        placeholder="Paste Dropbox / Google Drive link"
+                        type="text"
                         className="h-10 text-xs bg-background"
                       />
                     </div>
-                  </div>
-                  <div>
-                    <label className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5">
-                      Upload Drawings / Plan Link
-                    </label>
-                    <Input
-                      placeholder="Paste Dropbox / Google Drive link"
-                      type="text"
-                      className="h-10 text-xs bg-background"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="xl"
-                    className="w-full justify-center text-sm py-3.5 shadow-xs"
-                  >
-                    <span>Request Your Discounted Estimate &amp; Save 30%</span>
-                    <ArrowRight size={14} />
-                  </Button>
-                  <p className="text-[11px] text-center text-muted-foreground mt-2 font-normal">
-                    100% Confidentiality Guaranteed. NDA available on request.
-                  </p>
-                </form>
+
+                    {result && !isSubmitted && (
+                      <div className="p-3 rounded-lg bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800/40 text-xs leading-relaxed animate-fade-in-up">
+                        <p>{result}</p>
+                      </div>
+                    )}
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      size="xl"
+                      className="w-full justify-center text-sm py-3.5 shadow-xs cursor-pointer"
+                    >
+                      {isSubmitting ? (
+                        <span>Submitting Request...</span>
+                      ) : (
+                        <span className="flex items-center gap-2">
+                          <span>Request Your Discounted Estimate &amp; Save 30%</span>
+                          <ArrowRight size={14} />
+                        </span>
+                      )}
+                    </Button>
+
+                    <div className="pt-1 flex items-center justify-center gap-2 text-[11px] text-muted-foreground font-normal">
+                      <ShieldCheck size={13} className="text-primary" />
+                      <span>100% Confidentiality Guaranteed. NDA available on request.</span>
+                    </div>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </div>

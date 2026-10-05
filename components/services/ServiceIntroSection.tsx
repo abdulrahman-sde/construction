@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 interface ServiceIntroSectionProps {
   badge: string;
@@ -63,7 +64,13 @@ export default function ServiceIntroSection({
 
         <div>
           <Button
-            render={<Link href="#contact" />}
+            render={
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
             size="lg"
             className="shadow-xs font-medium text-xs sm:text-sm"
           >

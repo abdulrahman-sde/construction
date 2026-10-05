@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 interface ServicePillar {
   number: string;
@@ -224,11 +225,17 @@ export default function ServicesSection() {
               </p>
               <div className="pt-2">
                 <Button
-                  render={<Link href="#contact" />}
+                  render={
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
                   size="lg"
                   className="font-medium gap-2 shadow-xs px-7"
                 >
-                  <span>Contact Us</span>
+                  <span>Chat on WhatsApp</span>
                   <ArrowRight size={15} />
                 </Button>
               </div>

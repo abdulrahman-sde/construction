@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Star, ArrowRight, CheckCircle } from "reicon-react";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 interface Testimonial {
   quote: string;
@@ -123,11 +124,17 @@ export default function TestimonialsSection() {
             </p>
           </div>
           <Button
-            render={<Link href="#contact" />}
+            render={
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
             size="default"
             className="bg-white text-neutral-950 hover:bg-neutral-100 gap-2 shrink-0 font-medium"
           >
-            <span>Get a Quote</span>
+            <span>Get a Quote on WhatsApp</span>
             <ArrowRight size={13} />
           </Button>
         </div>

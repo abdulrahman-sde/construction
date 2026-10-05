@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronRight } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const trades = [
   {
@@ -366,7 +367,13 @@ export default function TakeoffSection() {
                   </p>
                 </div>
                 <Button
-                  render={<Link href="#contact" />}
+                  render={
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
                   size="default"
                   className="bg-white text-slate-900 font-medium text-xs px-4"
                 >

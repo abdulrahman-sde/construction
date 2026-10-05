@@ -168,18 +168,11 @@ export default function BlogSidebar({ currentSlug }: BlogSidebarProps) {
 
         <div className="space-y-2 pt-1">
           <a
-            href="tel:+13466602440"
+            href="tel:+13468612915"
             className="flex items-center gap-2.5 text-xs text-foreground/90 hover:text-primary transition-colors p-2 rounded-lg bg-background border border-border/60"
           >
             <Call size={13} className="text-primary shrink-0" />
-            <span className="font-sans text-[11.5px]">USA: (346) 660-2440</span>
-          </a>
-          <a
-            href="tel:0455843274"
-            className="flex items-center gap-2.5 text-xs text-foreground/90 hover:text-primary transition-colors p-2 rounded-lg bg-background border border-border/60"
-          >
-            <Call size={13} className="text-primary shrink-0" />
-            <span className="font-sans text-[11.5px]">AUS: 0455 843 274</span>
+            <span className="font-sans text-[11.5px]">(346) 861-2915</span>
           </a>
         </div>
       </div>

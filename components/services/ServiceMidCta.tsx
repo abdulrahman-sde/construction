@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Clock } from "reicon-react";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 interface ServiceMidCtaProps {
   badgeText?: string;
@@ -38,7 +39,13 @@ export default function ServiceMidCta({
 
         <div className="shrink-0 w-full md:w-auto">
           <Button
-            render={<Link href="#contact" />}
+            render={
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
             size="default"
             className="w-full md:w-auto bg-white text-primary hover:bg-neutral-100 font-medium px-5 py-2 text-xs sm:text-sm shadow-xs rounded-xl"
           >

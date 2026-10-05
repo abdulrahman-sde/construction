@@ -26,6 +26,7 @@ export interface ProjectCaseStudy {
   samplePdfName: string;
   sampleFileSize: string;
   imageSrc: string;
+  tradeIcon?: string;
   stats: ProjectStat[];
   overviewText: string[];
   challenges: string;
@@ -61,7 +62,8 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     samplePdfName: "Sample_Residential_Takeoff_Package.pdf",
     sampleFileSize: "4.8 MB",
-    imageSrc: "/assets/trades/concrete.svg",
+    imageSrc: "/assets/images/projects/residential-buildings.jpg",
+    tradeIcon: "/assets/trades/concrete.svg",
     stats: [
       { label: "Turnaround Time", value: "36 Hours" },
       { label: "Cost Accuracy Rate", value: "99.2%" },
@@ -142,7 +144,8 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     samplePdfName: "Sample_Commercial_Building_Takeoff.pdf",
     sampleFileSize: "6.2 MB",
-    imageSrc: "/assets/trades/metal.svg",
+    imageSrc: "/assets/images/projects/commercial-buildings.jpg",
+    tradeIcon: "/assets/trades/metal.svg",
     stats: [
       { label: "Turnaround Time", value: "48 Hours" },
       { label: "Cost Accuracy Rate", value: "99.5%" },
@@ -223,7 +226,8 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     samplePdfName: "Sample_Civil_Earthwork_Utility_Takeoff.pdf",
     sampleFileSize: "7.1 MB",
-    imageSrc: "/assets/trades/sitework.svg",
+    imageSrc: "/assets/images/projects/civil-construction.jpg",
+    tradeIcon: "/assets/trades/sitework.svg",
     stats: [
       { label: "Earthwork Precision", value: "+/- 1.5%" },
       { label: "Turnaround Time", value: "48 Hours" },
@@ -297,7 +301,8 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     samplePdfName: "Sample_Custom_Home_Takeoff.pdf",
     sampleFileSize: "4.1 MB",
-    imageSrc: "/assets/trades/lumber.svg",
+    imageSrc: "/assets/images/projects/home-construction.jpg",
+    tradeIcon: "/assets/trades/lumber.svg",
     stats: [
       { label: "Turnaround Time", value: "24 Hours" },
       { label: "Lumber Waste Factor", value: "< 5% Target" },
@@ -371,7 +376,8 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     samplePdfName: "Sample_Bridge_Infrastructure_Takeoff.pdf",
     sampleFileSize: "8.4 MB",
-    imageSrc: "/assets/trades/mep.svg",
+    imageSrc: "/assets/images/projects/bridge-construction.jpg",
+    tradeIcon: "/assets/trades/mep.svg",
     stats: [
       { label: "Turnaround Time", value: "48 Hours" },
       { label: "DOT Compliance", value: "100% Guaranteed" },
@@ -445,7 +451,8 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     samplePdfName: "Sample_Kitchen_Remodel_Takeoff.pdf",
     sampleFileSize: "3.7 MB",
-    imageSrc: "/assets/trades/interior.svg",
+    imageSrc: "/assets/images/projects/kitchen-construction.jpg",
+    tradeIcon: "/assets/trades/interior.svg",
     stats: [
       { label: "Turnaround Time", value: "24 Hours" },
       { label: "Millwork Accuracy", value: "100% Itemized" },

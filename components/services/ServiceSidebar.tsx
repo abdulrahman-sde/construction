@@ -10,6 +10,7 @@ import {
   Check,
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/contact";
  
 interface ServiceSidebarProps {
   currentSlug?: string;
@@ -39,12 +40,18 @@ export default function ServiceSidebar({ currentSlug: _currentSlug }: ServiceSid
 
           <div className="pt-1">
             <Button
-              render={<Link href="#contact" />}
+              render={
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               size="default"
               className="w-full bg-white text-slate-900 hover:bg-slate-100 font-medium text-xs shadow-xs rounded-lg justify-center"
             >
               <span className="flex items-center justify-center gap-2">
-                <span>Upload Plans Now</span>
+                <span>Upload Plans via WhatsApp</span>
                 <ArrowRight size={13} />
               </span>
             </Button>
@@ -81,28 +88,15 @@ export default function ServiceSidebar({ currentSlug: _currentSlug }: ServiceSid
 
         <div className="space-y-2 text-xs text-foreground/80 font-normal">
           <a
-            href="tel:+13466602440"
+            href="tel:+13468612915"
             className="flex items-center gap-2.5 p-2 rounded-xl bg-card border border-border/80"
           >
             <div className="w-6 h-6 rounded-md bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80">
               <Call size={12} />
             </div>
             <div>
-              <div className="text-[10px] text-muted-foreground font-normal uppercase">USA Office</div>
-              <div className="text-foreground font-normal">(346) 660-2440</div>
-            </div>
-          </a>
-
-          <a
-            href="tel:0455843274"
-            className="flex items-center gap-2.5 p-2 rounded-xl bg-card border border-border/80"
-          >
-            <div className="w-6 h-6 rounded-md bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80">
-              <Call size={12} />
-            </div>
-            <div>
-              <div className="text-[10px] text-muted-foreground font-normal uppercase">Australia Office</div>
-              <div className="text-foreground font-normal">0455 843 274</div>
+              <div className="text-[10px] text-muted-foreground font-normal uppercase">Direct Phone</div>
+              <div className="text-foreground font-normal">(346) 861-2915</div>
             </div>
           </a>
 
@@ -127,12 +121,18 @@ export default function ServiceSidebar({ currentSlug: _currentSlug }: ServiceSid
             Mon – Sat: 9:00 AM – 10:00 PM
           </div>
           <Button
-            render={<Link href="#contact" />}
+            render={
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
             variant="outline"
             size="sm"
             className="w-full font-medium text-xs border-border bg-card hover:bg-muted/40"
           >
-            <span>Request A Call Back</span>
+            <span>Chat on WhatsApp</span>
           </Button>
         </div>
       </div>

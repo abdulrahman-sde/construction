@@ -8,9 +8,10 @@ import ProjectsPublicTrustBar from "@/components/projects/ProjectsPublicTrustBar
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check, Clock, ShieldCheck, ArrowRight, WalletCheck } from "reicon-react";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Our Pricing & Packages | Construct Estimates - $50 Single Trade & Monthly Plans",
+  title: "Our Pricing & Packages | Buildcraft360 - $50 Single Trade & Monthly Plans",
   description:
     "Explore transparent construction estimating pricing: $50 single-trade takeoffs, mid-sized packages ($199–$500), and monthly dedicated estimator plans saving up to 60% in overhead.",
 };
@@ -216,7 +217,7 @@ export default function OurPricingPage() {
 
               <div className="pt-4">
                 <Button
-                  render={<Link href="/contact-us" />}
+                  render={<a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" />}
                   variant={tier.popular ? "default" : "outline"}
                   size="default"
                   className="w-full text-xs font-medium rounded-lg justify-center"
@@ -276,11 +277,11 @@ export default function OurPricingPage() {
 
           <div className="flex items-center gap-3 shrink-0">
             <Button
-              render={<Link href="/contact-us" />}
+              render={<a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" />}
               size="lg"
               className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
             >
-              <span>Upload Plans for 30% Off</span>
+              <span>Upload Plans via WhatsApp (30% Off)</span>
               <ArrowRight size={13} />
             </Button>
           </div>

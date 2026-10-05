@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Newsreader } from "next/font/google";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const geist = Geist({
@@ -49,6 +50,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-foreground selection:text-background font-normal">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

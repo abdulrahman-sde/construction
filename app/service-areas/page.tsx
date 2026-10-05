@@ -7,6 +7,7 @@ import ServicePreFooterBanner from "@/components/services/ServicePreFooterBanner
 import ProjectsPublicTrustBar from "@/components/projects/ProjectsPublicTrustBar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/contact";
 import {
   Global,
   Clock,
@@ -247,7 +248,7 @@ export default function ServiceAreasPage() {
               Serving Canadian General Contractors &amp; Trade Specialists
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground font-sans font-normal max-w-3xl leading-relaxed">
-              With an office in Oshawa, Ontario, we support general contractors bidding across Ontario, Alberta, and British Columbia with metric and imperial takeoff schedules conforming to MasterFormat Canadian editions.
+              We support general contractors bidding across Ontario, Alberta, and British Columbia with metric and imperial takeoff schedules conforming to MasterFormat Canadian editions.
             </p>
           </div>
 
@@ -289,11 +290,17 @@ export default function ServiceAreasPage() {
 
           <div className="flex items-center gap-3 shrink-0">
             <Button
-              render={<Link href="/contact-us" />}
+              render={
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               size="lg"
               className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
             >
-              <span>Upload Plans for 30% Off</span>
+              <span>Upload Plans via WhatsApp</span>
               <ArrowRight size={13} />
             </Button>
           </div>

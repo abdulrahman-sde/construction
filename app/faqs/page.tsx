@@ -14,9 +14,10 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { Clock, ShieldCheck, ArrowRight, CircleInfo } from "reicon-react";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions (FAQ) | Construct Estimates",
+  title: "Frequently Asked Questions (FAQ) | Buildcraft360",
   description:
     "Find answers to common questions about our construction estimating services: turnaround times, pricing databases (RSMeans, Craftsman), revisions, and deliverables.",
 };
@@ -26,14 +27,14 @@ const FAQ_CATEGORIES = [
     category: "Pricing & Billing",
     faqs: [
       {
-        question: "How much does it cost to get an estimate from Construct Estimates?",
+        question: "How much does it cost to get an estimate from Buildcraft360?",
         answer:
-          "At Construct Estimates, every quote is calibrated to the scope and size of your drawings. For smaller, single-trade projects that take a few hours to quantify, our pricing starts at $50. Mid-sized residential homes or commercial renovations fall in the $199 to $500 range, while larger ground-up commercial and civil projects are usually $800 or more. You can upload plans for a free, exact quote with 30% new client credit applied.",
+          "At Buildcraft360, every quote is calibrated to the scope and size of your drawings. For smaller, single-trade projects that take a few hours to quantify, our pricing starts at $50. Mid-sized residential homes or commercial renovations fall in the $199 to $500 range, while larger ground-up commercial and civil projects are usually $800 or more. You can upload plans for a free, exact quote with 30% new client credit applied.",
       },
       {
         question: "Where do you get your material, labor, and equipment prices from?",
         answer:
-          "Our cost data is powered by the Craftsman National Construction Estimator Database Suite and RSMeans Data 2026. These databases are updated continuously throughout the year and calibrated to your project's specific five-digit zip code in the USA or postal code in Australia, ensuring localized union and non-union prevailing wages and true material costs.",
+          "Our cost data is powered by the Craftsman National Construction Estimator Database Suite and RSMeans Data 2026. These databases are updated continuously throughout the year and calibrated to your project's specific five-digit zip code in the USA, ensuring localized union and non-union prevailing wages and true material costs.",
       },
       {
         question: "Do you charge extra for amendments, minor changes, or revisions?",
@@ -58,7 +59,7 @@ const FAQ_CATEGORIES = [
       {
         question: "Can you accommodate expedited or emergency same-day bids?",
         answer:
-          "Yes. For time-sensitive bids closing in 12–24 hours, we can assign a multi-estimator team to fast-track your takeoff. Please contact us directly by phone at (346) 660-2440 to arrange emergency expedited delivery.",
+          "Yes. For time-sensitive bids closing in 12–24 hours, we can assign a multi-estimator team to fast-track your takeoff. Please contact us directly via WhatsApp or call +1 (346) 861-2915 to arrange emergency expedited delivery.",
       },
     ],
   },
@@ -103,7 +104,7 @@ const FAQ_CATEGORIES = [
       {
         question: "Are your estimators certified and insured?",
         answer:
-          "Yes. All of our senior estimators and quantity surveyors are certified by the American Association of Cost Engineers (AACE International) and the Australian Institute of Quantity Surveyors (AIQS), ensuring the highest standard of professional compliance.",
+          "Yes. All of our senior estimators and quantity surveyors are certified by the American Association of Cost Engineers (AACE International) and the American Society of Professional Estimators (ASPE), ensuring the highest standard of professional compliance.",
       },
     ],
   },
@@ -209,11 +210,11 @@ export default function FaqsPage() {
 
           <div className="flex items-center gap-3 shrink-0">
             <Button
-              render={<Link href="/contact-us" />}
+              render={<a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" />}
               size="lg"
               className="font-medium px-6 shadow-xs gap-2 text-xs rounded-xl"
             >
-              <span>Contact Us for Assistance</span>
+              <span>Chat with Us on WhatsApp</span>
               <ArrowRight size={13} />
             </Button>
           </div>

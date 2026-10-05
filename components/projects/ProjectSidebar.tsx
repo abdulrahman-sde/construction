@@ -14,6 +14,7 @@ import {
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import { ProjectCaseStudy } from "@/lib/projects-data";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 interface ProjectSidebarProps {
   project: ProjectCaseStudy;
@@ -151,12 +152,18 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
 
           <div className="pt-1">
             <Button
-              render={<Link href="#contact" />}
+              render={
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               size="default"
               className="w-full bg-white text-slate-900 hover:bg-slate-100 font-medium text-xs shadow-xs rounded-lg justify-center"
             >
               <span className="flex items-center justify-center gap-2">
-                <span>Upload Plans for Quote</span>
+                <span>Upload Plans via WhatsApp</span>
                 <ArrowRight size={13} />
               </span>
             </Button>
@@ -165,11 +172,11 @@ export default function ProjectSidebar({ project }: ProjectSidebarProps) {
           {/* Direct Contact Links */}
           <div className="pt-3 border-t border-slate-800 space-y-2 text-xs">
             <a
-              href="tel:3466602440"
+              href="tel:+13468612915"
               className="flex items-center gap-2.5 text-slate-300 hover:text-white transition-colors"
             >
               <Call size={14} className="text-primary shrink-0" />
-              <span>(346) 660-2440</span>
+              <span>(346) 861-2915</span>
             </a>
             <a
               href="mailto:Info@buildcraft360.com"

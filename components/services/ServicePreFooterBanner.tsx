@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Call, Clock, ShieldCheck } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export default function ServicePreFooterBanner() {
   return (
@@ -25,25 +26,31 @@ export default function ServicePreFooterBanner() {
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Button
-              render={<Link href="#contact" />}
+              render={
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               size="lg"
               className="shadow-xs font-medium text-xs sm:text-sm"
             >
               <span className="flex items-center gap-2">
-                <span>Upload Plans &amp; Blueprints</span>
+                <span>Upload Plans via WhatsApp</span>
                 <ArrowRight size={14} />
               </span>
             </Button>
 
             <Button
-              render={<a href="tel:+13466602440" />}
+              render={<a href="tel:+13468612915" />}
               variant="outline"
               size="lg"
               className="font-medium text-xs sm:text-sm border-border bg-background hover:bg-muted/40"
             >
               <span className="flex items-center gap-2">
                 <Call size={14} />
-                <span>Call (346) 660-2440</span>
+                <span>Call (346) 861-2915</span>
               </span>
             </Button>
           </div>

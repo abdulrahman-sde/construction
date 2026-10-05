@@ -7,6 +7,7 @@ import ServicePreFooterBanner from "@/components/services/ServicePreFooterBanner
 import ProjectsPublicTrustBar from "@/components/projects/ProjectsPublicTrustBar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/contact";
 import {
   ShieldCheck,
   Award,
@@ -19,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "About Us | Buildcraft360 - Construction Estimating, Planning & Architectural Services",
   description:
-    "Learn about Buildcraft360: 10+ certified cost estimators, planners, and architects, 5,000+ completed projects, and over 300 satisfied clients across North America and Australia.",
+    "Learn about Buildcraft360: 10+ certified cost estimators, planners, and architects, 5,000+ completed projects, and over 300 satisfied clients across North America.",
 };
 
 const STATS = [
@@ -142,7 +143,7 @@ export default function AboutUsPage() {
             <div className="pt-2 flex flex-wrap gap-4 text-xs font-sans text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <Check size={14} className="text-primary" />
-                AACE &amp; AIQS Certified
+                AACE &amp; CPE Certified
               </span>
               <span className="flex items-center gap-1.5">
                 <Check size={14} className="text-primary" />
@@ -198,11 +199,11 @@ export default function AboutUsPage() {
 
               <div className="pt-2">
                 <Button
-                  render={<Link href="/contact-us" />}
+                  render={<a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" />}
                   size="default"
                   className="bg-white text-slate-900 hover:bg-slate-100 font-medium text-xs rounded-lg gap-2"
                 >
-                  <span>Request a Custom Quote</span>
+                  <span>Request a Custom Quote on WhatsApp</span>
                   <ArrowRight size={13} />
                 </Button>
               </div>

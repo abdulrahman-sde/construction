@@ -1,39 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "reicon-react";
+import { ArrowRight, Clock } from "reicon-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-
-const projects = [
-  {
-    src: "/assets/images/project-1.png",
-    alt: "Commercial Office Complex Estimating",
-    category: "Commercial Estate",
-    title: "Commercial Office Complex",
-    scope: "Complete Framing, Concrete & Finish Takeoff",
-  },
-  {
-    src: "/assets/images/project-2.png",
-    alt: "Waterfront Modern Villa Residence",
-    category: "Residential Luxury",
-    title: "Waterfront Modern Villa",
-    scope: "Glazing, Structural Steel & MEP",
-  },
-  {
-    src: "/assets/images/project-3.png",
-    alt: "Sunset Valley Condominiums",
-    category: "Multi-Family",
-    title: "Sunset Valley Condos",
-    scope: "Full Bid Package & Subcontractor Audit",
-  },
-  {
-    src: "/assets/images/project-4.png",
-    alt: "Austin Urban Mixed-Use Lofts",
-    category: "Commercial Retail",
-    title: "Austin Urban Lofts",
-    scope: "Sitework, Earthwork & Drywall Package",
-  },
-];
+import { ALL_PROJECTS } from "@/lib/projects-data";
 
 export default function ProjectsSection() {
   return (
@@ -42,7 +11,7 @@ export default function ProjectsSection() {
       id="projects"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 md:mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-14">
           <div className="space-y-2.5 max-w-2xl">
             <span className="text-xs font-sans font-medium uppercase tracking-wider text-muted-foreground block">
               Featured Case Studies
@@ -52,9 +21,7 @@ export default function ProjectsSection() {
               <span className="font-normal text-primary">Clients</span>
             </h2>
             <p className="font-sans text-muted-foreground text-xs sm:text-sm font-normal leading-relaxed">
-              Our mission for construction estimation is to deliver precise and
-              reliable cost assessments, enabling informed decision-making,
-              optimal budgeting, and seamless project execution.
+              Explore our real-world takeoff packages and CSI MasterFormat cost assessments delivered for general contractors, builders, and trade subcontractors.
             </p>
           </div>
           <Button
@@ -68,32 +35,55 @@ export default function ProjectsSection() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
-          {projects.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-2xl overflow-hidden bg-card text-card-foreground shadow-sm relative aspect-[4/5] flex flex-col justify-end p-5 border border-neutral-200/90 dark:border-neutral-800"
+        {/* 6 Projects Grid with Authentic Reference Site Imagery */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {ALL_PROJECTS.map((project, index) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="group relative rounded-2xl overflow-hidden bg-slate-900 border border-neutral-200/90 dark:border-neutral-800 shadow-xs hover:border-primary/50 transition-all duration-300 aspect-[4/3] sm:aspect-[16/11] flex flex-col justify-between p-5 sm:p-6"
             >
+              {/* Project Image */}
               <Image
-                alt={p.alt}
-                className="absolute inset-0 object-cover"
+                src={project.imageSrc}
+                alt={project.title}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 25vw, 300px"
-                src={p.src}
+                loading={index < 3 ? "eager" : "lazy"}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-              <div className="relative z-10 text-white space-y-1">
-                <span className="inline-block text-[10px] uppercase font-sans font-medium tracking-wider px-2 py-0.5 rounded bg-white/20 text-white backdrop-blur-sm">
-                  {p.category}
+
+              {/* Dark Gradient Overlay for optimal editorial legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15 group-hover:via-black/55 transition-colors duration-300" />
+
+              {/* Top Meta Bar: Category + Turnaround Time */}
+              <div className="relative z-10 flex items-center justify-between gap-2">
+                <span className="inline-block text-[11px] uppercase font-sans font-medium tracking-wider px-2.5 py-0.5 rounded-md bg-white/20 text-white backdrop-blur-md border border-white/10">
+                  {project.category}
                 </span>
-                <h4 className="font-medium text-sm text-white pt-1">
-                  {p.title}
-                </h4>
-                <p className="text-[11px] text-white/80 font-normal leading-snug">
-                  {p.scope}
-                </p>
+                <span className="inline-flex items-center gap-1 text-[11px] font-sans text-white/90 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-md border border-white/10">
+                  <Clock size={11} className="text-primary" />
+                  <span>{project.turnaroundTime}</span>
+                </span>
               </div>
-            </div>
+
+              {/* Bottom Content: Title, Summary & CTA Link */}
+              <div className="relative z-10 text-white space-y-1.5 pt-6">
+                <h3 className="font-serif font-normal text-xl sm:text-2xl text-white tracking-tight leading-snug group-hover:text-blue-100 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-xs text-white/80 font-normal leading-relaxed line-clamp-2">
+                  {project.summary}
+                </p>
+                <div className="pt-1.5 flex items-center gap-1.5 text-xs font-sans font-medium text-white/90 group-hover:text-white">
+                  <span>View Case Study</span>
+                  <ArrowRight
+                    size={12}
+                    className="group-hover:translate-x-1 transition-transform duration-200"
+                  />
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

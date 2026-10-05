@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Check, Shield2, Headset, TickCircle, ArrowRight } from "reicon-react";
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 const checklistItems = [
   "Any Trade or Any Kind of Project",
@@ -58,7 +59,13 @@ export default function HeroSection() {
             {/* CTA Button */}
             <div className="pt-2">
               <Button
-                render={<Link href="#contact" />}
+                render={
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
                 size="xl"
                 className="shadow-sm font-medium"
               >

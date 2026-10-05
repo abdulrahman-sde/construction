@@ -17,4 +17,6 @@ export const CONTACT_INFO = {
   linkedinUrl: "https://www.linkedin.com/company/buildcraft360/",
 } as const;
 
+export const WEB3FORMS_ACCESS_KEY = "43a6bde4-2e4e-40a4-85b5-2575bfd9e326";
+
 export const WHATSAPP_URL = CONTACT_INFO.whatsappUrl;

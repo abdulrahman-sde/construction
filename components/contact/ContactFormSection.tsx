@@ -17,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { WEB3FORMS_ACCESS_KEY } from "@/lib/contact";
 
 const TRADES = [
   "General Contracting / Full Build",
@@ -79,7 +80,7 @@ export default function ContactFormSection() {
     setTrackingRef(refId);
 
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", "ec5b7772-d3b4-4b10-9e19-48a58af8c5e7");
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
     formData.append("from_name", "Buildcraft360 Takeoff Portal");
     formData.append("subject", `New Takeoff Request: ${quoteData.fullName || "Contractor"} - 30% Off`);
     formData.append("trade_scope", selectedTrade);
@@ -114,7 +115,7 @@ export default function ContactFormSection() {
     setTrackingRef(refId);
 
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", "ec5b7772-d3b4-4b10-9e19-48a58af8c5e7");
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
     formData.append("from_name", "Buildcraft360 Contact Portal");
     formData.append("subject", `General Inquiry: ${generalData.subject} from ${generalData.fullName || "Visitor"}`);
     formData.append("tracking_reference", refId);

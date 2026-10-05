@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import { WEB3FORMS_ACCESS_KEY } from "@/lib/contact";
 
 export default function ContactSection() {
   const [result, setResult] = useState<string>("");
@@ -18,7 +19,7 @@ export default function ContactSection() {
     setResult("");
 
     const formData = new FormData(event.currentTarget);
-    formData.append("access_key", "ec5b7772-d3b4-4b10-9e19-48a58af8c5e7");
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
     formData.append("from_name", "Buildcraft360 Homepage Takeoff Form");
     formData.append("subject", "30% Off Estimate Request - Homepage / Service Section");
 

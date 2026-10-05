@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, Check, ShieldCheck } from "reicon-react";
 import { Button } from "@/components/ui/button";
+import { WEB3FORMS_ACCESS_KEY } from "@/lib/contact";
 
 interface ContactFormProps {
   className?: string;
@@ -19,9 +20,9 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
     setIsSubmitting(true);
     setResult("");
 
-    const formData = new FormData(event.currentTarget);
-    formData.append("access_key", "ec5b7772-d3b4-4b10-9e19-48a58af8c5e7");
-    formData.append("from_name", "Buildcraft360 Website Lead");
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -32,15 +33,16 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
       const data = await response.json();
       if (data.success) {
         setIsSuccess(true);
-        setResult("Success! Your message has been sent. Our estimating team will reply within 2 hours.");
+        setResult("Success! Your message has been sent.");
+        form.reset();
         if (onSuccess) onSuccess();
       } else {
         setIsSuccess(false);
-        setResult(data.message || "An error occurred while sending your message. Please try again.");
+        setResult(data.message || "Error");
       }
     } catch {
       setIsSuccess(false);
-      setResult("Network error. Please check your connection and try again.");
+      setResult("Error");
     } finally {
       setIsSubmitting(false);
     }
@@ -50,13 +52,13 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
     <form onSubmit={onSubmit} className={`space-y-4 ${className}`}>
       <div>
         <label
-          htmlFor="cf-name"
+          htmlFor="name"
           className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
         >
           Your Name <span className="text-primary">*</span>
         </label>
         <input
-          id="cf-name"
+          id="name"
           type="text"
           name="name"
           required
@@ -67,13 +69,13 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
 
       <div>
         <label
-          htmlFor="cf-email"
+          htmlFor="email"
           className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
         >
           Email Address <span className="text-primary">*</span>
         </label>
         <input
-          id="cf-email"
+          id="email"
           type="email"
           name="email"
           required
@@ -84,18 +86,18 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
 
       <div>
         <label
-          htmlFor="cf-message"
+          htmlFor="message"
           className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
         >
-          Message / Project Scope <span className="text-primary">*</span>
+          Message <span className="text-primary">*</span>
         </label>
         <textarea
-          id="cf-message"
+          id="message"
           name="message"
           required
-          rows={4}
-          placeholder="Please describe your project scope, trade requirements, or questions..."
-          className="w-full rounded-lg border border-input bg-background p-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary transition-colors"
+          rows={5}
+          placeholder="How can we help with your estimating or construction project?"
+          className="w-full rounded-lg border border-input bg-background p-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary transition-colors resize-y"
         />
       </div>
 
@@ -106,10 +108,10 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
         className="w-full justify-center text-xs sm:text-sm py-3.5 shadow-xs font-medium cursor-pointer"
       >
         {isSubmitting ? (
-          <span>Sending...</span>
+          <span>Submitting...</span>
         ) : (
           <span className="flex items-center gap-2">
-            <span>Send Message</span>
+            <span>Submit</span>
             <ArrowRight size={14} />
           </span>
         )}
@@ -117,7 +119,7 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
 
       {result && (
         <div
-          className={`p-3 rounded-xl border text-xs leading-relaxed flex items-start gap-2 animate-fade-in-up ${
+          className={`p-3.5 rounded-xl border text-xs leading-relaxed flex items-start gap-2 animate-fade-in-up ${
             isSuccess
               ? "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/40"
               : "bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-800/40"
@@ -130,7 +132,7 @@ export default function ContactForm({ className = "", onSuccess }: ContactFormPr
 
       <div className="flex items-center justify-center gap-2 text-[11px] text-muted-foreground font-normal">
         <ShieldCheck size={13} className="text-primary" />
-        <span>100% Privacy Protected. Never Shared.</span>
+        <span>100% Confidential. We respect your privacy.</span>
       </div>
     </form>
   );

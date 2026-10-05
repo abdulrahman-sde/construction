@@ -1,47 +1,8 @@
-"use client";
-
-import { useState } from "react";
-import { ArrowRight, Check, Message, Call } from "reicon-react";
-import { Button } from "@/components/ui/button";
+import { Message, Call } from "reicon-react";
 import { WHATSAPP_URL } from "@/lib/contact";
+import ContactForm from "@/components/ContactForm";
 
 export default function MinimalContactSection() {
-  const [result, setResult] = useState<string>("");
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
-
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSubmitting(true);
-    setResult("");
-
-    const formData = new FormData(event.currentTarget);
-    formData.append("access_key", "ec5b7772-d3b4-4b10-9e19-48a58af8c5e7");
-    formData.append("from_name", "Buildcraft360 Contact Page");
-    formData.append("subject", `New Contact Inquiry from ${formData.get("name") || "Website Visitor"}`);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-      if (data.success) {
-        setIsSuccess(true);
-        setResult("Thank you! Your message has been sent successfully. We'll be in touch shortly.");
-        (event.target as HTMLFormElement).reset();
-      } else {
-        setIsSuccess(false);
-        setResult(data.message || "Failed to send message. Please try again or email us directly.");
-      }
-    } catch {
-      setIsSuccess(false);
-      setResult("Network error. Please check your connection and try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="w-full max-w-5xl mx-auto">
@@ -187,96 +148,10 @@ export default function MinimalContactSection() {
           </div>
         </div>
 
-        {/* Right Column: Clean, Minimal Form */}
+        {/* Right Column: Contact Form */}
         <div className="lg:col-span-7">
           <div className="p-6 sm:p-8 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card shadow-sm">
-            <form onSubmit={onSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="contact-name"
-                  className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
-                >
-                  Name <span className="text-primary">*</span>
-                </label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Your full name"
-                  className="h-10 w-full rounded-lg border border-input bg-background px-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary transition-colors"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="contact-email"
-                  className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
-                >
-                  Email <span className="text-primary">*</span>
-                </label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="name@company.com"
-                  className="h-10 w-full rounded-lg border border-input bg-background px-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary transition-colors"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="contact-message"
-                  className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
-                >
-                  Message <span className="text-primary">*</span>
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  required
-                  rows={5}
-                  placeholder="How can we help with your estimating or construction project?"
-                  className="w-full rounded-lg border border-input bg-background p-3 text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary transition-colors resize-y"
-                />
-              </div>
-
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                size="xl"
-                className="w-full justify-center text-xs sm:text-sm py-3.5 shadow-xs font-medium cursor-pointer"
-              >
-                {isSubmitting ? (
-                  <span>Sending Message...</span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    <span>Send Message</span>
-                    <ArrowRight size={14} />
-                  </span>
-                )}
-              </Button>
-
-              {result && (
-                <div
-                  className={`p-3.5 rounded-xl border text-xs leading-relaxed flex items-start gap-2 animate-fade-in-up ${
-                    isSuccess
-                      ? "bg-emerald-50 dark:bg-emerald-950/30 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/40"
-                      : "bg-rose-50 dark:bg-rose-950/30 text-rose-800 dark:text-rose-300 border-rose-200 dark:border-rose-800/40"
-                  }`}
-                >
-                  {isSuccess && (
-                    <Check size={15} className="shrink-0 mt-0.5 text-emerald-600 dark:text-emerald-400" />
-                  )}
-                  <p>{result}</p>
-                </div>
-              )}
-
-              <p className="text-[11px] text-center text-muted-foreground pt-1 font-normal">
-                100% Confidential. We respect your privacy.
-              </p>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>

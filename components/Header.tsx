@@ -222,7 +222,7 @@ export default function Header() {
               width={161}
               height={28}
               priority
-              className="h-7 w-auto object-contain dark:hidden"
+              className="h-[25px] sm:h-7 w-auto object-contain dark:hidden"
             />
             <Image
               src="/assets/logos/buildcraft360-horizontal-white.png"
@@ -230,7 +230,7 @@ export default function Header() {
               width={161}
               height={28}
               priority
-              className="h-7 w-auto object-contain hidden dark:block"
+              className="h-[25px] sm:h-7 w-auto object-contain hidden dark:block"
             />
           </Link>
 
@@ -343,7 +343,7 @@ export default function Header() {
           </nav>
 
           {/* Right Action CTAs */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             <Button
               render={
                 <a
@@ -352,18 +352,20 @@ export default function Header() {
                   rel="noopener noreferrer"
                 />
               }
-              size="default"
-              className="rounded-lg text-xs font-medium px-4 shadow-xs"
+              size="sm"
+              className="h-8 sm:h-9 px-2.5 sm:px-4 text-[11.5px] sm:text-xs font-medium gap-1.5 sm:gap-2 shadow-xs shrink-0 rounded-lg"
             >
-              <span>Affordable Estimates (30% off)</span>
-              <ArrowRight size={13} />
+              <span className="hidden sm:inline">Affordable Estimates (30% off)</span>
+              <span className="hidden min-[360px]:inline sm:hidden">Get 30% Off</span>
+              <span className="min-[360px]:hidden">30% Off</span>
+              <ArrowRight size={12} className="size-3 sm:size-3.5 shrink-0" />
             </Button>
 
             {/* Mobile Menu Hamburger Toggle */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+              className="lg:hidden p-1.5 sm:p-2 rounded-lg text-foreground/80 hover:text-foreground hover:bg-accent transition-colors shrink-0"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
             >

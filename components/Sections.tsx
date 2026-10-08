@@ -40,15 +40,15 @@ export function OutrankSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-serif font-normal text-foreground tracking-tight">
-            Outrank Your Competitors with Accurate{" "}
+            Smarter Solutions for{" "}
             <span className="font-normal text-primary">
-              Construction Estimates
+              Better Construction Projects
             </span>
           </h2>
           <p className="font-sans text-muted-foreground text-xs sm:text-sm mt-2.5 leading-relaxed font-normal max-w-2xl mx-auto">
-            Don&apos;t let estimating expenses hold you back. Our cost-effective solutions and
-            industry expertise allow you to bid more confidently, secure more contracts, and grow
-            your business.
+            Our cost-effective estimating, takeoff, planning, and architectural
+            services help you make better decisions, improve project efficiency,
+            bid with confidence, and win more opportunities.
           </p>
         </div>
 

@@ -43,9 +43,10 @@ export default function HeroSection() {
             </h1>
 
             <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xl font-normal">
-              Audit-ready material takeoffs and localized pricing calibrated to
-              your regional zip code. Helping contractors, builders, and
-              architects bid faster with confidence.
+              Accurate and detailed estimating, takeoffs, planning, and
+              architectural support tailored to your project needs—helping
+              contractors, builders, and professionals work faster and with
+              confidence.
             </p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-foreground/90 text-sm font-normal">
               {checklistItems.map((item) => (

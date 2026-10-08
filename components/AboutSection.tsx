@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const stats = [
   { value: "5000+", label: "Projects Completed" },
   { value: "300+", label: "Happy Clients" },
-  { value: "10+", label: "Highly Qualified Estimators" },
+  { value: "12+", label: "Highly Qualified Estimators & Planners" },
 ];
 
 export default function AboutSection() {

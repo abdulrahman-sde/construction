@@ -20,13 +20,13 @@ import {
 export const metadata: Metadata = {
   title: "About Us | Buildcraft360 - Construction Estimating, Planning & Architectural Services",
   description:
-    "Learn about Buildcraft360: 10+ certified cost estimators, planners, and architects, 5,000+ completed projects, and over 300 satisfied clients across North America.",
+    "Learn about Buildcraft360: 12+ certified cost estimators, planners, and architects, 5,000+ completed projects, and over 300 satisfied clients across North America.",
 };
 
 const STATS = [
   { value: "5000+", label: "Projects Completed" },
   { value: "300+", label: "Happy Clients" },
-  { value: "10+", label: "Highly Qualified Estimators" },
+  { value: "12+", label: "Highly Qualified Estimators & Planners" },
   { value: "8+ Years", label: "Industry Experience" },
 ];
 
@@ -133,7 +133,7 @@ export default function AboutUsPage() {
                 At Buildcraft360, our mission is to eliminate estimating uncertainty and streamline project planning. Founded by experienced construction engineers and professional quantity surveyors, we recognized that general contractors and trade subcontractors were constantly losing bids due to late submission times or inaccurate takeoffs.
               </p>
               <p>
-                With over 8 years of experience in the construction industry, Buildcraft360 provides dependable project support across residential, commercial, civil, and industrial projects. Our team of 10+ certified estimators, planners, and architectural professionals brings the technical knowledge and practical expertise needed to support projects from initial planning through execution.
+                With over 8 years of experience in the construction industry, Buildcraft360 provides dependable project support across residential, commercial, civil, and industrial projects. Our team of 12+ certified estimators, planners, and architectural professionals brings the technical knowledge and practical expertise needed to support projects from initial planning through execution.
               </p>
               <p>
                 Whether you need an estimate for a small project or a detailed takeoff for a larger commercial project, we provide clear and organized estimating that helps you understand the numbers before you bid.

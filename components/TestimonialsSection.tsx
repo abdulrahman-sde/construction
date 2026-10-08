@@ -119,8 +119,10 @@ export default function TestimonialsSection() {
               </span>
             </h2>
             <p className="font-sans text-slate-400 text-xs sm:text-sm mt-2 max-w-xl font-normal leading-relaxed">
-              General contractors, trade specialists, and builders across the United States
-              rely on Buildcraft360 for dependable quantity takeoffs and win-ready bids.
+              General contractors, builders, and construction professionals
+              rely on Buildcraft360 for dependable estimating, takeoffs,
+              planning, and architectural support that helps keep projects
+              efficient and successful.
             </p>
           </div>
           <Button

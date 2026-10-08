@@ -11,9 +11,9 @@ import {
 const accordionItems = [
   {
     id: "item-0",
-    title: "Trust in Accurate Estimates",
+    title: "Trust in Accuracy",
     content:
-      "At Buildcraft360, we deliver precise and dependable construction cost estimates. Our meticulous analysis and attention to detail ensure accurate projections, mitigating the risk of unexpected expenses and delays. Trust us for reliable estimates that provide a solid foundation for successful project planning and execution.",
+      "At Buildcraft360, we provide accurate and dependable support across estimating, takeoffs, planning, and architectural services. Our attention to detail helps you make informed decisions, control costs, and keep projects on track.",
   },
   {
     id: "item-1",
@@ -23,9 +23,9 @@ const accordionItems = [
   },
   {
     id: "item-2",
-    title: "Certified Estimators",
+    title: "Experienced Estimators & Planners",
     content:
-      "Our certified estimators possess industry-leading qualifications, working alongside quantity surveyors and architects following RSMeans & CSI MasterFormat standards.",
+      "Our experienced estimators and planners deliver accurate, practical, and reliable support using proven industry practices and standards.",
   },
   {
     id: "item-3",
@@ -35,15 +35,15 @@ const accordionItems = [
   },
   {
     id: "item-4",
-    title: "Competitive Pricing ($200 Avg)",
+    title: "Competitive Pricing ($150 Avg)",
     content:
-      "While the average cost of our services is only $200, our goal is exceptional return on investment without breaking your bank.",
+      "While the average cost of our services is only $150, our goal is exceptional return on investment without breaking your bank.",
   },
   {
     id: "item-5",
     title: "Customized Solutions",
     content:
-      "We personalize estimates based on your local subcontractor rates, crew productivity, and suppliers.",
+      "We tailor our estimating, planning, and architectural services to your project requirements, goals, and scope.",
   },
   {
     id: "item-6",
@@ -71,9 +71,12 @@ export default function WhyChooseSection() {
                 </span>
               </h2>
               <p className="font-sans text-muted-foreground text-sm sm:text-base font-normal mt-3 leading-relaxed">
-                We stand out from the competition regarding material takeoff and
-                construction estimating services. Here&apos;s why contractors
-                across North America trust us:
+                Buildcraft360 provides practical, accurate, and reliable
+                construction support services—from estimating and quantity
+                takeoffs to planning and architectural services. We help
+                contractors and construction professionals make informed
+                decisions, improve project efficiency, control costs, and deliver
+                projects with confidence.
               </p>
             </div>
 
@@ -104,11 +107,13 @@ export default function WhyChooseSection() {
                   </svg>
                 </div>
                 <h4 className="font-serif font-normal text-base text-white">
-                  Unmatched Precision
+                  Comprehensive Expertise
                 </h4>
                 <p className="font-sans text-xs text-white/80 font-normal leading-relaxed">
-                  Detailed quantification covering every single material trade
-                  with localized regional price index.
+                  Accurate, practical, and detail-focused support across
+                  estimating, quantity takeoffs, planning, and architectural
+                  services—helping you make better project decisions from initial
+                  planning through execution.
                 </p>
                 <div className="flex items-center gap-4 text-xs font-medium text-white/90 pt-1">
                   <span className="flex items-center gap-1.5">

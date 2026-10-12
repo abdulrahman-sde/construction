@@ -4,6 +4,8 @@
  * Extracted directly from https://constructestimates.com/
  */
 
+import { NEW_SERVICES } from "./new-services-data";
+
 export interface ServiceValueProp {
   title: string;
   description: string;
@@ -2467,12 +2469,27 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
       }
     ],
     "metaDescription": "Professional our service areas by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
-  }
+  },
+  ...NEW_SERVICES,
 };
 
 export const SERVICES_NAV_LIST = [
-  { title: "Cost Estimating Services", slug: "cost-estimating-services" },
-  { title: "Construction Takeoff Services", slug: "construction-takeoff-services" },
+  // 1. Estimating
+  { title: "Construction Cost Estimating", slug: "construction-cost-estimating" },
+  { title: "Quantity Takeoff Services", slug: "quantity-takeoff-services" },
+  { title: "Residential & Commercial Estimating", slug: "residential-commercial-estimating" },
+  { title: "Tender & Bid Support", slug: "tender-bid-support" },
+  // 2. Planning
+  { title: "Construction Planning & Scheduling", slug: "construction-planning-scheduling" },
+  { title: "Primavera P6 Scheduling", slug: "primavera-p6-scheduling" },
+  { title: "Progress Monitoring & Reporting", slug: "progress-monitoring-reporting" },
+  { title: "Delay Analysis & Schedule Recovery", slug: "delay-analysis-schedule-recovery" },
+  // 3. Architecture
+  { title: "Architectural Design", slug: "architectural-design" },
+  { title: "Floor Plans & Building Layouts", slug: "floor-plans-building-layouts" },
+  { title: "Architectural Drawings & Documentation", slug: "architectural-drawings-documentation" },
+  { title: "3D Modeling & Visualization", slug: "3d-modeling-visualization" },
+  // Additional / Historical Trades
   { title: "Concrete Estimating Services", slug: "concrete-estimating-services" },
   { title: "Electrical Estimating Services", slug: "electrical-estimating-services" },
   { title: "MEP Estimating Services", slug: "mep-estimating-services" },
@@ -2483,16 +2500,13 @@ export const SERVICES_NAV_LIST = [
   { title: "SiteWork Estimating Services", slug: "sitework-estimating-services" },
   { title: "Thermal & Moisture Protection Estimating Services", slug: "thermal-moisture-protection-estimating-services" },
   { title: "Interior & Exterior Finishes Estimating Services", slug: "interior-exterior-finishes-estimating-services" },
+  { title: "Cost Estimating Services", slug: "cost-estimating-services" },
+  { title: "Construction Takeoff Services", slug: "construction-takeoff-services" },
   { title: "Commercial Estimating Services", slug: "commercial-estimating-services" },
   { title: "Residential Estimating Services", slug: "residential-estimating-services" },
   { title: "Industrial Estimating Services", slug: "industrial-estimating-services" },
   { title: "Preliminary Estimate Services", slug: "preliminary-estimate" },
-  { title: "Quantity Takeoff Services", slug: "quantity-takeoff-services" },
-  { title: "Estimating Consultant", slug: "estimating-consultant" },
   { title: "Virtual Bid Management", slug: "virtual-bid-management" },
-  { title: "Construction Estimator Sydney", slug: "construction-estimator-sydney" },
-  { title: "Building Estimator Melbourne", slug: "building-estimator-melbourne" },
-  { title: "Our Service Areas", slug: "service-areas" },
 ];
 
 export function getServiceBySlug(slug: string): ServicePageData | undefined {
@@ -2502,3 +2516,4 @@ export function getServiceBySlug(slug: string): ServicePageData | undefined {
 export function getAllServiceSlugs(): string[] {
   return Object.keys(ALL_SERVICES);
 }
+

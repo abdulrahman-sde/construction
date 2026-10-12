@@ -10,9 +10,13 @@ import {
   ArrowRight,
   Menu as MenuIcon,
   CloseCircle,
+  Calculator,
+  Calendar,
+  Building3,
+  IconComponent,
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { WHATSAPP_URL, INSTAGRAM_URL } from "@/lib/contact";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -28,56 +32,103 @@ import {
 
 // --- Navigation Data ---
 
-const serviceItems = [
+export interface NavServiceItem {
+  href: string;
+  title: string;
+  description: string;
+}
+
+export interface NavServiceCategory {
+  title: string;
+  tagline: string;
+  icon: IconComponent;
+  items: NavServiceItem[];
+}
+
+const serviceCategories: NavServiceCategory[] = [
   {
-    href: "/cost-estimating-services",
-    title: "Cost Estimating Services",
-    description: "Zip-code adjusted labor, materials & equipment pricing",
-    iconSrc: "/assets/icons/cost-estimating.svg",
+    title: "Estimating",
+    tagline: "Cost & Takeoff Engineering",
+    icon: Calculator,
+    items: [
+      {
+        href: "/construction-cost-estimating",
+        title: "Construction Cost Estimating",
+        description: "Detailed construction cost estimates for labor, materials, equipment, and overall project pricing.",
+      },
+      {
+        href: "/quantity-takeoff-services",
+        title: "Quantity Takeoff Services",
+        description: "Accurate material quantities and itemized measurements from construction drawings.",
+      },
+      {
+        href: "/residential-commercial-estimating",
+        title: "Residential & Commercial Estimating",
+        description: "Cost estimating for homes, multi-family buildings, offices, retail, and commercial developments.",
+      },
+      {
+        href: "/tender-bid-support",
+        title: "Tender & Bid Support",
+        description: "Bid pricing, scope reviews, and estimating support for contractors and subcontractors.",
+      },
+    ],
   },
   {
-    href: "/construction-takeoff-services",
-    title: "Construction Takeoff Services",
-    description: "Digital blueprint itemization & complete material counts",
-    iconSrc: "/assets/icons/material-takeoff.svg",
+    title: "Planning",
+    tagline: "Schedules & Project Controls",
+    icon: Calendar,
+    items: [
+      {
+        href: "/construction-planning-scheduling",
+        title: "Construction Planning & Scheduling",
+        description: "Develop practical construction schedules, activity sequences, and execution plans.",
+      },
+      {
+        href: "/primavera-p6-scheduling",
+        title: "Primavera P6 Scheduling",
+        description: "Baseline programs, detailed activity schedules, and schedule updates using Primavera P6.",
+      },
+      {
+        href: "/progress-monitoring-reporting",
+        title: "Progress Monitoring & Reporting",
+        description: "Track planned versus actual progress and prepare clear project progress reports.",
+      },
+      {
+        href: "/delay-analysis-schedule-recovery",
+        title: "Delay Analysis & Schedule Recovery",
+        description: "Assess schedule impacts and develop practical recovery or mitigation plans.",
+      },
+    ],
   },
   {
-    href: "/residential-estimating-services",
-    title: "Residential Estimating",
-    description: "Single-family, multi-family, custom homes & renovations",
-    iconSrc: "/assets/icons/residential-estimating.svg",
-  },
-  {
-    href: "/commercial-estimating-services",
-    title: "Commercial Estimating",
-    description: "Offices, retail plazas, hospitality & public buildings",
-    iconSrc: "/assets/icons/commercial-estimating.svg",
-  },
-  {
-    href: "/industrial-estimating-services",
-    title: "Industrial Estimating",
-    description: "Manufacturing, plants, processing units & civil works",
-    iconSrc: "/assets/icons/industrial-estimating.svg",
-  },
-  {
-    href: "/preliminary-estimate",
-    title: "Preliminary Estimates",
-    description: "Feasibility budgets for architects, developers & lenders",
-    iconSrc: "/assets/icons/preliminary-estimates.svg",
-  },
-  {
-    href: "/quantity-takeoff-services",
-    title: "Quantity Takeoff Services",
-    description: "Itemized bill of quantities with color-coded plans",
-    iconSrc: "/assets/icons/material-takeoff.svg",
-  },
-  {
-    href: "/virtual-bid-management",
-    title: "Virtual Bid Management",
-    description: "Subcontractor coordination, bid review & win strategy",
-    iconSrc: "/assets/icons/check-circle.svg",
+    title: "Architecture",
+    tagline: "Design, Layouts & Visualization",
+    icon: Building3,
+    items: [
+      {
+        href: "/architectural-design",
+        title: "Architectural Design",
+        description: "Concept development, space planning, and building design solutions.",
+      },
+      {
+        href: "/floor-plans-building-layouts",
+        title: "Floor Plans & Building Layouts",
+        description: "Functional floor plans and building layouts for residential and commercial spaces.",
+      },
+      {
+        href: "/architectural-drawings-documentation",
+        title: "Architectural Drawings & Documentation",
+        description: "Plans, elevations, sections, and coordinated architectural drawing packages.",
+      },
+      {
+        href: "/3d-modeling-visualization",
+        title: "3D Modeling & Visualization",
+        description: "Three-dimensional building models and visual presentations to communicate design intent.",
+      },
+    ],
   },
 ];
+
 
 const tradeItems = [
   {
@@ -206,6 +257,17 @@ export default function Header() {
                   <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                 </svg>
               </a>
+              <a
+                aria-label="Instagram"
+                href={INSTAGRAM_URL}
+                rel="noreferrer"
+                target="_blank"
+                className="hover:text-white transition-colors"
+              >
+                <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -258,36 +320,71 @@ export default function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="center"
-                alignOffset={-80}
+                alignOffset={0}
                 sideOffset={12}
-                className="w-[660px] p-2.5 rounded-2xl shadow-xl border border-border/80 bg-popover/98 backdrop-blur-xl"
+                className="w-[880px] max-w-[calc(100vw-2rem)] p-4 sm:p-5 rounded-2xl shadow-2xl border border-border/80 bg-popover/98 backdrop-blur-xl max-h-[calc(100vh-6rem)] overflow-y-auto"
               >
-                <div className="grid grid-cols-2 gap-1.5">
-                  {serviceItems.map((item) => (
-                    <DropdownMenuItem
-                      key={item.href}
-                      render={<Link href={item.href} />}
-                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-neutral-100/80 dark:hover:bg-neutral-800/60 cursor-pointer text-left outline-none transition-colors"
-                    >
-                      <div className="size-9 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground flex items-center justify-center shrink-0 border border-neutral-200/80 dark:border-neutral-700/80 shadow-2xs">
-                        <Image
-                          src={item.iconSrc}
-                          alt={item.title}
-                          width={20}
-                          height={20}
-                          className="size-5 object-contain"
-                        />
+                <div className="grid grid-cols-3 gap-5 divide-x divide-border/60">
+                  {serviceCategories.map((cat, idx) => (
+                    <div key={cat.title} className={idx > 0 ? "pl-5" : ""}>
+                      {/* Category Header with Icon (No Numbering) */}
+                      <div className="flex items-center gap-2.5 pb-2.5 mb-2 border-b border-border/60">
+                        <div className="size-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                          <cat.icon size={14} />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="text-[12px] font-semibold uppercase tracking-wider text-foreground">
+                            {cat.title}
+                          </h3>
+                          <p className="text-[10.5px] text-muted-foreground leading-tight mt-0.5 font-normal truncate">
+                            {cat.tagline}
+                          </p>
+                        </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <span className="text-[13px] font-medium text-foreground block leading-snug">
-                          {item.title}
-                        </span>
-                        <p className="text-[11.5px] leading-tight text-muted-foreground mt-0.5 line-clamp-1 font-normal">
-                          {item.description}
-                        </p>
+
+                      {/* 4 Category Items - Clean Minimal with In-Place Selective Disclosure */}
+                      <div className="space-y-1">
+                        {cat.items.map((item) => (
+                          <DropdownMenuItem
+                            key={item.href}
+                            render={<Link href={item.href} />}
+                            className="group flex flex-col items-start px-2.5 py-1.5 rounded-lg hover:bg-neutral-100/90 dark:hover:bg-neutral-800/70 focus:bg-neutral-100/90 dark:focus:bg-neutral-800/70 cursor-pointer text-left outline-none transition-colors"
+                          >
+                            <div className="flex items-center justify-between w-full">
+                              <span className="text-[13px] font-medium text-foreground group-hover:text-primary group-focus:text-primary transition-colors leading-tight">
+                                {item.title}
+                              </span>
+                              <ArrowRight
+                                size={11}
+                                className="text-muted-foreground/30 group-hover:text-primary group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100 group-focus:opacity-100 shrink-0 ml-1.5"
+                              />
+                            </div>
+                            <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-visible:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-out w-full">
+                              <div className="overflow-hidden">
+                                <p className="text-[11px] leading-relaxed text-muted-foreground pt-1 font-normal opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-150 delay-50">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </div>
+                          </DropdownMenuItem>
+                        ))}
                       </div>
-                    </DropdownMenuItem>
+                    </div>
                   ))}
+                </div>
+
+                {/* Clean Static Footer */}
+                <div className="mt-3.5 pt-3 border-t border-border/60 flex items-center justify-between px-1.5 text-[11.5px] text-muted-foreground">
+                  <span className="truncate">
+                    <strong className="font-medium text-foreground">Buildcraft360</strong> — Integrated Estimating, Planning &amp; Architecture
+                  </span>
+                  <Link
+                    href="/contact-us"
+                    className="text-foreground hover:text-primary font-medium inline-flex items-center gap-1.5 transition-colors shrink-0 ml-4 group/cta"
+                  >
+                    <span>Request a Scope Review</span>
+                    <ArrowRight size={11} className="transition-transform group-hover/cta:translate-x-0.5" />
+                  </Link>
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -394,32 +491,38 @@ export default function Header() {
             </div>
 
             <Accordion className="w-full">
-              {/* Mobile Our Services */}
+              {/* Mobile Our Services - Minimal & Responsive */}
               <AccordionItem value="services">
                 <AccordionTrigger className="text-sm font-medium py-3 text-foreground">
-                  Our Services
+                  Our Services (12)
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="space-y-1 pl-2 pt-1 pb-2">
-                    {serviceItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-medium text-foreground/80 hover:bg-accent transition-colors"
-                      >
-                        <div className="flex items-center gap-2">
-                          <Image
-                            src={item.iconSrc}
-                            alt=""
-                            width={16}
-                            height={16}
-                            className="size-4 object-contain"
-                          />
-                          <span>{item.title}</span>
+                  <div className="space-y-3 pt-1 pb-2">
+                    {serviceCategories.map((cat) => (
+                      <div key={cat.title} className="space-y-1">
+                        <div className="flex items-center gap-2 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-foreground border-b border-border/40">
+                          <cat.icon size={13} className="text-primary shrink-0" />
+                          <span>{cat.title}</span>
+                          <span className="text-[10px] text-muted-foreground/70 font-normal lowercase tracking-normal ml-auto">
+                            {cat.tagline}
+                          </span>
                         </div>
-                        <ArrowRight size={11} className="text-muted-foreground" />
-                      </Link>
+                        <div className="space-y-0.5">
+                          {cat.items.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center justify-between py-2 px-2.5 rounded-lg text-foreground/90 hover:bg-accent transition-colors"
+                            >
+                              <span className="text-[12.5px] font-medium leading-tight">
+                                {item.title}
+                              </span>
+                              <ArrowRight size={12} className="text-muted-foreground shrink-0" />
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </AccordionContent>
@@ -505,6 +608,17 @@ export default function Header() {
                   >
                     <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                       <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                    </svg>
+                  </a>
+                  <a
+                    href={INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram"
+                    className="p-1 rounded-md hover:bg-accent text-foreground hover:text-primary transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                     </svg>
                   </a>
                 </div>

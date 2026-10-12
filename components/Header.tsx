@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   Call,
   Message,
   ChevronDown,
+  ChevronRight,
   ArrowRight,
   Menu as MenuIcon,
   CloseCircle,
@@ -17,6 +18,8 @@ import {
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL, INSTAGRAM_URL } from "@/lib/contact";
+import { ESTIMATING_TRADES } from "@/lib/trades-data";
+import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -29,6 +32,12 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+
+const TRADES_SERVICE_HREFS = new Set([
+  "/construction-cost-estimating",
+  "/quantity-takeoff-services",
+  "/residential-commercial-estimating",
+]);
 
 // --- Navigation Data ---
 
@@ -130,74 +139,40 @@ const serviceCategories: NavServiceCategory[] = [
 ];
 
 
-const tradeItems = [
-  {
-    href: "/electrical-estimating-services",
-    title: "Electrical Estimating Services",
-  },
-  {
-    href: "/concrete-estimating-services",
-    title: "Concrete Estimating Services",
-  },
-  {
-    href: "/opening-estimating-services",
-    title: "Opening Estimating Services",
-  },
-  {
-    href: "/masonry-estimating-services",
-    title: "Masonry Estimating Services",
-  },
-  {
-    href: "/mep-estimating-services",
-    title: "MEP Estimating Services",
-  },
-  {
-    href: "/metal-estimating-services",
-    title: "Metal Estimating Services",
-  },
-  {
-    href: "/sitework-estimating-services",
-    title: "SiteWork Estimating Services",
-  },
-  {
-    href: "/lumber-takeoff-services",
-    title: "Lumber Takeoff Services",
-  },
-  {
-    href: "/thermal-moisture-protection-estimating-services",
-    title: "Thermal & Moisture Protection Estimating Services",
-  },
-  {
-    href: "/interior-exterior-finishes-estimating-services",
-    title: "Interior & Exterior Finishes Estimating Services",
-  },
-];
-
-const tradeRows = [
-  [
-    { href: "/electrical-estimating-services", title: "Electrical Estimating Services" },
-    { href: "/metal-estimating-services", title: "Metal Estimating Services" },
-  ],
-  [
-    { href: "/concrete-estimating-services", title: "Concrete Estimating Services" },
-    { href: "/sitework-estimating-services", title: "SiteWork Estimating Services" },
-  ],
-  [
-    { href: "/opening-estimating-services", title: "Opening Estimating Services" },
-    { href: "/lumber-takeoff-services", title: "Lumber Takeoff Services" },
-  ],
-  [
-    { href: "/masonry-estimating-services", title: "Masonry Estimating Services" },
-    { href: "/thermal-moisture-protection-estimating-services", title: "Thermal & Moisture Protection Estimating Services" },
-  ],
-  [
-    { href: "/mep-estimating-services", title: "MEP Estimating Services" },
-    { href: "/interior-exterior-finishes-estimating-services", title: "Interior & Exterior Finishes Estimating Services" },
-  ],
-];
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredEstimatingService, setHoveredEstimatingService] = useState<string | null>(null);
+  const [mobileExpandedService, setMobileExpandedService] = useState<string | null>(null);
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleServiceHover = (href: string) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+    if (TRADES_SERVICE_HREFS.has(href)) {
+      setHoveredEstimatingService(href);
+    } else {
+      setHoveredEstimatingService(null);
+    }
+  };
+
+  const handleRightSectionEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+      hoverTimeoutRef.current = null;
+    }
+  };
+
+  const handleMenuLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredEstimatingService(null);
+    }, 180);
+  };
+
+  const activeServiceItem = serviceCategories[0].items.find(
+    (item) => item.href === hoveredEstimatingService
+  );
 
   return (
     <>
@@ -296,7 +271,7 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation with shadcn Dropdowns */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-2 text-[13.5px] font-medium text-foreground/80">
             {/* 1. About Us Direct Link */}
             <Link
@@ -306,10 +281,10 @@ export default function Header() {
               About Us
             </Link>
 
-            {/* 2. Our Services Dropdown */}
+            {/* 2. Our Services Dropdown with Interactive Trades Flyout */}
             <DropdownMenu modal={false}>
               <DropdownMenuTrigger
-                openOnHover={false}
+                openOnHover={true}
                 className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring select-none data-[popup-open]:text-foreground data-[popup-open]:bg-accent/60"
               >
                 <span>Our Services</span>
@@ -322,55 +297,174 @@ export default function Header() {
                 align="center"
                 alignOffset={0}
                 sideOffset={12}
-                className="w-[880px] max-w-[calc(100vw-2rem)] p-4 sm:p-5 rounded-2xl shadow-2xl border border-border/80 bg-popover/98 backdrop-blur-xl max-h-[calc(100vh-6rem)] overflow-y-auto"
+                className="w-[880px] max-w-[calc(100vw-2rem)] p-4 sm:p-5 rounded-2xl shadow-2xl border border-border/80 bg-popover/98 backdrop-blur-xl max-h-[calc(100vh-6rem)] overflow-y-auto relative"
               >
-                <div className="grid grid-cols-3 gap-5 divide-x divide-border/60">
-                  {serviceCategories.map((cat, idx) => (
-                    <div key={cat.title} className={idx > 0 ? "pl-5" : ""}>
-                      {/* Category Header with Icon (No Numbering) */}
-                      <div className="flex items-center gap-2.5 pb-2.5 mb-2 border-b border-border/60">
-                        <div className="size-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                          <cat.icon size={14} />
+                <div
+                  onMouseLeave={handleMenuLeave}
+                  className={cn(
+                    "relative transition-all duration-200",
+                    hoveredEstimatingService ? "min-h-[235px]" : "min-h-0"
+                  )}
+                >
+                  <div className="grid grid-cols-3 gap-5 divide-x divide-border/60">
+                    {serviceCategories.map((cat, idx) => (
+                      <div key={cat.title} className={idx > 0 ? "pl-5" : ""}>
+                        {/* Category Header with Icon */}
+                        <div className="flex items-center gap-2.5 pb-2.5 mb-2 border-b border-border/60">
+                          <div className="size-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                            <cat.icon size={14} />
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="text-[12px] font-semibold uppercase tracking-wider text-foreground">
+                              {cat.title}
+                            </h3>
+                            <p className="text-[10.5px] text-muted-foreground leading-tight mt-0.5 font-normal truncate">
+                              {cat.tagline}
+                            </p>
+                          </div>
                         </div>
-                        <div className="min-w-0">
-                          <h3 className="text-[12px] font-semibold uppercase tracking-wider text-foreground">
-                            {cat.title}
-                          </h3>
-                          <p className="text-[10.5px] text-muted-foreground leading-tight mt-0.5 font-normal truncate">
-                            {cat.tagline}
-                          </p>
+
+                        {/* Category Items */}
+                        <div className="space-y-1">
+                          {cat.items.map((item) => {
+                            const hasTrades = TRADES_SERVICE_HREFS.has(item.href);
+                            const isHovered = hoveredEstimatingService === item.href;
+
+                            return (
+                              <DropdownMenuItem
+                                key={item.href}
+                                render={<Link href={item.href} />}
+                                onMouseEnter={() => handleServiceHover(item.href)}
+                                className={cn(
+                                  "group flex flex-col items-start px-2.5 py-1.5 rounded-lg cursor-pointer text-left outline-none transition-all duration-150",
+                                  isHovered
+                                    ? "bg-primary/10 text-primary"
+                                    : "hover:bg-neutral-100/90 dark:hover:bg-neutral-800/70 focus:bg-neutral-100/90 dark:focus:bg-neutral-800/70"
+                                )}
+                              >
+                                <div className="flex items-center justify-between w-full">
+                                  <span
+                                    className={cn(
+                                      "text-[13px] leading-tight transition-colors",
+                                      isHovered
+                                        ? "font-semibold text-primary"
+                                        : "font-medium text-foreground group-hover:text-primary group-focus:text-primary"
+                                    )}
+                                  >
+                                    {item.title}
+                                  </span>
+
+                                  {hasTrades ? (
+                                    <span className="inline-flex items-center gap-1 shrink-0 ml-1.5">
+                                      <span
+                                        className={cn(
+                                          "text-[10px] font-medium px-1.5 py-0.2 rounded-full border transition-colors",
+                                          isHovered
+                                            ? "bg-primary text-white border-primary"
+                                            : "bg-primary/10 text-primary border-primary/20 group-hover:bg-primary group-hover:text-white"
+                                        )}
+                                      >
+                                        8 Trades
+                                      </span>
+                                      <ChevronRight
+                                        size={12}
+                                        className={cn(
+                                          "transition-transform",
+                                          isHovered
+                                            ? "text-primary translate-x-0.5"
+                                            : "text-muted-foreground/40 group-hover:text-primary"
+                                        )}
+                                      />
+                                    </span>
+                                  ) : (
+                                    <ArrowRight
+                                      size={11}
+                                      className="text-muted-foreground/30 group-hover:text-primary group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100 group-focus:opacity-100 shrink-0 ml-1.5"
+                                    />
+                                  )}
+                                </div>
+                                <div
+                                  className={cn(
+                                    "grid transition-[grid-template-rows] duration-200 ease-out w-full",
+                                    isHovered
+                                      ? "grid-rows-[1fr]"
+                                      : "grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-visible:grid-rows-[1fr]"
+                                  )}
+                                >
+                                  <div className="overflow-hidden">
+                                    <p
+                                      className={cn(
+                                        "text-[11px] leading-relaxed text-muted-foreground pt-1 font-normal transition-opacity duration-150",
+                                        isHovered
+                                          ? "opacity-100"
+                                          : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 delay-50"
+                                      )}
+                                    >
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              </DropdownMenuItem>
+                            );
+                          })}
                         </div>
                       </div>
+                    ))}
+                  </div>
 
-                      {/* 4 Category Items - Clean Minimal with In-Place Selective Disclosure */}
-                      <div className="space-y-1">
-                        {cat.items.map((item) => (
-                          <DropdownMenuItem
-                            key={item.href}
-                            render={<Link href={item.href} />}
-                            className="group flex flex-col items-start px-2.5 py-1.5 rounded-lg hover:bg-neutral-100/90 dark:hover:bg-neutral-800/70 focus:bg-neutral-100/90 dark:focus:bg-neutral-800/70 cursor-pointer text-left outline-none transition-colors"
+                  {/* Interactive Right-Side Trades Flyout: Opens when hovering over the 3 Estimating services */}
+                  {hoveredEstimatingService && activeServiceItem && (
+                    <div
+                      onMouseEnter={handleRightSectionEnter}
+                      className="absolute inset-y-0 right-0 left-[calc(33.333%+8px)] z-30 rounded-xl border border-border/80 bg-popover/98 backdrop-blur-2xl shadow-xl p-3 flex flex-col justify-between overflow-y-auto animate-in fade-in slide-in-from-left-2 duration-150"
+                    >
+                      {/* Top Header of Right Side Section */}
+                      <div className="pb-1.5 border-b border-border/60 shrink-0">
+                        <div className="flex items-center justify-between gap-3">
+                          <h4 className="text-[12px] font-semibold text-foreground truncate">
+                            {activeServiceItem.title}
+                          </h4>
+                          <Link
+                            href={activeServiceItem.href}
+                            className="inline-flex items-center gap-1 text-[11px] font-medium text-primary hover:underline transition-colors shrink-0"
                           >
-                            <div className="flex items-center justify-between w-full">
-                              <span className="text-[13px] font-medium text-foreground group-hover:text-primary group-focus:text-primary transition-colors leading-tight">
-                                {item.title}
+                            <span>View Page</span>
+                            <ArrowRight size={10} />
+                          </Link>
+                        </div>
+                        <p className="text-[10.5px] text-muted-foreground mt-0.5 leading-snug line-clamp-1 font-normal">
+                          {activeServiceItem.description}
+                        </p>
+                      </div>
+
+                      {/* The 8 Trades Grid */}
+                      <div className="py-1.5 flex-1 flex flex-col justify-center">
+                        <div className="mb-1.5">
+                          <span className="text-[10.5px] font-semibold uppercase tracking-wider text-foreground/80">
+                            Trades
+                          </span>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-1.5">
+                          {ESTIMATING_TRADES.map((trade) => (
+                            <Link
+                              key={trade.slug}
+                              href={trade.href}
+                              className="group/trade px-2.5 py-1.5 rounded-lg border text-left transition-all duration-150 flex items-center justify-between bg-muted/30 border-border/50 text-foreground/85 hover:bg-muted/70 hover:border-border hover:text-foreground hover:shadow-xs"
+                            >
+                              <span className="text-[11.5px] font-medium leading-normal truncate group-hover/trade:text-primary">
+                                {trade.shortTitle}
                               </span>
                               <ArrowRight
                                 size={11}
-                                className="text-muted-foreground/30 group-hover:text-primary group-hover:translate-x-0.5 transition-all opacity-0 group-hover:opacity-100 group-focus:opacity-100 shrink-0 ml-1.5"
+                                className="shrink-0 transition-transform text-muted-foreground/40 opacity-0 group-hover/trade:opacity-100 group-hover/trade:text-primary group-hover/trade:translate-x-0.5 ml-1"
                               />
-                            </div>
-                            <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus-visible:grid-rows-[1fr] transition-[grid-template-rows] duration-200 ease-out w-full">
-                              <div className="overflow-hidden">
-                                <p className="text-[11px] leading-relaxed text-muted-foreground pt-1 font-normal opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-150 delay-50">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </div>
-                          </DropdownMenuItem>
-                        ))}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  ))}
+                  )}
                 </div>
 
                 {/* Clean Static Footer */}
@@ -385,41 +479,6 @@ export default function Header() {
                     <span>Request a Scope Review</span>
                     <ArrowRight size={11} className="transition-transform group-hover/cta:translate-x-0.5" />
                   </Link>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* 3. Trades Dropdown */}
-            <DropdownMenu modal={false}>
-              <DropdownMenuTrigger
-                openOnHover={false}
-                className="group inline-flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring select-none data-[popup-open]:text-foreground data-[popup-open]:bg-accent/60"
-              >
-                <span>Trades</span>
-                <ChevronDown
-                  size={12}
-                  className="text-muted-foreground transition-transform duration-200 group-data-[popup-open]:rotate-180"
-                />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="start"
-                sideOffset={12}
-                className="w-[580px] sm:w-[640px] p-0 rounded-2xl shadow-xl border border-border/80 bg-popover/98 backdrop-blur-xl overflow-hidden"
-              >
-                <div className="divide-y divide-border/60">
-                  {tradeRows.map((row, rowIdx) => (
-                    <div key={rowIdx} className="grid grid-cols-2 divide-x divide-border/60">
-                      {row.map((item) => (
-                        <DropdownMenuItem
-                          key={item.href}
-                          render={<Link href={item.href} />}
-                          className="px-5 py-3 text-[13px] sm:text-[13.5px] font-normal text-foreground/85 hover:text-foreground hover:bg-neutral-100/70 dark:hover:bg-neutral-800/50 transition-colors cursor-pointer outline-none rounded-none flex items-center justify-between"
-                        >
-                          <span>{item.title}</span>
-                        </DropdownMenuItem>
-                      ))}
-                    </div>
-                  ))}
                 </div>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -491,7 +550,7 @@ export default function Header() {
             </div>
 
             <Accordion className="w-full">
-              {/* Mobile Our Services - Minimal & Responsive */}
+              {/* Mobile Our Services */}
               <AccordionItem value="services">
                 <AccordionTrigger className="text-sm font-medium py-3 text-foreground">
                   Our Services (12)
@@ -507,44 +566,77 @@ export default function Header() {
                             {cat.tagline}
                           </span>
                         </div>
-                        <div className="space-y-0.5">
-                          {cat.items.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center justify-between py-2 px-2.5 rounded-lg text-foreground/90 hover:bg-accent transition-colors"
-                            >
-                              <span className="text-[12.5px] font-medium leading-tight">
-                                {item.title}
-                              </span>
-                              <ArrowRight size={12} className="text-muted-foreground shrink-0" />
-                            </Link>
-                          ))}
+                        <div className="space-y-1 pt-1">
+                          {cat.items.map((item) => {
+                            const hasTrades = TRADES_SERVICE_HREFS.has(item.href);
+                            const isExpanded = mobileExpandedService === item.href;
+
+                            return (
+                              <div key={item.href} className="rounded-lg border border-transparent hover:border-border/60 transition-colors">
+                                <div className="flex items-center justify-between py-1.5 px-2.5 rounded-lg text-foreground/90 hover:bg-accent transition-colors">
+                                  <Link
+                                    href={item.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="flex-1 text-[12.5px] font-medium leading-tight hover:text-primary transition-colors"
+                                  >
+                                    {item.title}
+                                  </Link>
+
+                                  {hasTrades ? (
+                                    <button
+                                      type="button"
+                                      onClick={() =>
+                                        setMobileExpandedService(
+                                          isExpanded ? null : item.href
+                                        )
+                                      }
+                                      className="inline-flex items-center gap-1 text-[10.5px] font-medium px-2 py-0.5 rounded-md bg-primary/10 text-primary border border-primary/20 shrink-0 ml-2"
+                                    >
+                                      <span>8 Trades</span>
+                                      <ChevronDown
+                                        size={11}
+                                        className={cn(
+                                          "transition-transform duration-200",
+                                          isExpanded && "rotate-180"
+                                        )}
+                                      />
+                                    </button>
+                                  ) : (
+                                    <Link
+                                      href={item.href}
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      <ArrowRight size={12} className="text-muted-foreground shrink-0" />
+                                    </Link>
+                                  )}
+                                </div>
+
+                                {/* Mobile Embedded 8 Trades for this Service */}
+                                {hasTrades && isExpanded && (
+                                  <div className="pl-4 pr-2 pb-2 pt-1 space-y-1 bg-muted/30 rounded-b-lg border-t border-border/40 animate-in fade-in duration-150">
+                                    <div className="text-[10px] uppercase font-semibold text-muted-foreground tracking-wider px-2 py-0.5">
+                                      Trades:
+                                    </div>
+                                    <div className="grid grid-cols-1 gap-1">
+                                      {ESTIMATING_TRADES.map((trade) => (
+                                        <Link
+                                          key={trade.slug}
+                                          href={trade.href}
+                                          onClick={() => setMobileMenuOpen(false)}
+                                          className="flex items-center justify-between py-1.5 px-2 rounded-md text-[11.5px] text-foreground/80 hover:text-primary hover:bg-accent transition-colors"
+                                        >
+                                          <span>{trade.title}</span>
+                                          <ArrowRight size={10} className="text-muted-foreground" />
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* Mobile Trades */}
-              <AccordionItem value="trades">
-                <AccordionTrigger className="text-sm font-medium py-3 text-foreground">
-                  Trades (10)
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-1 pl-2 pt-1 pb-2">
-                    {tradeItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-normal text-foreground/80 hover:bg-accent transition-colors"
-                      >
-                        <span>{item.title}</span>
-                        <ArrowRight size={11} className="text-muted-foreground" />
-                      </Link>
                     ))}
                   </div>
                 </AccordionContent>

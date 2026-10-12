@@ -10,12 +10,14 @@ import ServiceDeliverablesSection from "@/components/services/ServiceDeliverable
 import ServiceMidCta from "@/components/services/ServiceMidCta";
 import ServiceFaqSection from "@/components/services/ServiceFaqSection";
 import ServicePreFooterBanner from "@/components/services/ServicePreFooterBanner";
+import ServiceTradesSection from "@/components/services/ServiceTradesSection";
 import { ServicePageData } from "@/lib/services-data";
 
 interface ServiceLayoutProps {
   service: ServicePageData;
   children?: React.ReactNode;
 }
+
 
 const PLANNING_SLUGS = new Set([
   "construction-planning-scheduling",
@@ -98,6 +100,9 @@ export default function ServiceLayout({
               heading={service.deliverablesHeading}
               deliverables={service.deliverables}
             />
+
+            {/* Trades Breakdown on Every Details Page */}
+            <ServiceTradesSection serviceTitle={service.title} />
 
             {/* Optional Custom Page Content */}
             {children}

@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Download, Eye, Layers } from "reicon-react";
-import { Button } from "@/components/ui/button";
+import { Eye } from "reicon-react";
 import { ProjectCaseStudy } from "@/lib/projects-data";
 
 interface ProjectBlueprintViewerProps {
@@ -12,43 +11,6 @@ export default function ProjectBlueprintViewer({
 }: ProjectBlueprintViewerProps) {
   return (
     <div className="rounded-xl border border-border bg-card overflow-hidden shadow-2xs">
-      {/* Viewer Header Bar */}
-      <div className="bg-slate-900 text-slate-200 px-4 py-3 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800">
-        <div className="flex items-center gap-2">
-          {/* macOS style dots */}
-          <div className="flex items-center gap-1.5 mr-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-          </div>
-          <span className="font-sans text-xs text-slate-300">
-            Sheet A-102_Markup_Overlay.pdf
-          </span>
-          <span className="text-[10px] font-sans font-medium text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">
-            Scale: 1/4&quot; = 1&apos;-0&quot;
-          </span>
-        </div>
-
-        <div className="flex items-center gap-3 text-xs">
-          <span className="inline-flex items-center gap-1 text-slate-300 font-normal">
-            <Layers size={13} className="text-primary" />
-            <span>Bluebeam Revu Color-Coded</span>
-          </span>
-          <Button
-            render={
-              <a
-                href={`#sample-download`}
-              />
-            }
-            size="sm"
-            className="h-7 text-xs bg-primary hover:bg-primary/90 text-white font-medium px-2.5 rounded"
-          >
-            <Download size={12} className="mr-1" />
-            <span>Download Sample PDF</span>
-          </Button>
-        </div>
-      </div>
-
       {/* Main Markup Image Display */}
       <div className="relative aspect-[16/9] sm:aspect-[16/10] bg-slate-950 overflow-hidden">
         <Image

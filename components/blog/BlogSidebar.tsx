@@ -20,7 +20,7 @@ interface BlogSidebarProps {
 const popularTrades = [
   { name: "Concrete Estimating", href: "/concrete-estimating-services" },
   { name: "MEP Estimating", href: "/mep-estimating-services" },
-  { name: "Electrical Estimating", href: "/electrical-estimating-services" },
+  { name: "Masonry Estimating", href: "/masonry-estimating-services" },
   { name: "Lumber Takeoffs", href: "/lumber-takeoff-services" },
   { name: "Commercial Estimating", href: "/commercial-estimating-services" },
 ];

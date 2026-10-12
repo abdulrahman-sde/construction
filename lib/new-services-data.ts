@@ -5,6 +5,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "construction-cost-estimating",
     title: "Construction Cost Estimating",
     breadcrumb: "Construction Cost Estimating",
+    heroSubtitle:
+      "Audit-ready construction cost estimates and material takeoffs calibrated to your regional zip code, delivered in 24–48 hours.",
     badge: "Cost Engineering • Trade-by-Trade Pricing",
     headlinePrefix: "Precision",
     highlightWord: "Construction Cost Estimating",
@@ -128,6 +130,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "residential-commercial-estimating",
     title: "Residential & Commercial Estimating",
     breadcrumb: "Residential & Commercial Estimating",
+    heroSubtitle:
+      "Comprehensive cost estimates for residential and commercial builds calibrated to local RSMeans data and zip-code pricing.",
     badge: "Homes • Multi-Family • Retail • Offices",
     headlinePrefix: "Specialized",
     highlightWord: "Residential & Commercial Estimating",
@@ -251,6 +255,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "tender-bid-support",
     title: "Tender & Bid Support",
     breadcrumb: "Tender & Bid Support",
+    heroSubtitle:
+      "Subcontractor leveling, tender scope reviews, and competitive bid pricing support for general contractors and subcontractors.",
     badge: "Contractor Bidding • Bid Leveling",
     headlinePrefix: "Winning",
     highlightWord: "Tender & Bid Support",
@@ -374,6 +380,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "construction-planning-scheduling",
     title: "Construction Planning & Scheduling",
     breadcrumb: "Construction Planning & Scheduling",
+    heroSubtitle:
+      "Practical construction schedules, activity sequences, and CPM execution plans built for seamless on-site delivery.",
     badge: "Project Controls • CPM Scheduling",
     headlinePrefix: "Practical",
     highlightWord: "Construction Planning & Scheduling",
@@ -497,6 +505,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "primavera-p6-scheduling",
     title: "Primavera P6 Scheduling",
     breadcrumb: "Primavera P6 Scheduling",
+    heroSubtitle:
+      "Baseline programs, critical path schedules, and resource-loaded updates built using Primavera P6.",
     badge: "Enterprise Controls • Oracle Primavera P6",
     headlinePrefix: "Enterprise-Grade",
     highlightWord: "Primavera P6 Scheduling",
@@ -620,6 +630,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "progress-monitoring-reporting",
     title: "Progress Monitoring & Reporting",
     breadcrumb: "Progress Monitoring & Reporting",
+    heroSubtitle:
+      "Real-time planned vs. actual progress tracking, milestone monitoring, and executive project status reporting.",
     badge: "Project Controls • Variance Analysis",
     headlinePrefix: "Real-Time",
     highlightWord: "Progress Monitoring & Reporting",
@@ -743,6 +755,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "delay-analysis-schedule-recovery",
     title: "Delay Analysis & Schedule Recovery",
     breadcrumb: "Delay Analysis & Schedule Recovery",
+    heroSubtitle:
+      "Forensic delay analysis, critical path impact assessments, and actionable schedule recovery programs.",
     badge: "Forensic Controls • Recovery Planning",
     headlinePrefix: "Strategic",
     highlightWord: "Delay Analysis & Schedule Recovery",
@@ -866,6 +880,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "architectural-design",
     title: "Architectural Design",
     breadcrumb: "Architectural Design",
+    heroSubtitle:
+      "Concept development, space planning, and tailored architectural solutions for residential and commercial spaces.",
     badge: "Concept Development • Space Planning",
     headlinePrefix: "Creative",
     highlightWord: "Architectural Design",
@@ -989,6 +1005,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "floor-plans-building-layouts",
     title: "Floor Plans & Building Layouts",
     breadcrumb: "Floor Plans & Building Layouts",
+    heroSubtitle:
+      "Functional floor plans, code-compliant space layouts, and optimized room arrangements for modern builds.",
     badge: "Spatial Layouts • CAD & BIM Drafting",
     headlinePrefix: "Functional",
     highlightWord: "Floor Plans & Building Layouts",
@@ -1112,6 +1130,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "architectural-drawings-documentation",
     title: "Architectural Drawings & Documentation",
     breadcrumb: "Architectural Drawings & Documentation",
+    heroSubtitle:
+      "Comprehensive architectural drawing packages including plans, elevations, sections, and permit documentation.",
     badge: "Construction Documents • Working Drawings",
     headlinePrefix: "Complete",
     highlightWord: "Architectural Drawings & Documentation",
@@ -1235,6 +1255,8 @@ export const NEW_SERVICES: Record<string, ServicePageData> = {
     slug: "3d-modeling-visualization",
     title: "3D Modeling & Visualization",
     breadcrumb: "3D Modeling & Visualization",
+    heroSubtitle:
+      "Photorealistic 3D visual renderings and spatial modeling to bring architectural concepts to life.",
     badge: "3D Rendering • Visual Presentations",
     headlinePrefix: "Photorealistic",
     highlightWord: "3D Modeling & Visualization",

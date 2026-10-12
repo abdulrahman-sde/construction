@@ -4,12 +4,14 @@ interface ServiceHeroBannerProps {
   title: string;
   breadcrumb?: string;
   category?: string;
+  subtitle?: string;
 }
 
 export default function ServiceHeroBanner({
   title,
   breadcrumb,
   category = "Services",
+  subtitle,
 }: ServiceHeroBannerProps) {
   return (
     <section className="relative blueprint-subtle-grid py-14 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 border-b border-border/80 bg-slate-50/40 dark:bg-slate-950/20 overflow-hidden">
@@ -38,10 +40,12 @@ export default function ServiceHeroBanner({
           {title}
         </h1>
 
-        {/* Subtitle */}
-        <p className="font-sans text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
-          Audit-ready construction cost estimates and material takeoffs calibrated to your regional zip code, delivered in 24–48 hours.
-        </p>
+        {/* Dynamic Subtitle */}
+        {subtitle && (
+          <p className="font-sans text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto font-normal leading-relaxed">
+            {subtitle}
+          </p>
+        )}
       </div>
     </section>
   );

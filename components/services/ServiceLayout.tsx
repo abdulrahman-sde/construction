@@ -17,6 +17,33 @@ interface ServiceLayoutProps {
   children?: React.ReactNode;
 }
 
+const PLANNING_SLUGS = new Set([
+  "construction-planning-scheduling",
+  "primavera-p6-scheduling",
+  "progress-monitoring-reporting",
+  "delay-analysis-schedule-recovery",
+]);
+
+const ARCHITECTURE_SLUGS = new Set([
+  "architectural-design",
+  "floor-plans-building-layouts",
+  "architectural-drawings-documentation",
+  "3d-modeling-visualization",
+]);
+
+function getHeroSubtitle(service: ServicePageData): string {
+  if (service.heroSubtitle) {
+    return service.heroSubtitle;
+  }
+  if (PLANNING_SLUGS.has(service.slug)) {
+    return "Critical path baseline schedules, Primavera P6 project controls, and delay analysis built for seamless project execution.";
+  }
+  if (ARCHITECTURE_SLUGS.has(service.slug)) {
+    return "Concept development, functional building layouts, coordinated architectural drawing packages, and 3D visualizations.";
+  }
+  return "Audit-ready construction cost estimates and material takeoffs calibrated to your regional zip code, delivered in 24–48 hours.";
+}
+
 export default function ServiceLayout({
   service,
   children,
@@ -31,6 +58,7 @@ export default function ServiceLayout({
         title={service.title}
         breadcrumb={service.breadcrumb}
         category="Services"
+        subtitle={getHeroSubtitle(service)}
       />
 
       {/* 3. Main 2-Column Content + Sticky Right Sidebar */}

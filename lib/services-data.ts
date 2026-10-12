@@ -47,6 +47,7 @@ export interface ServicePageData {
   midCtaSubtext: string;
   faqs: ServiceFaq[];
   metaDescription: string;
+  heroSubtitle?: string;
 }
 
 export const ALL_SERVICES: Record<string, ServicePageData> = {

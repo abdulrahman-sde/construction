@@ -1,5 +1,5 @@
 /**
- * Construct Estimates - Scraped Landing Page Assets Registry
+ * Buildcraft360 - Scraped Landing Page Assets Registry
  * Organized assets directly extracted from https://constructestimates.com/
  */
 

@@ -58,14 +58,11 @@ export default function ContactSection() {
 
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-serif font-normal leading-[1.18] tracking-tight text-foreground">
               Let&apos;s Discuss Your Construction{" "}
-              <span className="font-normal text-primary">Estimating Needs</span>
+              <span className="font-normal text-primary">Project</span>
             </h2>
 
             <p className="font-sans text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
-              Ready to experience the difference with Buildcraft360? Take the next step
-              towards accurate construction estimates and successful projects. Contact us today to
-              request a quote with <span className="text-foreground font-medium">30% off</span> tailored to
-              your specific needs.
+              From accurate cost estimates to project planning and architectural support, Buildcraft360 helps you move your projects forward with confidence.
             </p>
 
             <Card className="p-6 space-y-2 rounded-2xl border border-neutral-200/90 dark:border-neutral-800 bg-card shadow-sm">
@@ -207,7 +204,7 @@ export default function ContactSection() {
                         <span>Submitting Request...</span>
                       ) : (
                         <span className="flex items-center gap-2">
-                          <span>Request Your Discounted Estimate &amp; Save 30%</span>
+                          <span>Discuss Your Project Needs &amp; Save 30%</span>
                           <ArrowRight size={14} />
                         </span>
                       )}

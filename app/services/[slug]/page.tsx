@@ -19,15 +19,15 @@ export async function generateMetadata({
 
   if (!service) {
     return {
-      title: "Service Not Found | Construct Estimates",
+      title: "Service Not Found | Buildcraft360",
     };
   }
 
   return {
-    title: `${service.title} | Construct Estimates`,
+    title: `${service.title} | Buildcraft360`,
     description: service.metaDescription,
     openGraph: {
-      title: `${service.title} | Construct Estimates`,
+      title: `${service.title} | Buildcraft360`,
       description: service.metaDescription,
       type: "website",
     },

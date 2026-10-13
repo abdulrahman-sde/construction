@@ -6,6 +6,7 @@ import {
   Building2,
   CheckCircle,
   ArrowRight,
+  DrawCompass,
   IconComponent,
 } from "reicon-react";
 import { Button } from "@/components/ui/button";
@@ -112,17 +113,85 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Full Uncropped Visual Triptych Master Picture */}
+        {/* Full Uncropped Visual Triptych Master Feature */}
         <div className="mb-14 sm:mb-16">
-          <div className="relative rounded-2xl overflow-hidden border border-border/90 shadow-md bg-card">
-            <Image
-              src="/assets/images/services-overview.jpg"
-              alt="Buildcraft360 Construction Estimating, Construction Planning & Architectural Design"
-              width={1024}
-              height={682}
-              className="w-full h-auto block"
-              priority
-            />
+          <div className="rounded-2xl overflow-hidden border border-border/80 shadow-md bg-[#042a51]">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/95 dark:divide-slate-800">
+              {/* Pillar 1: Estimating */}
+              <div className="flex flex-col bg-[#042a51]">
+                <div className="relative aspect-[336/508] w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src="/assets/images/service-scene-estimating.jpg"
+                    alt="Construction Estimation - Accurate cost estimates, quantity takeoffs and bid support"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="p-6 sm:p-7 flex flex-col items-center text-center text-white">
+                  <div className="mb-3 text-white">
+                    <Calculator size={30} />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-white mb-2">
+                    Construction Estimation
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-blue-100/90 leading-relaxed max-w-[280px]">
+                    Accurate cost estimates, quantity takeoffs and bid support for your projects.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pillar 2: Planning */}
+              <div className="flex flex-col bg-[#042a51]">
+                <div className="relative aspect-[336/508] w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src="/assets/images/service-scene-planning.jpg"
+                    alt="Construction Planning - Detailed scheduling, Primavera P6 support"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="p-6 sm:p-7 flex flex-col items-center text-center text-white">
+                  <div className="mb-3 text-white">
+                    <Calendar size={30} />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-white mb-2">
+                    Construction Planning
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-blue-100/90 leading-relaxed max-w-[280px]">
+                    Detailed scheduling, Primavera P6 support, progress monitoring and planning assistance.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pillar 3: Architecture */}
+              <div className="flex flex-col bg-[#042a51]">
+                <div className="relative aspect-[336/508] w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src="/assets/images/service-scene-architecture.jpg"
+                    alt="Architectural Design - Architectural drafting, design support"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                <div className="p-6 sm:p-7 flex flex-col items-center text-center text-white">
+                  <div className="mb-3 text-white">
+                    <DrawCompass size={30} />
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-white mb-2">
+                    Architectural Design
+                  </h3>
+                  <p className="text-xs sm:text-[13px] text-blue-100/90 leading-relaxed max-w-[280px]">
+                    Architectural drafting, design support and construction drawings.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

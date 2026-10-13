@@ -1,5 +1,5 @@
 /**
- * Construct Estimates - Services Registry & Content Database
+ * Buildcraft360 - Services Registry & Content Database
  * Centralized, data-driven registry containing complete structured data for all service pages.
  * Extracted directly from https://constructestimates.com/
  */
@@ -60,7 +60,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Concrete Estimating Services",
     "headlineSuffix": "for Precise Project Bids",
     "leadParagraph": "Professional Concrete Estimating Services for Accurate Project Estimates",
-    "secondaryParagraph": "With years of experience serving general contracting corporations, concrete contractors, home builders, and real estate developers, Construct Estimates has become a trusted name in the industry. Our expert team specializes in Division 3 trades. It is certified by esteemed organizations like the American Association of Cost Engineers (AACE) and the Australian Institute of Quantity Surveyors (AIQS). When you partner with us, you can rest assured that your concrete estimating needs are in capable hands.",
+    "secondaryParagraph": "With years of experience serving general contracting corporations, concrete contractors, home builders, and real estate developers, Buildcraft360 has become a trusted name in the industry. Our expert team specializes in Division 3 trades. It is certified by esteemed organizations like the American Association of Cost Engineers (AACE) and the Australian Institute of Quantity Surveyors (AIQS). When you partner with us, you can rest assured that your concrete estimating needs are in capable hands.",
     "ctaText": "Request Concrete Estimating Services Now & Save 30%",
     "valueProps": [
       {
@@ -159,7 +159,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional concrete estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional concrete estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "commercial-estimating-services": {
     "slug": "commercial-estimating-services",
@@ -269,7 +269,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional commercial estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional commercial estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "residential-estimating-services": {
     "slug": "residential-estimating-services",
@@ -379,7 +379,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional residential estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional residential estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "electrical-estimating-services": {
     "slug": "electrical-estimating-services",
@@ -390,7 +390,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Electrical Estimating Services",
     "headlineSuffix": "for Low & High Voltage Projects",
     "leadParagraph": "Our team of experienced estimators is dedicated to providing accurate cost estimates for your electrical projects. With our expertise and attention to detail, we ensure that your estimates are precise, allowing you to plan and budget effectively.",
-    "secondaryParagraph": "At Construct Estimates, we specialize in providing exceptional Electrical Estimating Services to contractors, engineers, vendors, and homeowners. With our team of seasoned electrical estimators and industry-leading software, we deliver accurate, detailed, and customized estimates for a wide range of electrical projects. Whether you\u2019re working on residential, commercial, or industrial ventures, our comprehensive approach ensures that we work with the latest software like ConEst, Planswift, Accubid, and Bluebeam so that your estimates are tailored to your specific needs, allowing you to plan and budget with confidence.",
+    "secondaryParagraph": "At Buildcraft360, we specialize in providing exceptional Electrical Estimating Services to contractors, engineers, vendors, and homeowners. With our team of seasoned electrical estimators and industry-leading software, we deliver accurate, detailed, and customized estimates for a wide range of electrical projects. Whether you\u2019re working on residential, commercial, or industrial ventures, our comprehensive approach ensures that we work with the latest software like ConEst, Planswift, Accubid, and Bluebeam so that your estimates are tailored to your specific needs, allowing you to plan and budget with confidence.",
     "ctaText": "Request Electrical Estimating Services Now & Save 30%",
     "valueProps": [
       {
@@ -489,7 +489,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional electrical estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional electrical estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "mep-estimating-services": {
     "slug": "mep-estimating-services",
@@ -500,7 +500,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "MEP Estimating Services",
     "headlineSuffix": "for Complete Building Systems",
     "leadParagraph": "MEP Estimating Services: Accurate and Reliable Cost Estimation",
-    "secondaryParagraph": "Are you looking for accurate and reliable MEP estimating services for your construction projects? At Construct Estimates, we specialize in providing comprehensive and cost-effective estimation solutions tailored to meet your specific needs. With our expertise in MEP cost estimating, we ensure that your projects stay within budget while maintaining high-quality standards.",
+    "secondaryParagraph": "Are you looking for accurate and reliable MEP estimating services for your construction projects? At Buildcraft360, we specialize in providing comprehensive and cost-effective estimation solutions tailored to meet your specific needs. With our expertise in MEP cost estimating, we ensure that your projects stay within budget while maintaining high-quality standards.",
     "ctaText": "Request MEP Estimating Services Now & Save 30%",
     "valueProps": [
       {
@@ -599,7 +599,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional mep estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional mep estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "masonry-estimating-services": {
     "slug": "masonry-estimating-services",
@@ -610,7 +610,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Masonry Estimating Services",
     "headlineSuffix": "for Block, Brick, and Stone",
     "leadParagraph": "Expert Masonry Estimating Services Tailored to Your Needs",
-    "secondaryParagraph": "Are you in search of the best masonry estimating services? Look no further. Construct Estimates pride ourselves on delivering top-notch and timely estimates for masonry projects across North America, Australia, and the Caribbean. With years of diversified experience in the estimation industry, we excel in providing accurate estimates that you can rely on.",
+    "secondaryParagraph": "Are you in search of the best masonry estimating services? Look no further. Buildcraft360 prides itself on delivering top-notch and timely estimates for masonry projects across North America, Australia, and the Caribbean. With years of diversified experience in the estimation industry, we excel in providing accurate estimates that you can rely on.",
     "ctaText": "Request Masonry Estimating Services Now & Save 30%",
     "valueProps": [
       {
@@ -709,7 +709,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional masonry estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional masonry estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "lumber-takeoff-services": {
     "slug": "lumber-takeoff-services",
@@ -720,7 +720,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Lumber Takeoff Services",
     "headlineSuffix": "for Framers, Builders & Vendors",
     "leadParagraph": "Lumber Takeoff Services to Streamline Your  Construction Projects",
-    "secondaryParagraph": "Are you searching for a reliable and professional hub for Lumber Takeoff Services? Construct Estimates is your go-to destination for accurate and efficient lumber estimation. With years of experience in the construction estimation industry, we specialize in providing comprehensive and precise lumber takeoff services for a wide range of projects, including residential, commercial, industrial, retail, and civil.",
+    "secondaryParagraph": "Are you searching for a reliable and professional hub for Lumber Takeoff Services? Buildcraft360 is your go-to destination for accurate and efficient lumber estimation. With years of experience in the construction estimation industry, we specialize in providing comprehensive and precise lumber takeoff services for a wide range of projects, including residential, commercial, industrial, retail, and civil.",
     "ctaText": "Request Lumber Takeoff Services Now & Save 30%",
     "valueProps": [
       {
@@ -819,7 +819,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional lumber takeoff services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional lumber takeoff services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "metal-estimating-services": {
     "slug": "metal-estimating-services",
@@ -830,7 +830,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Metal Estimating Services",
     "headlineSuffix": "for Steel Fabricators & Erectors",
     "leadParagraph": "Metal Estimating Services: Steel Takeoffs and Expert Detailing",
-    "secondaryParagraph": "Are you grappling with the complexities of metal estimation? Construct Estimates is your dedicated partner in providing reliable, affordable, and timely metal estimating services that cater to the diverse needs of builders, fabricators, framers, distributors, and various other stakeholders in the construction industry. Our goal is to provide you with comprehensive structural steel, rebar, and miscellaneous metals estimating services that not only help you reduce overhead costs but also contribute to a greener environment by minimizing waste.",
+    "secondaryParagraph": "Are you grappling with the complexities of metal estimation? Buildcraft360 is your dedicated partner in providing reliable, affordable, and timely metal estimating services that cater to the diverse needs of builders, fabricators, framers, distributors, and various other stakeholders in the construction industry. Our goal is to provide you with comprehensive structural steel, rebar, and miscellaneous metals estimating services that not only help you reduce overhead costs but also contribute to a greener environment by minimizing waste.",
     "ctaText": "Request Metal Estimating Services Now & Save 30%",
     "valueProps": [
       {
@@ -929,7 +929,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional metal estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional metal estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "opening-estimating-services": {
     "slug": "opening-estimating-services",
@@ -940,7 +940,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Opening Estimating Services",
     "headlineSuffix": "for Doors, Hardware & Glazing",
     "leadParagraph": "Openings Estimating Services  That Deliver Accurate and Affordable Results",
-    "secondaryParagraph": "Are you tired of inaccurate cost estimations for your opening frames, doors, and windows? Construct Estimates specialize in providing top-notch Opening Estimating Services for commercial and residential buildings that deliver unparalleled accuracy and reliability. Our team of expert cost estimators is dedicated to ensuring that you have the most detailed and comprehensive cost breakdowns, empowering you to make informed decisions and win more bids.",
+    "secondaryParagraph": "Are you tired of inaccurate cost estimations for your opening frames, doors, and windows? Buildcraft360 specializes in providing top-notch Opening Estimating Services for commercial and residential buildings that deliver unparalleled accuracy and reliability. Our team of expert cost estimators is dedicated to ensuring that you have the most detailed and comprehensive cost breakdowns, empowering you to make informed decisions and win more bids.",
     "ctaText": "Request Opening Estimating Services Now & Save 30%",
     "valueProps": [
       {
@@ -1039,7 +1039,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional opening estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional opening estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "sitework-estimating-services": {
     "slug": "sitework-estimating-services",
@@ -1050,7 +1050,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "SiteWork Estimating Services",
     "headlineSuffix": "for Civil & Earthwork Contractors",
     "leadParagraph": "Your Premier Source for Site Work Estimating Services",
-    "secondaryParagraph": "At Construct Estimates, we understand the challenges faced by site work contractors, landscaping contractors, land developers, general contractors, and site contractors. That\u2019s why we offer top-notch site work estimating services that provide you with accurate and detailed estimates, cut and fill takeoffs, and 3D maps within 24 to 48 hours. We aim to equip you with the tools to win more bids and optimize overhead costs.",
+    "secondaryParagraph": "At Buildcraft360, we understand the challenges faced by site work contractors, landscaping contractors, land developers, general contractors, and site contractors. That\u2019s why we offer top-notch site work estimating services that provide you with accurate and detailed estimates, cut and fill takeoffs, and 3D maps within 24 to 48 hours. We aim to equip you with the tools to win more bids and optimize overhead costs.",
     "ctaText": "Request SiteWork Estimating Services Now & Save 30%",
     "valueProps": [
       {
@@ -1149,7 +1149,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional sitework estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional sitework estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "thermal-moisture-protection-estimating-services": {
     "slug": "thermal-moisture-protection-estimating-services",
@@ -1160,7 +1160,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Thermal & Moisture Protection",
     "headlineSuffix": "Estimating Services for Building Envelopes",
     "leadParagraph": "Estimating Services That Shield Your Project with Precision",
-    "secondaryParagraph": "Protecting your residential or commercial property from the damaging effects of thermal and moisture elements is of paramount importance. At Construct Estimates, we understand the significance of comprehensive thermal and moisture protection estimating services to ensure the longevity and integrity of your building. Our team of experienced estimators is dedicated to providing you with accurate cost estimates tailored to your specific needs, enabling you to make informed decisions and take proactive measures against potential risks.",
+    "secondaryParagraph": "Protecting your residential or commercial property from the damaging effects of thermal and moisture elements is of paramount importance. At Buildcraft360, we understand the significance of comprehensive thermal and moisture protection estimating services to ensure the longevity and integrity of your building. Our team of experienced estimators is dedicated to providing you with accurate cost estimates tailored to your specific needs, enabling you to make informed decisions and take proactive measures against potential risks.",
     "ctaText": "Request Thermal & Moisture Protection Estimating Now & Save 30%",
     "valueProps": [
       {
@@ -1259,7 +1259,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional thermal & moisture protection estimating by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional thermal & moisture protection estimating by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "interior-exterior-finishes-estimating-services": {
     "slug": "interior-exterior-finishes-estimating-services",
@@ -1369,7 +1369,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional interior & exterior finishes estimating by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional interior & exterior finishes estimating by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "industrial-estimating-services": {
     "slug": "industrial-estimating-services",
@@ -1479,7 +1479,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional industrial estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional industrial estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "cost-estimating-services": {
     "slug": "cost-estimating-services",
@@ -1589,7 +1589,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional cost estimating services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional cost estimating services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "construction-takeoff-services": {
     "slug": "construction-takeoff-services",
@@ -1600,7 +1600,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Construction Takeoff Services",
     "headlineSuffix": "Delivered Within 24-48 Hours",
     "leadParagraph": "Boost Your Construction Projects with Expert Takeoff Services",
-    "secondaryParagraph": "Are you looking for accurate and comprehensive construction takeoff services to streamline your projects and enhance your bottom line? At Construct Estimates, we specialize in providing professional quantity estimating solutions tailored to meet the unique needs of construction professionals like you. Our expertise and advanced technology enable us to deliver precise material quantities, cost estimations, and takeoff data, empowering you to make informed business decisions and win more projects.",
+    "secondaryParagraph": "Are you looking for accurate and comprehensive construction takeoff services to streamline your projects and enhance your bottom line? At Buildcraft360, we specialize in providing professional quantity estimating solutions tailored to meet the unique needs of construction professionals like you. Our expertise and advanced technology enable us to deliver precise material quantities, cost estimations, and takeoff data, empowering you to make informed business decisions and win more projects.",
     "ctaText": "Request Construction Takeoff Services Now & Save 30%",
     "valueProps": [
       {
@@ -1699,7 +1699,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional construction takeoff services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional construction takeoff services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "quantity-takeoff-services": {
     "slug": "quantity-takeoff-services",
@@ -1710,7 +1710,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Quantity Takeoff Services",
     "headlineSuffix": "for Developers, Architects & GCs",
     "leadParagraph": "Quantity Takeoff Services For Construction Projects",
-    "secondaryParagraph": "Construct Estimates empower contractors, architects, developers, and homeowners with precise material and labor estimates, enabling you to make informed decisions, secure projects, and achieve success in the construction industry.",
+    "secondaryParagraph": "Buildcraft360 empowers contractors, architects, developers, and homeowners with precise material and labor estimates, enabling you to make informed decisions, secure projects, and achieve success in the construction industry.",
     "ctaText": "Request Quantity Takeoff Services Now & Save 30%",
     "valueProps": [
       {
@@ -1809,7 +1809,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional quantity takeoff services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional quantity takeoff services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "preliminary-estimate": {
     "slug": "preliminary-estimate",
@@ -1919,7 +1919,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional preliminary estimate services by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional preliminary estimate services by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "estimating-consultant": {
     "slug": "estimating-consultant",
@@ -2029,7 +2029,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional construction estimating consultant by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional construction estimating consultant by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "virtual-bid-management": {
     "slug": "virtual-bid-management",
@@ -2040,7 +2040,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Virtual Bid Management",
     "headlineSuffix": "to Dominate Your Bidding Pipeline",
     "leadParagraph": "Streamline Your Construction Bidding Process with Virtual Bid Management",
-    "secondaryParagraph": "Are you tired of juggling countless tasks while trying to win construction bids? Do you wish you could focus on the core aspects of your business without getting bogged down by bid management complexities? Introducing Construct Estimates\u2019 Virtual Bid Manager (VBM) service\u2014your ticket to crafting winning proposals, efficient bidding, increased chances of winning contracts, and accelerated business growth.",
+    "secondaryParagraph": "Are you tired of juggling countless tasks while trying to win construction bids? Do you wish you could focus on the core aspects of your business without getting bogged down by bid management complexities? Introducing Buildcraft360\u2019 Virtual Bid Manager (VBM) service\u2014your ticket to crafting winning proposals, efficient bidding, increased chances of winning contracts, and accelerated business growth.",
     "ctaText": "Request Virtual Bid Management Now & Save 30%",
     "valueProps": [
       {
@@ -2139,7 +2139,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional virtual bid management by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional virtual bid management by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "construction-estimator-sydney": {
     "slug": "construction-estimator-sydney",
@@ -2249,7 +2249,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional construction estimator sydney by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional construction estimator sydney by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "building-estimator-melbourne": {
     "slug": "building-estimator-melbourne",
@@ -2359,7 +2359,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional building estimator melbourne by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional building estimator melbourne by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   "service-areas": {
     "slug": "service-areas",
@@ -2370,7 +2370,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
     "highlightWord": "Service Areas",
     "headlineSuffix": "Across the United States and Australia",
     "leadParagraph": "Serving the Entire United States and Australia",
-    "secondaryParagraph": "Construct Estimates deliver top-notch construction cost estimating and takeoff services across a vast geographical expanse. Our dedication to precision and quality knows no borders, so we proudly offer our services in every state of the United States and throughout Australia.",
+    "secondaryParagraph": "Buildcraft360 delivers top-notch construction cost estimating and takeoff services across a vast geographical expanse. Our dedication to precision and quality knows no borders, so we proudly offer our services in every state of the United States and throughout Australia.",
     "ctaText": "Request Our Service Areas Now & Save 30%",
     "valueProps": [
       {
@@ -2469,7 +2469,7 @@ export const ALL_SERVICES: Record<string, ServicePageData> = {
         "answer": "No, we do not charge for minor amendments, clarifications, or reviews. We want to ensure you have a winning, error-free bid and maintain a 95% quote acceptance rate."
       }
     ],
-    "metaDescription": "Professional our service areas by Construct Estimates. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
+    "metaDescription": "Professional our service areas by Buildcraft360. Accurate material takeoffs and cost estimations delivered in 24-48 hours with 100% precision."
   },
   ...NEW_SERVICES,
 };

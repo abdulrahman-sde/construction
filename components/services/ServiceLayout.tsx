@@ -101,8 +101,10 @@ export default function ServiceLayout({
               deliverables={service.deliverables}
             />
 
-            {/* Trades Breakdown on Every Details Page */}
-            <ServiceTradesSection serviceTitle={service.title} />
+            {/* Trades Breakdown (Only on Estimating Service Pages) */}
+            {!PLANNING_SLUGS.has(service.slug) && !ARCHITECTURE_SLUGS.has(service.slug) && (
+              <ServiceTradesSection serviceTitle={service.title} />
+            )}
 
             {/* Optional Custom Page Content */}
             {children}

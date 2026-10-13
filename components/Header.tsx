@@ -486,6 +486,12 @@ export default function Header() {
             {/* Direct Links */}
             <Link
               className="px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer"
+              href="/our-pricing"
+            >
+              Pricing and Packages
+            </Link>
+            <Link
+              className="px-3 py-2 rounded-lg hover:text-foreground hover:bg-accent/60 transition-colors duration-150 cursor-pointer"
               href="/our-projects"
             >
               Our Projects
@@ -645,6 +651,13 @@ export default function Header() {
 
             {/* Direct Links on Mobile */}
             <div className="border-t border-border/80 pt-3 mt-2 space-y-1">
+              <Link
+                href="/our-pricing"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2.5 px-3 rounded-lg text-sm font-medium text-foreground hover:bg-accent transition-colors"
+              >
+                Pricing and Packages
+              </Link>
               <Link
                 href="/our-projects"
                 onClick={() => setMobileMenuOpen(false)}

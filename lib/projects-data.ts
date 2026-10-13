@@ -71,7 +71,7 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
       { label: "Format Delivered", value: "PDF & Excel" },
     ],
     overviewText: [
-      "At Construct Estimates, our residential estimating team provides exhaustive, audit-ready cost assessments for multi-family residential complexes, custom single-family estates, and extensive residential renovations.",
+      "At Buildcraft360, our residential estimating team provides exhaustive, audit-ready cost assessments for multi-family residential complexes, custom single-family estates, and extensive residential renovations.",
       "Every takeoff is performed using high-resolution digital plan digitizers in Bluebeam Revu and PlanSwift. Each structural framing element, concrete cubic yard, and square foot of drywall is color-coded directly on your construction drawings, allowing project managers and field superintendents to verify every line item visually.",
       "Pricing is calibrated using the latest 2026 RSMeans localized cost data aligned with your project's specific zip code, ensuring that your bids are fiercely competitive yet protect your profit margins against material cost volatility.",
     ],
@@ -153,7 +153,7 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
       { label: "Bid Win Benchmark", value: "34% Increase" },
     ],
     overviewText: [
-      "Commercial building estimating demands extreme rigor. From mid-rise corporate headquarters to neighborhood retail strip centers and medical office facilities, Construct Estimates delivers audit-proof takeoff packages.",
+      "Commercial building estimating demands extreme rigor. From mid-rise corporate headquarters to neighborhood retail strip centers and medical office facilities, Buildcraft360 delivers audit-proof takeoff packages.",
       "We unpack complex MEP drawings, structural engineering schedules, and architectural specifications, synthesizing thousands of distinct trade items into an intuitive, editable Excel Bill of Quantities.",
       "Our team identifies constructability clashes, missing plan details, and scope ambiguities early during the pre-construction takeoff phase, drafting Request for Information (RFI) logs to prevent costly change orders during execution.",
     ],
@@ -235,7 +235,7 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
       { label: "Deliverable Format", value: "3D CAD & Excel" },
     ],
     overviewText: [
-      "Civil estimating requires cutting-edge volumetric modeling. At Construct Estimates, we utilize 3D surface modeling tools such as AGTEK and InSite Elevation Pro to calculate exact cut and fill quantities, accounting for soil shrinkage, swell factors, and topsoil stripping depths.",
+      "Civil estimating requires cutting-edge volumetric modeling. At Buildcraft360, we utilize 3D surface modeling tools such as AGTEK and InSite Elevation Pro to calculate exact cut and fill quantities, accounting for soil shrinkage, swell factors, and topsoil stripping depths.",
       "We specialize in public infrastructure and utility contracts conforming to federal, state, and municipal DOT specifications (such as TxDOT and California Caltrans standards).",
       "Whether bidding on a 50-acre commercial site grading project or municipal underground sewer extension, our civil estimators ensure every linear foot of pipe, cubic yard of bedding gravel, and ton of asphalt is accounted for with zero guesswork.",
     ],
@@ -311,7 +311,7 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     overviewText: [
       "Custom home building leaves no margin for loose material estimates. An over-ordered framing package erodes profit, while an under-ordered one stalls trade crews on site.",
-      "Construct Estimates provides home builders with line-item clarity. We break down your lumber takeoff by wall section, floor level, and roof elevation, providing suppliers with ready-to-quote cut lists.",
+      "Buildcraft360 provides home builders with line-item clarity. We break down your lumber takeoff by wall section, floor level, and roof elevation, providing suppliers with ready-to-quote cut lists.",
       "From foundation pouring to final cabinet hardware, our detailed PDFs give home builders the confidence to present fixed-price contracts to discerning home buyers.",
     ],
     challenges:
@@ -386,7 +386,7 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     overviewText: [
       "Bridge construction estimating requires technical mastery of heavy civil engineering specifications. Quantities must adhere to AASHTO, FHWA, and state DOT standard specifications.",
-      "Construct Estimates has provided estimating consultation for bridge rehabilitation projects, multi-span highway overpasses, and pedestrian trail bridges across North America and Australia.",
+      "Buildcraft360 has provided estimating consultation for bridge rehabilitation projects, multi-span highway overpasses, and pedestrian trail bridges across North America and Australia.",
       "We account for critical temporary works that general estimating services overlook: coffer dams, formwork shoring, crane pad construction, traffic management staging, and environmental silt containment.",
     ],
     challenges:
@@ -461,7 +461,7 @@ export const ALL_PROJECTS: ProjectCaseStudy[] = [
     ],
     overviewText: [
       "Kitchen remodels represent some of the highest square-foot cost concentrations in both residential homes and commercial hospitality projects. Precision in material counts and trade scope isolation is paramount.",
-      "Construct Estimates breaks down kitchen renovations trade-by-trade: demolition, electrical service upgrades, gas piping relocations, custom casework installation, stone fabrication, and luxury appliance installation.",
+      "Buildcraft360 breaks down kitchen renovations trade-by-trade: demolition, electrical service upgrades, gas piping relocations, custom casework installation, stone fabrication, and luxury appliance installation.",
       "Our takeoff packages give remodelers transparent line items to present to homeowners, eliminating awkward mid-project change orders and preserving trust throughout construction.",
     ],
     challenges:

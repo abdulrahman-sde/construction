@@ -16,12 +16,12 @@ export default function ServicePreFooterBanner() {
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-serif font-normal text-foreground leading-[1.18] tracking-tight">
             Let&apos;s Discuss Your Construction{" "}
             <span className="font-normal text-primary">
-              Estimating Needs
+              Project
             </span>
           </h2>
 
           <p className="font-sans text-muted-foreground text-sm sm:text-base font-normal leading-relaxed">
-            Don&apos;t let inaccurate takeoffs or tight bid deadlines hurt your margins. Partner with certified cost engineers and receive detailed CSI MasterFormat line-item takeoffs with up to 30% savings on estimating expenses.
+            From accurate cost estimates to project planning and architectural support, Buildcraft360 helps you move your projects forward with confidence.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">

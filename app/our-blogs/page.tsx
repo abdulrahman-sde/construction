@@ -7,11 +7,11 @@ import BlogListingClient from "@/components/blog/BlogListingClient";
 import { getAllBlogPosts } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
-  title: "Construction Estimating Insights & Industry Guides | Construct Estimates",
+  title: "Construction Estimating Insights & Industry Guides | Buildcraft360",
   description:
     "Explore authoritative construction estimating guides, quantity takeoff manuals, bidding strategies, software comparisons, and cash flow management insights.",
   openGraph: {
-    title: "Construction Estimating Insights & Industry Guides | Construct Estimates",
+    title: "Construction Estimating Insights & Industry Guides | Buildcraft360",
     description:
       "Explore authoritative construction estimating guides, quantity takeoff manuals, bidding strategies, software comparisons, and cash flow management insights.",
     type: "website",

@@ -3,11 +3,13 @@ import { ServiceDeliverable } from "@/lib/services-data";
 
 interface ServiceDeliverablesSectionProps {
   heading?: string;
+  subtext?: string;
   deliverables?: ServiceDeliverable[];
 }
 
 export default function ServiceDeliverablesSection({
-  heading = "What You Will Receive in Your Takeoff Package",
+  heading = "What You Will Receive in Your Deliverable Package",
+  subtext = "Every deliverable package is prepared to industry standards, fully coordinated, and formatted for seamless execution, bidding, and client review.",
   deliverables,
 }: ServiceDeliverablesSectionProps) {
   if (!deliverables || deliverables.length === 0) return null;
@@ -19,7 +21,7 @@ export default function ServiceDeliverablesSection({
           {heading}
         </h3>
         <p className="font-sans text-xs sm:text-sm text-muted-foreground mt-2 max-w-2xl font-normal leading-relaxed">
-          Every estimate package is delivered in industry-standard formats ready for immediate bidding, supplier ordering, and field execution.
+          {subtext}
         </p>
       </div>
 

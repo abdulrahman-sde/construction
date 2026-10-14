@@ -8,10 +8,72 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { WEB3FORMS_ACCESS_KEY } from "@/lib/contact";
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  currentSlug?: string;
+  category?: "estimating" | "planning" | "architectural";
+  serviceTitle?: string;
+}
+
+const PLANNING_SLUGS = new Set([
+  "construction-planning-scheduling",
+  "primavera-p6-scheduling",
+  "progress-monitoring-reporting",
+  "delay-analysis-schedule-recovery",
+]);
+
+const ARCHITECTURE_SLUGS = new Set([
+  "architectural-design",
+  "floor-plans-building-layouts",
+  "architectural-drawings-documentation",
+  "3d-modeling-visualization",
+]);
+
+export default function ContactSection({
+  currentSlug = "",
+  category,
+  serviceTitle,
+}: ContactSectionProps = {}) {
   const [result, setResult] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
+  const isPlanning = category === "planning" || PLANNING_SLUGS.has(currentSlug);
+  const isArchitecture = category === "architectural" || ARCHITECTURE_SLUGS.has(currentSlug);
+
+  // Content tailoring based on service category
+  let sampleTitle = "Download our Free Sample Projects";
+  let sampleDesc =
+    "Explore our sample projects to see the quality of our estimating, planning, and architectural services.";
+  let formTitle = "Upload Plans & Get 30% Off";
+  let formSubtitle = "Fast 24-48 hour turnaround on all trades";
+  let formSuccessMessage =
+    "Success! Your plans have been submitted. Our senior estimator will review your sheets and send your 30% discounted quote within 2 hours.";
+
+  if (isPlanning) {
+    sampleTitle = "Download our Free Sample Schedules";
+    sampleDesc =
+      "Want to inspect the precision of our Primavera P6 Gantt charts, WBS trees, and schedule narratives before ordering?";
+    formTitle = "Upload Project Scope & Get 30% Off";
+    formSubtitle = "Fast 24-48 hour turnaround on baseline schedules and reviews";
+    formSuccessMessage =
+      "Success! Your project scope has been submitted. Our senior planning engineer will review your documents and send your proposal within 2 hours.";
+  } else if (isArchitecture) {
+    sampleTitle = "Download our Free Sample Architectural Sets";
+    sampleDesc =
+      "Want to inspect the quality of our floor plans, elevation sets, and 3D architectural renderings before ordering?";
+    formTitle = "Upload Design Brief & Get 30% Off";
+    formSubtitle = "Fast turnaround on permit-ready drawings and 3D models";
+    formSuccessMessage =
+      "Success! Your design brief has been submitted. Our senior architectural designer will review your concepts and send your proposal within 2 hours.";
+  }
+
+  const formSubject = serviceTitle
+    ? `30% Off Request - ${serviceTitle}`
+    : isPlanning
+    ? "30% Off Schedule Request - Planning Section"
+    : isArchitecture
+    ? "30% Off Design Request - Architectural Section"
+    : "30% Off Estimate Request - Homepage / Service Section";
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -20,8 +82,8 @@ export default function ContactSection() {
 
     const formData = new FormData(event.currentTarget);
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("from_name", "Buildcraft360 Homepage Takeoff Form");
-    formData.append("subject", "30% Off Estimate Request - Homepage / Service Section");
+    formData.append("from_name", "Buildcraft360 Request Form");
+    formData.append("subject", formSubject);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -32,12 +94,12 @@ export default function ContactSection() {
       const data = await response.json();
       if (data.success) {
         setIsSubmitted(true);
-        setResult("Success! Your plans have been submitted. Our senior estimator will review your sheets and send your 30% discounted quote within 2 hours.");
+        setResult(formSuccessMessage);
       } else {
-        setResult(data.message || "An error occurred while submitting your plans. Please try again or email Info@buildcraft360.com.");
+        setResult(data.message || "An error occurred while submitting your request. Please try again or email Info@buildcraft360.com.");
       }
     } catch {
-      setResult("Network error. Please verify your connection or email your plans directly to Info@buildcraft360.com.");
+      setResult("Network error. Please verify your connection or email your requirements directly to Info@buildcraft360.com.");
     } finally {
       setIsSubmitting(false);
     }
@@ -70,11 +132,10 @@ export default function ContactSection() {
                 <div className="w-8 h-8 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-foreground border border-neutral-200/80 dark:border-neutral-700/80 flex items-center justify-center shrink-0 shadow-2xs">
                   <Gift size={16} />
                 </div>
-                <span>Download our Free Sample Estimates</span>
+                <span>{sampleTitle}</span>
               </h4>
               <p className="font-sans text-xs text-muted-foreground font-normal leading-relaxed pl-11">
-                Want to inspect the precision of our takeoff spreadsheets and colored markup PDFs
-                before ordering?
+                {sampleDesc}
               </p>
             </Card>
           </div>
@@ -85,10 +146,10 @@ export default function ContactSection() {
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-border">
                 <div>
                   <h3 className="text-base font-serif font-normal text-foreground tracking-tight">
-                    Upload Plans &amp; Get 30% Off
+                    {formTitle}
                   </h3>
                   <span className="font-sans text-xs text-muted-foreground font-normal">
-                    Fast 24-48 hour turnaround on all trades
+                    {formSubtitle}
                   </span>
                 </div>
                 <Badge variant="primary" className="text-[10.5px]">
@@ -104,80 +165,121 @@ export default function ContactSection() {
                     </div>
                     <div className="space-y-1.5 max-w-sm mx-auto">
                       <h4 className="font-serif font-normal text-lg text-foreground">
-                        Estimate Request Received
+                        Request Received
                       </h4>
                       <p className="text-xs text-muted-foreground font-normal leading-relaxed">
                         {result}
                       </p>
                     </div>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setIsSubmitted(false)}
-                      className="text-xs cursor-pointer"
-                    >
-                      Submit Another Request
-                    </Button>
                   </div>
                 ) : (
-                  <form className="space-y-4" onSubmit={onSubmit}>
-                    <div>
-                      <label
-                        htmlFor="cs-name"
-                        className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
-                      >
-                        Your Full Name <span className="text-primary">*</span>
-                      </label>
-                      <Input
-                        id="cs-name"
-                        name="name"
-                        required
-                        placeholder="John Doe"
-                        type="text"
-                        className="h-10 text-xs bg-background"
-                      />
-                    </div>
+                  <form onSubmit={onSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
+                      <div className="space-y-1.5">
                         <label
-                          htmlFor="cs-phone"
-                          className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
+                          htmlFor="cs-name"
+                          className="text-xs font-normal text-muted-foreground"
                         >
-                          Phone Number <span className="text-primary">*</span>
+                          Your Name *
                         </label>
                         <Input
-                          id="cs-phone"
-                          name="phone"
+                          id="cs-name"
+                          name="name"
+                          placeholder="John Doe"
                           required
-                          placeholder="(346) 000-0000"
-                          type="tel"
+                          type="text"
                           className="h-10 text-xs bg-background"
                         />
                       </div>
-                      <div>
+                      <div className="space-y-1.5">
                         <label
                           htmlFor="cs-email"
-                          className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
+                          className="text-xs font-normal text-muted-foreground"
                         >
-                          Your Email <span className="text-primary">*</span>
+                          Email Address *
                         </label>
                         <Input
                           id="cs-email"
                           name="email"
+                          placeholder="john@construction.com"
                           required
-                          placeholder="contractor@build.com"
                           type="email"
                           className="h-10 text-xs bg-background"
                         />
                       </div>
                     </div>
-                    <div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label
+                          htmlFor="cs-phone"
+                          className="text-xs font-normal text-muted-foreground"
+                        >
+                          Phone Number
+                        </label>
+                        <Input
+                          id="cs-phone"
+                          name="phone"
+                          placeholder="(555) 000-0000"
+                          type="tel"
+                          className="h-10 text-xs bg-background"
+                        />
+                      </div>
+                      <div className="space-y-1.5">
+                        <label
+                          htmlFor="cs-trade"
+                          className="text-xs font-normal text-muted-foreground"
+                        >
+                          Trade / Scope of Work
+                        </label>
+                        <Input
+                          id="cs-trade"
+                          name="trade"
+                          placeholder={
+                            isPlanning
+                              ? "e.g., Primavera P6 CPM Schedule"
+                              : isArchitecture
+                              ? "e.g., 2D Floor Plans & 3D Renderings"
+                              : "e.g., Drywall, Electrical, Full Package"
+                          }
+                          type="text"
+                          className="h-10 text-xs bg-background"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label
+                        htmlFor="cs-notes"
+                        className="text-xs font-normal text-muted-foreground"
+                      >
+                        Project Details / Specific Notes
+                      </label>
+                      <textarea
+                        id="cs-notes"
+                        name="notes"
+                        rows={3}
+                        placeholder={
+                          isPlanning
+                            ? "Tell us about your project milestones, target completion date, or contract scheduling requirements..."
+                            : isArchitecture
+                            ? "Tell us about your building concept, square footage, styling preferences, or permitting requirements..."
+                            : "Tell us about your project scope, turnaround deadline, location zip code, or specific divisions needed..."
+                        }
+                        className="w-full rounded-md border border-input bg-background px-3 py-2 text-xs placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring resize-none font-sans font-normal"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
                       <label
                         htmlFor="cs-drawings"
-                        className="block text-[11px] font-medium text-foreground/80 uppercase tracking-wider mb-1.5"
+                        className="text-xs font-normal text-muted-foreground"
                       >
-                        Upload Drawings / Plan Link
+                        {isPlanning
+                          ? "Project Scope / Drawing Link"
+                          : isArchitecture
+                          ? "Design Brief / Sketches Link"
+                          : "Upload Drawings / Plan Link"}
                       </label>
                       <Input
                         id="cs-drawings"

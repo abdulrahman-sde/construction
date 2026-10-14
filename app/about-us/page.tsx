@@ -124,19 +124,19 @@ export default function AboutUsPage() {
                 Our Commitment to Excellence
               </Badge>
               <h2 className="text-2xl sm:text-3xl font-serif font-normal text-foreground tracking-tight">
-                A Reliable Estimating Partner for Construction Companies
+                A Reliable Partner for Construction Companies
               </h2>
             </div>
 
             <div className="space-y-4 text-sm text-muted-foreground font-sans font-normal leading-relaxed">
               <p>
-                At Buildcraft360, our mission is to eliminate estimating uncertainty and streamline project planning. Founded by experienced construction engineers and professional quantity surveyors, we recognized that general contractors and trade subcontractors were constantly losing bids due to late submission times or inaccurate takeoffs.
+                At Buildcraft360, our mission is to simplify construction estimating, streamline project planning, and help construction professionals make informed decisions. We understand the challenges contractors face, from inaccurate quantity takeoffs and tight bidding deadlines to cost control and project scheduling.
               </p>
               <p>
-                With over 8 years of experience in the construction industry, Buildcraft360 provides dependable project support across residential, commercial, civil, and industrial projects. Our team of 12+ certified estimators, planners, and architectural professionals brings the technical knowledge and practical expertise needed to support projects from initial planning through execution.
+                With over 8 years of industry experience, Buildcraft360 provides reliable support across residential, commercial, civil, and industrial projects. Our team of 12+ estimators, planners, and architectural professionals combines technical expertise with practical industry knowledge to deliver dependable solutions tailored to each project&apos;s requirements.
               </p>
               <p>
-                Whether you need an estimate for a small project or a detailed takeoff for a larger commercial project, we provide clear and organized estimating that helps you understand the numbers before you bid.
+                Whether you need detailed quantity takeoffs, cost estimates, project planning, or architectural support, we help you save time, manage costs, submit competitive bids, and move your projects forward with confidence.
               </p>
             </div>
 
@@ -221,7 +221,7 @@ export default function AboutUsPage() {
               Built on Precision, Transparency &amp; Speed
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground font-sans font-normal leading-relaxed">
-              Every takeoff we deliver adheres to rigorous quantity surveying standards to ensure you remain competitive.
+              Buildcraft360 delivers reliable estimating, planning, and architectural solutions to keep your projects efficient and cost-effective.
             </p>
           </div>
 

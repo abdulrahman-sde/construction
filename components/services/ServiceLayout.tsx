@@ -121,10 +121,10 @@ export default function ServiceLayout({
       </main>
 
       {/* 4. Plan Upload & Contact Form Anchor Section */}
-      <ContactSection />
+      <ContactSection currentSlug={service.slug} serviceTitle={service.title} />
 
       {/* 5. Pre-Footer Action Banner with Engineer Graphic */}
-      <ServicePreFooterBanner />
+      <ServicePreFooterBanner currentSlug={service.slug} />
 
       {/* 6. Global Footer */}
       <Footer />

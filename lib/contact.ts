@@ -10,7 +10,7 @@ export const CONTACT_INFO = {
   whatsappNumber: "13468612915",
   whatsappDisplay: "+1 (346) 861-2915",
   whatsappUrl:
-    "https://wa.me/13468612915?text=Hello%20Buildcraft360%2C%20I%20would%20like%20to%20get%20an%20estimate.",
+    "https://wa.me/13468612915?text=Hi%20Buildcraft360%2C%20I%27d%20like%20to%20discuss%20my%20project",
   email: "Info@buildcraft360.com",
   address: "30 N Gould St #4453, Sheridan, WY 82801, United States",
   facebookUrl: "https://www.facebook.com/share/1BXiBdy5Bs/",

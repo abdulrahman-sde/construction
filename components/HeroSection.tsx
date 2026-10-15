@@ -70,12 +70,7 @@ export default function HeroSection() {
                 size="xl"
                 className="shadow-sm font-medium"
               >
-                <span>
-                  Reduce Your Estimating Expenses{" "}
-                  <span className="underline decoration-white/60">
-                    Up to 30%
-                  </span>
-                </span>
+                <span>Discuss Your Project With Us</span>
                 <ArrowRight size={16} />
               </Button>
             </div>

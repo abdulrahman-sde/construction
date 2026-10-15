@@ -1,8 +1,7 @@
-"use client";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export default function WhatsAppButton() {
-  const whatsappUrl =
-    "https://wa.me/13468612915?text=Hello%20Buildcraft360%2C%20I%20would%20like%20to%20inquire%20about%20an%20estimate.";
+  const whatsappUrl = WHATSAPP_URL;
 
   return (
     <aside aria-label="WhatsApp live chat" className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50">
